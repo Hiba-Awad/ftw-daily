@@ -19,6 +19,7 @@ import {
   PrivacyPolicyPage,
   ProfilePage,
   ProfileSettingsPage,
+  ReviewDetailsPage,
   SearchPage,
   StyleguidePage,
   TermsOfServicePage,
@@ -250,6 +251,16 @@ const routeConfiguration = () => {
       authPage: 'LoginPage',
       component: () => <NamedRedirect name="ContactDetailsPage" />,
     },
+
+    {
+      path: '/account/review',
+      name: 'ReviewDetailsPage',
+      auth: true,
+      authPage: 'LoginPage',
+      component: props => <ReviewDetailsPage {...props} />,
+      loadData: ReviewDetailsPage.loadData,
+    },
+
     {
       path: '/account/contact-details',
       name: 'ContactDetailsPage',

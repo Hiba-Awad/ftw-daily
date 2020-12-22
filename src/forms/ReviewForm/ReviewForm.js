@@ -7,7 +7,7 @@ import classNames from 'classnames';
 import { isTransactionsTransitionAlreadyReviewed } from '../../util/errors';
 import { propTypes } from '../../util/types';
 import { required } from '../../util/validators';
-import { FieldReviewRating, Form, PrimaryButton, FieldTextInput } from '../../components';
+import { Form, PrimaryButton, FieldTextInput, FieldSelect } from '../../components';
 
 import css from './ReviewForm.css';
 
@@ -62,13 +62,39 @@ const ReviewFormComponent = props => (
 
       return (
         <Form className={classes} onSubmit={handleSubmit}>
-          <FieldReviewRating
-            className={css.reviewRating}
-            id={formId ? `${formId}.starRating` : 'starRating'}
-            name="reviewRating"
-            label={reviewRating}
-            validate={required(reviewRatingRequiredMessage)}
+          <FieldTextInput
+            className={css.reviewContent}
+            type="textarea"
+            id={formId ? `${formId}.reviewContent` : 'reviewContent'}
+            name="reviewContent"
+            label={reviewContent}
+            placeholder={reviewContentPlaceholderMessage}
+            validate={required(reviewContentRequiredMessage)}
           />
+          <FieldSelect
+            id={formId ? `${formId}.reviewContent` : 'reviewContent'}
+            name="height"
+            label="height"
+          >
+            <option value="5'2">5'2.</option>
+            <option value="5'3">5'3</option>
+            <option value="5'4">5'4</option>
+            <option value="5'5">5'5</option>
+            <option value="5'6">5'6</option>
+            <option value="5'8">5'7</option>
+          </FieldSelect>
+          <FieldSelect
+            id={formId ? `${formId}.reviewContent` : 'reviewContent'}
+            name="height"
+            label="height"
+          >
+            <option value="5'2">5'2.</option>
+            <option value="5'3">5'3</option>
+            <option value="5'4">5'4</option>
+            <option value="5'5">5'5</option>
+            <option value="5'6">5'6</option>
+            <option value="5'8">5'7</option>
+          </FieldSelect>
 
           <FieldTextInput
             className={css.reviewContent}
