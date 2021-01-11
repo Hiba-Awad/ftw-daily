@@ -21,6 +21,8 @@
 }
 
 .sectionImages {
+  max-width: 50%;
+  flex-basis: 50%;
 }
 
 .threeToTwoWrapper {
@@ -224,8 +226,12 @@
     margin-top: 50px;
     margin-bottom: 0px;
     /* contentContainer's full width - (bookingColumn + two paddings + margin + border) */
-    max-width: calc(100% - 433px);
-    flex-basis: calc(100% - 433px);
+    /* HA: remove booking column 
+max-width: calc(100% - 433px);
+flex-basis: calc(100% - 433px);
+    */
+    max-width: 50%;
+    flex-basis: 50%;
     flex-shrink: 0;
     flex-grow: 1;
   }
@@ -289,6 +295,7 @@
 
   @media (--viewportMedium) {
     display: flex;
+    flex-direction: column;
     margin-bottom: 31px;
   }
 }

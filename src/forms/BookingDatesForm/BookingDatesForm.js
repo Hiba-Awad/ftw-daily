@@ -200,27 +200,6 @@ export class BookingDatesFormComponent extends Component {
                   this.handleOnChange(values);
                 }}
               />
-              <FieldDateRangeInput
-                className={css.bookingDates}
-                name="bookingDates"
-                unitType={unitType}
-                startDateId={`${formId}.bookingStartDate`}
-                startDateLabel={bookingStartLabel}
-                startDatePlaceholderText={startDatePlaceholderText}
-                endDateId={`${formId}.bookingEndDate`}
-                endDateLabel={bookingEndLabel}
-                endDatePlaceholderText={endDatePlaceholderText}
-                focusedInput={this.state.focusedInput}
-                onFocusedInputChange={this.onFocusedInputChange}
-                format={identity}
-                timeSlots={timeSlots}
-                useMobileMargins
-                validate={composeValidators(
-                  required(requiredMessage),
-                  bookingDatesRequired(startDateErrorMessage, endDateErrorMessage)
-                )}
-                disabled={fetchLineItemsInProgress}
-              />
 
               {bookingInfoMaybe}
               {loadingSpinnerMaybe}

@@ -10,9 +10,6 @@ const SectionDescriptionMaybe = props => {
   const { description } = props;
   return description ? (
     <div className={css.sectionDescription}>
-      <h2 className={css.descriptionTitle}>
-        <FormattedMessage id="ListingPage.descriptionTitle" />
-      </h2>
       <p className={css.description}>
         {richText(description, {
           longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS_IN_DESCRIPTION,
