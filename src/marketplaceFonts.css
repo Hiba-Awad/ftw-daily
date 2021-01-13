@@ -11,8 +11,8 @@
     since browsers support CSS Properties already.
  */
 
-  --fontFamily: 'poppins', Helvetica, Arial, sans-serif;
-
+  --fontFamily: 'Segoe UI', 'open sans', Arial, sans-serif;
+  --headerFontFamily: 'Georgia Pro', Georgia, serif;
   --fontWeightRegular: 400;
   --fontWeightMedium: 500;
   --fontWeightSemiBold: 600;
@@ -86,6 +86,7 @@
   /* ================ Modal title ================ */
 
   --marketplaceModalTitleStyles {
+    font-family: var(--headerFontFamily);
     font-weight: var(--fontWeightSemiBold);
     font-size: 30px;
     line-height: 36px;
@@ -170,6 +171,7 @@
   }
 
   --marketplaceH5FontStyles: {
+    font-family: var(--headerFontFamily);
     font-weight: var(--fontWeightMedium);
     font-size: 14px;
     line-height: 18px;

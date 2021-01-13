@@ -205,15 +205,6 @@ export class BookingDatesFormComponent extends Component {
               {loadingSpinnerMaybe}
               {bookingInfoErrorMaybe}
 
-              <p className={css.smallPrint}>
-                <FormattedMessage
-                  id={
-                    isOwnListing
-                      ? 'BookingDatesForm.ownListing'
-                      : 'BookingDatesForm.youWontBeChargedInfo'
-                  }
-                />
-              </p>
               <div className={submitButtonClasses}>
                 <PrimaryButton type="submit">
                   <FormattedMessage id="BookingDatesForm.requestToBook" />

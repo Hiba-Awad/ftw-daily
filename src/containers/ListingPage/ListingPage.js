@@ -57,6 +57,8 @@ import SectionReviews from './SectionReviews';
 import SectionHostMaybe from './SectionHostMaybe';
 import SectionRulesMaybe from './SectionRulesMaybe';
 import SectionMapMaybe from './SectionMapMaybe';
+import SectionTabInfo from './SectionTabInfo';
+import SectionSizeOptions from './SectionSizeOptions';
 import css from './ListingPage.css';
 
 const MIN_LENGTH_FOR_LONG_WORDS_IN_TITLE = 16;
@@ -374,9 +376,8 @@ export class ListingPageComponent extends Component {
     const hostLink = (
       <NamedLink
         className={css.authorNameLink}
-        name="ListingPage"
-        params={params}
-        to={{ hash: '#host' }}
+        name="ProfilePage"
+        params={{ id: ensuredAuthor.id.uuid }}
       >
         {authorDisplayName}
       </NamedLink>
@@ -439,8 +440,7 @@ export class ListingPageComponent extends Component {
                     showContactUser={showContactUser}
                     onContactUser={this.onContactUser}
                   />
-                  <SectionDescriptionMaybe description={description} />
-
+                  <SectionSizeOptions publicData={publicData}></SectionSizeOptions>
                   <BookingPanel
                     className={css.bookingPanel}
                     listing={currentListing}
@@ -458,6 +458,7 @@ export class ListingPageComponent extends Component {
                     fetchLineItemsInProgress={fetchLineItemsInProgress}
                     fetchLineItemsError={fetchLineItemsError}
                   />
+                  <SectionTabInfo publicData={publicData} />
                 </div>
               </div>
             </div>

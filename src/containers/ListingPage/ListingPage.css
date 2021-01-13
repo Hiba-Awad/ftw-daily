@@ -6,6 +6,7 @@
 .pageRoot {
   display: flex;
   padding-bottom: 90px;
+  margin: 0;
   @media (--viewportLarge) {
     padding-bottom: 0;
   }
@@ -21,8 +22,7 @@
 }
 
 .sectionImages {
-  max-width: 50%;
-  flex-basis: 50%;
+  flex-basis: auto;
 }
 
 .threeToTwoWrapper {
@@ -193,21 +193,18 @@
 
 .contentContainer {
   @media (--viewportMedium) {
-    max-width: 1056px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0;
     display: flex;
     position: relative;
   }
 
   @media (--viewportLarge) {
-    max-width: 1128px;
-    padding: 0 36px;
-    margin: 0 auto 117px;
+    padding: 0;
+    margin: 0;
   }
 
   @media (--viewportXLarge) {
-    max-width: 1056px;
     padding: 0;
   }
 }
@@ -240,11 +237,13 @@ flex-basis: calc(100% - 433px);
 .bookingPanel {
   @media (--viewportLarge) {
     display: block;
-    margin-top: 79px;
-    margin-left: 60px;
-    border-left-style: solid;
+    margin-top: 10px;
+    margin-left: 0px;
+    /*border-left-style: solid;
     border-left-width: 1px;
     border-left-color: var(--matterColorNegative);
+    */
+    max-width: 70%;
 
     padding-left: 60px;
 
@@ -290,7 +289,7 @@ flex-basis: calc(100% - 433px);
 }
 
 .sectionHeading {
-  margin-top: 22px;
+  margin-top: 0px;
   margin-bottom: 34px;
 
   @media (--viewportMedium) {
@@ -338,7 +337,7 @@ flex-basis: calc(100% - 433px);
 .heading {
   margin-bottom: 33px;
   padding: 0 24px;
-
+  margin-top: 0px;
   @media (--viewportMedium) {
     margin-bottom: 0;
     padding: 0;
@@ -348,6 +347,7 @@ flex-basis: calc(100% - 433px);
 .title {
   /* Font */
   @apply --marketplaceModalTitleStyles;
+  font-family: var(--headerFontFamily);
   color: var(--matterColor);
 
   /* Layout */
@@ -375,6 +375,7 @@ flex-basis: calc(100% - 433px);
 
 .authorNameLink {
   color: var(--matterColor);
+  font-family: var(--fontFamily);
 }
 
 .contactWrapper {
@@ -590,4 +591,16 @@ flex-basis: calc(100% - 433px);
   /* use break-word if available */
   word-break: break-word;
   hyphens: auto;
+}
+
+.sectionSizeOptions {
+  max-width: 30%;
+}
+
+.variantsTabNav {
+  margin: 0px;
+}
+.sizeTab {
+  @apply --marketplaceH3FontStyles;
+  margin: 0px;
 }

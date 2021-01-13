@@ -2,6 +2,8 @@ import pick from 'lodash/pick';
 import moment from 'moment';
 import config from '../../config';
 import { types as sdkTypes } from '../../util/sdkLoader';
+import { util as sdkUtil } from '../../util/sdkLoader';
+
 import { storableError } from '../../util/errors';
 import { addMarketplaceEntities } from '../../ducks/marketplaceData.duck';
 import { transactionLineItems } from '../../util/api';
@@ -182,7 +184,21 @@ export const showListing = (listingId, isOwn = false) => (dispatch, getState, sd
       // Avatars
       'variants.square-small',
       'variants.square-small2x',
+
+      //custom variatns
+      'variants.portrait-crop',
+      'variants.portrait-crop2x',
     ],
+    'imageVariant.portrait-crop': sdkUtil.objectQueryString({
+      w: 400,
+      h: 600,
+      fit: 'crop',
+    }),
+    'imageVariant.portrait-crop2x': sdkUtil.objectQueryString({
+      w: 800,
+      h: 1200,
+      fit: 'crop',
+    }),
   };
 
   const show = isOwn ? sdk.ownListings.show(params) : sdk.listings.show(params);

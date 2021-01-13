@@ -28,7 +28,8 @@
 }
 
 .primaryButton {
-  /* Class handle for primary button state styles */
+  background-color: #da4167;
+  /* Class handle for primary button state styles *
 }
 .secondaryButton {
   /* Class handle for secondary button state styles */

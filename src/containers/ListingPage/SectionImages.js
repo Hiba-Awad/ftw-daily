@@ -46,12 +46,7 @@ const SectionImages = props => {
             rootClassName={css.rootForImage}
             alt={title}
             image={firstImage}
-            variants={[
-              'landscape-crop',
-              'landscape-crop2x',
-              'landscape-crop4x',
-              'landscape-crop6x',
-            ]}
+            variants={['portrait-crop', 'portrait-crop2x']}
           />
           {viewPhotosButton}
         </div>
