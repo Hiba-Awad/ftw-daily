@@ -26,7 +26,7 @@
 
 /* Firefox doesn't support image aspect ratio inside flexbox */
 .aspectWrapper {
-  padding-bottom: 66.6667%; /* 3:2 Aspect Ratio */
+  padding-bottom: 150%; /* 2:3 Aspect Ratio */
   background: var(--matterColorNegative); /* Loading BG color */
 }
 
@@ -74,7 +74,7 @@
 .perUnit {
   /* Font */
   @apply --marketplaceTinyFontStyles;
-  color: var(--matterColor);
+  color: var(--matterColorDark);
 
   /* Remove default margins from font */
   margin-top: 0;

@@ -7,7 +7,7 @@
 }
 
 .darkSkin {
-  background-color: var(--matterColor);
+  background-color: var(--matterColorLight);
 }
 
 .tab {
@@ -32,7 +32,7 @@
   /* Font */
   @apply --marketplaceTabNavHorizontalFontStyles;
 
-  color: var(--matterColor);
+  color: var(--matterColorDark);
   padding-bottom: 10px;
 
   border-bottom-width: 2px;
@@ -62,8 +62,8 @@
 }
 
 .selectedTabContent {
-  border-bottom-color: var(--matterColorDark);
-  color: var(--matterColorDark);
+  border-bottom-color: var(--marketplaceColor);
+  color: var(--marketplaceColor);
 }
 
 .disabled {
@@ -74,16 +74,16 @@
 
 /* Dark skin */
 .tabContentDarkSkin {
-  color: var(--matterColorAnti);
+  color: var(--matterColorDark);
 
   &:hover {
-    color: var(--matterColorLight);
+    color: var(--matterColorDark);
   }
 }
 
 .selectedTabContentDarkSkin {
-  border-bottom-color: var(--matterColorLight);
-  color: var(--matterColorLight);
+  border-bottom-color: var(--marketplaceColor);
+  color: var(--matterColorDark);
 }
 
 .disabledDarkSkin {

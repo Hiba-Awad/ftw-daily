@@ -26,6 +26,8 @@ import {
 } from './SearchPage.helpers';
 import MainPanel from './MainPanel';
 import css from './SearchPage.css';
+import { util as sdkUtil } from '../../util/sdkLoader';
+
 
 // Pagination page size might need to be dynamic on responsive page layouts
 // Current design has max 3 columns 12 is divisible by 2 and 3
@@ -328,8 +330,18 @@ SearchPage.loadData = (params, search) => {
     perPage: RESULT_PAGE_SIZE,
     include: ['author', 'images'],
     'fields.listing': ['title', 'geolocation', 'price'],
-    'fields.user': ['profile.displayName', 'profile.abbreviatedName'],
-    'fields.image': ['variants.landscape-crop', 'variants.landscape-crop2x'],
+    'fields.user': ['profile.displayName', 'profile.abbreviatedName'],       
+    'fields.image': ['variants.portrait-crop', 'variants.portrait-crop2x'],
+   'imageVariant.portrait-crop': sdkUtil.objectQueryString({
+     w: 400,
+     h: 600,
+     fit: 'crop',
+   }),
+   'imageVariant.portrait-crop2x': sdkUtil.objectQueryString({
+     w: 800,
+     h: 1200,
+     fit: 'crop',
+   }),
     'limit.images': 1,
   });
 };

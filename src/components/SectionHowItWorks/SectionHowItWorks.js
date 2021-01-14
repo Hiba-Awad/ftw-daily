@@ -20,7 +20,13 @@ const SectionHowItWorks = props => {
       <div className={css.steps}>
         <div className={css.step}>
           <p>
-            <FormattedMessage id="SectionHowItWorks.part1Text" />
+            <FormattedMessage id="SectionHowItWorks.part1Text"  />
+          </p>
+          <p>
+            <FormattedMessage id="SectionHowItWorks.part2Text" />
+          </p>
+          <p>
+            <FormattedMessage id="SectionHowItWorks.part3Text" />
           </p>
         </div>
       </div>

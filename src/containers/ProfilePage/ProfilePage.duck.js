@@ -2,6 +2,7 @@ import { addMarketplaceEntities } from '../../ducks/marketplaceData.duck';
 import { fetchCurrentUser } from '../../ducks/user.duck';
 import { denormalisedResponseEntities } from '../../util/data';
 import { storableError } from '../../util/errors';
+import { util as sdkUtil } from '../../util/sdkLoader';
 
 // ================ Action types ================ //
 
@@ -127,7 +128,17 @@ export const queryUserListings = userId => (dispatch, getState, sdk) => {
     .query({
       author_id: userId,
       include: ['author', 'images'],
-      'fields.image': ['variants.landscape-crop', 'variants.landscape-crop2x'],
+      'fields.image': ['variants.portrait-crop', 'variants.portrait-crop2x'],
+   'imageVariant.portrait-crop': sdkUtil.objectQueryString({
+     w: 400,
+     h: 600,
+     fit: 'crop',
+   }),
+   'imageVariant.portrait-crop2x': sdkUtil.objectQueryString({
+     w: 800,
+     h: 1200,
+     fit: 'crop',
+   }),
     })
     .then(response => {
       // Pick only the id and type properties from the response listings

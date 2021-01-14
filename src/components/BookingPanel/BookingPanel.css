@@ -44,7 +44,7 @@
   color: var(--matterColor);
 
   /* Layout */
-  width: 100%;
+  width: 50px;
   margin-top: 0;
   margin-bottom: 0;
   @media (--viewportMedium) {
@@ -113,15 +113,15 @@
 
 .bookingDatesSubmitButtonWrapper {
   flex-shrink: 0;
-  padding: 0 24px 24px 24px;
-  width: 100%;
+  padding: 0;
+  width: 50%;
   position: fixed;
   bottom: 0;
   background-color: var(--matterColorLight);
 
   @media (--viewportMedium) {
-    padding: 0 24px 24px 24px;
-    width: 100%;
+    padding: 0 0 25px 0;
+    width: 50%;
     position: static;
     bottom: unset;
     background-color: transparent;

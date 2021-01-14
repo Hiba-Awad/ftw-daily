@@ -3,11 +3,14 @@
 .title {
   @apply --marketplaceH1FontStyles;
   margin-top: 0;
+  text-align: center;
 }
 
 .steps {
-  display: flex;
+  display: flex-end;
   flex-direction: column;
+  text-align: center;
+
 
   @media (--viewportMedium) {
     flex-direction: row;

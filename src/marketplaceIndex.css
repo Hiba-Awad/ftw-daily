@@ -90,7 +90,7 @@ label {
 }
 
 button {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Segoe UI', 'open sans', Arial, sans-serif;;
 }
 
 select {
@@ -119,9 +119,9 @@ textarea {
 
 :global(.fontsLoaded) {
   & body {
-    font-family: 'poppins', Helvetica, Arial, sans-serif;
+    font-family: 'Segoe UI', 'open sans', Arial, sans-serif;
   }
   & button {
-    font-family: 'poppins', Helvetica, Arial, sans-serif;
+    font-family: 'Segoe UI', 'open sans', Arial, sans-serif;;
   }
 }

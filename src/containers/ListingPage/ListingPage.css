@@ -183,7 +183,7 @@
 .carouselModalScrollLayer {
   width: 100vw;
   height: 100vh;
-  background-color: rgba(1, 1, 1, 0.92);
+  background-color: #ffffff
 }
 
 .carouselModalContainer {
@@ -245,7 +245,7 @@ flex-basis: calc(100% - 433px);
     */
     max-width: 70%;
 
-    padding-left: 60px;
+    padding-left: 0px;
 
     /* The calendar needs 312px */
     flex-basis: 312px;
@@ -315,7 +315,9 @@ flex-basis: calc(100% - 433px);
 .desktopPriceValue {
   /* Font */
   @apply --marketplaceModalTitleStyles;
-  color: var(--marketplaceColor);
+  color: var(--matterColorDark);
+  font-size: 25px;
+  font-weight: 200;
 
   @media (--viewportMedium) {
     margin-top: 0;
@@ -348,7 +350,9 @@ flex-basis: calc(100% - 433px);
   /* Font */
   @apply --marketplaceModalTitleStyles;
   font-family: var(--headerFontFamily);
-  color: var(--matterColor);
+  color: var(--matterColorDark);
+  font-weight: 200;
+  
 
   /* Layout */
   width: 100%;
@@ -374,8 +378,10 @@ flex-basis: calc(100% - 433px);
 }
 
 .authorNameLink {
-  color: var(--matterColor);
+  color: var(--matterColorDark);
   font-family: var(--fontFamily);
+  font-size: 60px;
+  font-weight: 300;
 }
 
 .contactWrapper {
