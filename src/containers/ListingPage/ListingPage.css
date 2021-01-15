@@ -317,7 +317,7 @@ flex-basis: calc(100% - 433px);
   @apply --marketplaceModalTitleStyles;
   color: var(--matterColorDark);
   font-size: 25px;
-  font-weight: 200;
+  font-weight: 300;
 
   @media (--viewportMedium) {
     margin-top: 0;

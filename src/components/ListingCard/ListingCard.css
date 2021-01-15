@@ -60,6 +60,8 @@
 .priceValue {
   /* Font */
   @apply --marketplaceH3FontStyles;
+  color: var(--matterColorDark);
+
 
   /* Remove default margins from font */
   margin-top: 0;
@@ -94,7 +96,9 @@
 .title {
   /* Font */
   @apply --marketplaceH3FontStyles;
-  color: var(--matterColor);
+  color: var(--matterColorAnti);
+  font-weight: 400;
+  font-size: 16px;
 
   /* Remove default margins from font */
   margin-top: 0;
@@ -102,21 +106,23 @@
 
   @media (--viewportMedium) {
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 20px;
   }
 }
 
 .authorInfo {
   /* Font */
-  @apply --marketplaceTinyFontStyles;
+  @apply --marketplaceH5FontStyles;
   color: var(--matterColor);
+  font-size: 18px;
+  font-weight: 600;
 
   /* Remove default margins from font */
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: 0px;
+  margin-bottom: 0px;
 
   @media (--viewportMedium) {
-    margin-top: 0;
+    margin-top: 5px;
     margin-bottom: 0;
   }
 }
