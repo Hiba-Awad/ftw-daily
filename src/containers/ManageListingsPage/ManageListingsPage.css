@@ -122,10 +122,10 @@
  * Here we take margin-right away, but we don't want it affect the next column breakpoint.
 
 
-
+*/
 .listingCard:nth-of-type(2n) {
   @media screen and (min-width: 768px) and (max-width: 1920px) {
-    margin-right: 0;
+    margin-right: 12px;
   }
 }
 
@@ -134,7 +134,7 @@
     margin-right: 0;
   }
 }
- */
+
  
 .pagination {
   /* margin-top: auto; pushes pagination to the end of the page. */
