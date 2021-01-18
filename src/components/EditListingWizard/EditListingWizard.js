@@ -38,10 +38,10 @@ const availabilityMaybe = config.enableAvailability ? [AVAILABILITY] : [];
 // and listing publishing happens after last panel.
 export const TABS = [
   DESCRIPTION,
-  FEATURES,
+  PRICING,
   POLICY,
   LOCATION,
-  PRICING,
+  FEATURES,
   ...availabilityMaybe,
   PHOTOS,
 ];

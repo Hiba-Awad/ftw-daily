@@ -57,6 +57,26 @@ const EditListingDescriptionFormComponent = props => (
         id: 'EditListingDescriptionForm.descriptionRequired',
       });
 
+      const sizeandfitMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.sizeandfit',
+      });
+      const sizeandfitPlaceholderMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.sizeandfitPlaceholder',
+      });
+      const sizeandfitRequiredMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.sizeandfitRequired',
+      });
+
+      const detailsandcareMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.detailsandcare',
+      });
+      const detailsandcarePlaceholderMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.detailsandcarePlaceholder',
+      });
+      const detailsandcareRequiredMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.detailsandcareRequired',
+      });
+
       const { updateListingError, createListingDraftError, showListingsError } = fetchErrors || {};
       const errorMessageUpdateListing = updateListingError ? (
         <p className={css.error}>
@@ -109,12 +129,36 @@ const EditListingDescriptionFormComponent = props => (
             validate={composeValidators(required(descriptionRequiredMessage))}
           />
 
+          
+<FieldTextInput
+            id="sizeandfit"
+            name="sizeandfit"
+            className={css.description}
+            type="textarea"
+            label={sizeandfitMessage}
+            placeholder={sizeandfitPlaceholderMessage}
+            validate={composeValidators(required(sizeandfitRequiredMessage))}
+          />
+
+<FieldTextInput
+            id="detailsandcare"
+            name="detailsandcare"
+            className={css.description}
+            type="textarea"
+            label={detailsandcareMessage}
+            placeholder={detailsandcarePlaceholderMessage}
+            validate={composeValidators(required(detailsandcareRequiredMessage))}
+          />
+
+{/*}
           <CustomCategorySelectFieldMaybe
             id="category"
             name="category"
             categories={categories}
             intl={intl}
           />
+
+      {*/}
 
           <Button
             className={css.submitButton}

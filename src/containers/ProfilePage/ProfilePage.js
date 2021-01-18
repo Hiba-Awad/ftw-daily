@@ -27,6 +27,8 @@ import {
 import { TopbarContainer, NotFoundPage } from '../../containers';
 import { loadData } from './ProfilePage.duck';
 import config from '../../config';
+import FreeBreakfastOutlinedIcon from '@material-ui/icons/FreeBreakfastOutlined';
+import HighlightOutlinedIcon from '@material-ui/icons/HighlightOutlined';
 
 import css from './ProfilePage.css';
 
@@ -187,6 +189,15 @@ export class ProfilePageComponent extends Component {
           <FormattedMessage id="ProfilePage.desktopHeading" values={{ name: displayName }} />
         </h1>
         {hasBio ? <p className={css.bio}>{bio}</p> : null}
+        <div className={css.bioLinks}>
+        <FreeBreakfastOutlinedIcon></FreeBreakfastOutlinedIcon>
+        <FormattedMessage id="ProfilePage.designerProfile" />
+        </div>
+        <div className={css.bioLinks}>
+        <HighlightOutlinedIcon></HighlightOutlinedIcon>
+        <FormattedMessage id="ProfilePage.productHighlight" />
+        </div>
+        {isMobileLayout ? mobileReviews : desktopReviews}
         {hasListings ? (
           <div className={listingsContainerClasses}>
             <h2 className={css.listingsTitle}>
@@ -204,7 +215,7 @@ export class ProfilePageComponent extends Component {
             </ul>
           </div>
         ) : null}
-        {isMobileLayout ? mobileReviews : desktopReviews}
+
       </div>
     );
 
@@ -246,7 +257,9 @@ export class ProfilePageComponent extends Component {
           <LayoutWrapperTopbar>
             <TopbarContainer currentPage="ProfilePage" />
           </LayoutWrapperTopbar>
+          {/*}
           <LayoutWrapperSideNav className={css.aside}>{asideContent}</LayoutWrapperSideNav>
+      {*/}
           <LayoutWrapperMain>{content}</LayoutWrapperMain>
           <LayoutWrapperFooter>
             <Footer />

@@ -41,12 +41,16 @@
      */
     padding: 112px 36px 82px 59px;
     background-color: var(--matterColorLight);
+    {/*}
     border-left-width: 1px;
     border-left-style: solid;
     border-left-color: var(--matterColorNegative);
+    {*/}
   }
 
   @media (--viewportLargeWithPaddings) {
-    padding: 112px calc((100% - 1056px) / 2) 82px 59px;
+    padding: 112px auto 82px auto;
+    max-width: 90vw;
+
   }
 }
