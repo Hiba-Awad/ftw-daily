@@ -63,7 +63,7 @@
   padding-bottom: calc(3 / 2 * 100%); /* 2:3 Aspect Ratio */
 
   @media (--viewportMedium) {
-    padding-bottom: calc( / 3 * 100%); /* 3:2 Aspect Ratio */
+    padding-bottom: calc(3 / 2 * 100%); /* 3:2 Aspect Ratio */
   }
 }
 
