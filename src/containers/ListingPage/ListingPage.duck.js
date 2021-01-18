@@ -15,7 +15,7 @@ import {
   LISTING_PAGE_PENDING_APPROVAL_VARIANT,
 } from '../../util/urlHelpers';
 import { fetchCurrentUser, fetchCurrentUserHasOrdersSuccess } from '../../ducks/user.duck';
-
+import axios from 'axios';
 const { UUID } = sdkTypes;
 
 // ================ Action types ================ //
@@ -215,15 +215,10 @@ export const showListing = (listingId, isOwn = false) => (dispatch, getState, sd
 
 export const fetchReviews = listingId => (dispatch, getState, sdk) => {
   dispatch(fetchReviewsRequest());
-  return sdk.reviews
-    .query({
-      listing_id: listingId,
-      state: 'public',
-      include: ['author', 'author.profileImage'],
-      'fields.image': ['variants.square-small', 'variants.square-small2x'],
-    })
+  return axios
+    .get('/reviews', { params: { listingUUID: listingId } })
     .then(response => {
-      const reviews = denormalisedResponseEntities(response);
+      const reviews = response.data;
       dispatch(fetchReviewsSuccess(reviews));
     })
     .catch(e => {
