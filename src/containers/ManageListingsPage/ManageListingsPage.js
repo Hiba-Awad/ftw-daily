@@ -26,6 +26,8 @@ import {
   queryOwnListings,
 } from './ManageListingsPage.duck';
 import css from './ManageListingsPage.css';
+import { util as sdkUtil } from '../../util/sdkLoader';
+
 
 // Pagination page size might need to be dynamic on responsive page layouts
 // Current design has max 3 columns 42 is divisible by 2 and 3
@@ -247,7 +249,17 @@ ManageListingsPage.loadData = (params, search) => {
     page,
     perPage: RESULT_PAGE_SIZE,
     include: ['images'],
-    'fields.image': ['variants.landscape-crop', 'variants.landscape-crop2x'],
+       'fields.image': ['variants.portrait-crop', 'variants.portrait-crop2x'],
+       'imageVariant.portrait-crop': sdkUtil.objectQueryString({
+         w: 400,
+         h: 600,
+         fit: 'crop',
+       }),
+       'imageVariant.portrait-crop2x': sdkUtil.objectQueryString({
+         w: 800,
+         h: 1200,
+         fit: 'crop',
+       }),    
     'limit.images': 1,
   });
 };

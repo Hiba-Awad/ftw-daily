@@ -12,7 +12,6 @@ import {
 } from '../../components';
 
 import css from './AboutPage.css';
-import image from './about-us-1056.jpg';
 
 const AboutPage = () => {
   const { siteTwitterHandle, siteFacebookPage } = config;
@@ -25,7 +24,7 @@ const AboutPage = () => {
       schema={{
         '@context': 'http://schema.org',
         '@type': 'AboutPage',
-        description: 'About Saunatime',
+        description: 'About Us',
         name: 'About page',
       }}
     >
@@ -35,54 +34,58 @@ const AboutPage = () => {
         </LayoutWrapperTopbar>
 
         <LayoutWrapperMain className={css.staticPageWrapper}>
-          <h1 className={css.pageTitle}>Experience the unique Finnish home sauna.</h1>
-          <img className={css.coverImage} src={image} alt="My first ice cream." />
+          <h1 className={css.pageTitle}>about us.</h1>
 
           <div className={css.contentWrapper}>
-            <div className={css.contentSide}>
-              <p>Did you know that Finland has 3.2 million saunas - almost one sauna per person!</p>
-            </div>
-
             <div className={css.contentMain}>
+              <div className={css.dividerline}>
               <h2>
-                Most of the Finnish saunas are located at the homes of individuals - indeed, most
-                people in Finland live in an apartment with sauna in it. In addition, lots of people
-                have lakeside summer cottages, which also typically come with a separate sauna
-                building near the waterfront.
+                our story.
               </h2>
-
               <p>
-                To truly experience a Finnish sauna, you need to look beyond the public saunas, and
-                instead visit a real home or cottage sauna. Saunatime makes this possible for
-                everyone. All our saunas are owned by individuals willing to let tourists and other
-                curious visitors to enter their sacred spaces.
+              We wanted to support small designers and we didn't know how. 
               </p>
-
-              <h3 className={css.subtitle}>Are you a sauna owner?</h3>
-
-              <p>
-                Saunatime offers you a good way to earn some extra cash! If you're not using your
-                sauna every evening, why not rent it to other people while it's free. And even if
-                you are using your sauna every evening (we understand, it's so good), why not invite
-                other people to join you when the sauna is already warm! A shared sauna experience
-                is often a more fulfilling one.
-              </p>
-
-              <h3 id="contact" className={css.subtitle}>
-                Create your own marketplace like Saunatime
-              </h3>
-              <p>
-                Saunatime is brought to you by the good folks at{' '}
-                <ExternalLink href="http://sharetribe.com">Sharetribe</ExternalLink>. Would you like
-                to create your own marketplace platform a bit like Saunatime? Or perhaps a mobile
-                app? With Sharetribe it's really easy. If you have a marketplace idea in mind, do
-                get in touch!
+              <p> 
+              Isn't it funny that in today's digital age, it's still so hard to buy fashion? We can buy cars, furniture, and food with ease online but buying that gorgeous dress from an unknown designer is still a research project that we frankly don't have time for. 
               </p>
               <p>
-                You can also checkout our{' '}
-                <ExternalLink href={siteFacebookPage}>Facebook</ExternalLink> and{' '}
-                <ExternalLink href={siteTwitterPage}>Twitter</ExternalLink>.
+              That's why we created Revvie.
               </p>
+              <p>
+              No more #onlineshoppingfails. No more hours spent on Instagram or Google looking for a single "real" woman wearing what you want to buy. 
+              </p>
+              <p>
+              We made it easier for you. Stress-free shopping: who would've thought?
+              </p>
+              </div>
+              <div className={css.dividerline}>
+
+              <h2>
+                our designers.
+              </h2>
+<p>Revvie's focus is to curate a collection of incredible designers who cultivate craftsmanship while leaving the smallest footprint possible.</p>
+<p>
+Many of our designers choose to manufacture locally in America using small-batch manufacturing methods. Others employ highly specialized factories in Europe or Latin America to produce the highest quality product. 
+</p>
+<p>We also wanted to bring our designers' stories to you so you can directly see the person behind the brand and understand who you're supporting. 
+</p>
+<p>But most of all,  we truly believe that our designers are creating amazing products that will last in your hands. 
+</p>
+<p>Thank you for your support.</p>
+              </div>
+              <div className={css.dividerline}>
+              <h2>
+                the team.
+              </h2>
+              <p>
+              We are two long-time friends who were frustrated with the entire online shopping process. Plus, we were sick and tired of fast fashion and realized that there was an entire universe of amazing designers making beautiful products who were yet to be discovered. We put two and two together and came up with Revvie.
+              </p>
+              <p>
+              Eugena founded her own size-inclusive brand called Ava James NYC after a decade-long career in finance. She's originally from Korea but spent her childhood in Hong Kong. She is obsessed with figure skating and lives in New York with her hubby and two kids. 
+              </p>
+              <p>Hiba is a computer aficionado who came to the US from her hometown Aleppo, Syria to study computer science at MIT. She's a passionate social justice advocate and loves listening to jazz and snacking while coding. </p>
+
+</div>
             </div>
           </div>
         </LayoutWrapperMain>

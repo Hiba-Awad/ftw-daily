@@ -44,7 +44,6 @@
 
 .contentMain {
   width: 90%;
-
   @media (--viewportMedium) {
     max-width: 650px;
   }
@@ -54,4 +53,12 @@
   @apply --marketplaceH3FontStyles;
   margin-top: 32px;
   margin-bottom: 16px;
+}
+
+.dividerline {
+  border-bottom: solid;
+  border-color: var(--marketplaceColor);
+  border-width: 4px;
+  border-length: 50%;
+  margin-bottom: 30px;
 }

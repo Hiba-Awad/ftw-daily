@@ -6,15 +6,15 @@
   border-top-color: var(--matterColorNegative);
 
   width: 100%;
-  padding: 24px 24px 42px 24px;
-  background-color: var(--matterColorBright);
+  padding: 15px 24px 42px 24px;
+  background-color: var(--footerColor);
 
   @media (--viewportMedium) {
     padding: 0 24px 33px 24px;
   }
 
   @media (--viewportLarge) {
-    padding: 0 0 81px 0;
+    padding: 0 0 15px 0;
     border-top: none;
   }
 }
@@ -23,11 +23,11 @@
  * view from the outermost paddings*/
 .topBorderWrapper {
   @media (--viewportMedium) {
-    padding-top: 41px;
+    padding-top: 20px;
   }
 
   @media (--viewportLarge) {
-    padding-top: 73px;
+    padding-top: 25px;
 
     border-top-style: solid;
     border-top-width: 1px;
@@ -79,7 +79,7 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   width: 100%;
-  margin-bottom: 18px;
+  margin-bottom: 5px;
 
   @media (--viewportMedium) {
     flex-wrap: nowrap;
@@ -91,22 +91,22 @@
 /* Desktop: logo and organization stuff */
 .organization {
   flex-shrink: 0;
-  flex-basis: 220px;
+  flex-basis: 0px;
   display: none;
   margin-right: 24px;
   margin-bottom: 24px;
 
   @media (--viewportMedium) {
     display: block;
-    order: 1;
+    order: 2;
     margin-right: 12px;
   }
   @media (--viewportLarge) {
-    flex-basis: 240px;
-    margin-right: 57px;
+    flex-basis: 0px;
+    margin-right: 5px;
   }
   @media (--viewportLargeWithPaddings) {
-    flex-basis: 250px;
+    flex-basis: 0px;
     margin-right: 12px;
   }
 }
@@ -124,15 +124,18 @@
 }
 
 .organizationInfo {
+
 }
 
 .organizationDescription,
 .organizationCopyright {
-  @apply --marketplaceTinyFontStyles;
+  @apply --marketplaceDefaultFontStyles;
+  margin-bottom: 0px;
+  color: var(--matterColorDark);
 }
 
 .organizationCopyright {
-  margin-top: 24px;
+  margin-top: 0px;
 }
 
 .copyrightLink {
@@ -147,7 +150,7 @@
 
 /* Desktop and Mobile: links to more information */
 .infoLinks {
-  order: 2;
+  order: 1;
   flex-basis: 165px;
   margin-right: 24px;
   margin-bottom: 24px;
@@ -174,9 +177,9 @@
 
 .link {
   /* Font */
-  @apply --marketplaceH5FontStyles;
-  line-height: 20px;
-  color: var(--matterColor);
+  @apply --marketplaceDefaultFontStyles;
+  line-height: 40px;
+  color: var(--matterColorDark);
   transition: var(--transitionStyleButton);
 
   margin-top: 0;

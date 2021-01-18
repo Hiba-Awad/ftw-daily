@@ -7,7 +7,7 @@
     overwrite each other if CSS Properties' (PostCSS plugin)
     configuration "preserve: true" is used - meaning that variables
     are left to CSS bundle. We are planning to enable it in the future
-    since browsers support CSS Properties already.
+    since browsers  pport CSS Properties already.
  */
 
   --LandingPage_sectionMarginTop: 40px;
@@ -16,7 +16,9 @@
 }
 
 .root {
+  
 }
+
 
 /* heroContainer gives the height for SectionHero */
 /* Safari has a bug with vw padding inside flexbox. Therefore we need an extra div (container) */
@@ -28,6 +30,9 @@
   height: 67.5vh;
   max-height: 600px;
   padding: 0;
+  background: var(--matterColorLight);
+
+
 
   @media (--viewportMedium) {
     min-height: 500px;
@@ -64,6 +69,7 @@
 
 .section {
   overflow: auto;
+  background: var(--matterColorLight);
 }
 
 /* Square corners for the last section if it's even */

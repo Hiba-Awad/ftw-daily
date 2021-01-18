@@ -76,8 +76,8 @@
 }
 
 .selectedLink {
-  border-bottom-color: var(--matterColorDark);
-  color: var(--matterColorDark);
+  border-bottom-color: var(--marketplaceColor);
+  color: var(--marketplaceDark);
 
   @media (--viewportLarge) {
     width: var(--TabNav_linkWidth);

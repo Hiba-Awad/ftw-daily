@@ -187,7 +187,7 @@ export const ManageListingCardComponent = props => {
             rootClassName={css.rootForImage}
             alt={title}
             image={firstImage}
-            variants={['landscape-crop', 'landscape-crop2x']}
+            variants={['portrait-crop', 'portrait-crop2x']}
             sizes={renderSizes}
           />
         </div>
@@ -301,9 +301,11 @@ export const ManageListingCardComponent = props => {
               <div className={css.priceValue} title={priceTitle}>
                 {formattedPrice}
               </div>
+              {/*}
               <div className={css.perUnit}>
                 <FormattedMessage id={unitTranslationKey} />
               </div>
+          {*/}
             </React.Fragment>
           ) : (
             <div className={css.noPrice}>
