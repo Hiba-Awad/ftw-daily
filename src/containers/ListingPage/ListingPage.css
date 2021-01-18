@@ -193,19 +193,19 @@
 
 .contentContainer {
   @media (--viewportMedium) {
-    margin: 0 auto;
-    padding: 0;
+    margin: 0;
+    padding: 0 0 50px 0;
     display: flex;
     position: relative;
   }
 
   @media (--viewportLarge) {
-    padding: 0;
+    padding: 0 0 100px 0;
     margin: 0;
   }
 
   @media (--viewportXLarge) {
-    padding: 0;
+    padding: 0 0 100px 0;;
   }
 }
 
