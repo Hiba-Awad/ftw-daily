@@ -216,9 +216,11 @@ export const showListing = (listingId, isOwn = false) => (dispatch, getState, sd
 export const fetchReviews = listingId => (dispatch, getState, sdk) => {
   dispatch(fetchReviewsRequest());
   return axios
-    .get('/reviews', { params: { listingUUID: listingId } })
+    .get('/reviews', { params: { listingUUID: listingId.uuid } })
     .then(response => {
       const reviews = response.data;
+      console.log(response);
+      console.log(response.data);
       dispatch(fetchReviewsSuccess(reviews));
     })
     .catch(e => {

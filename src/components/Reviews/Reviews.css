@@ -4,6 +4,11 @@
   margin: 0;
 }
 
+.sectionImages {
+  width: 25%;
+  height: 25%;
+}
+
 .reviewItem {
   margin-bottom: 32px;
 
