@@ -1,0 +1,85 @@
+@import '../../marketplace.css';
+
+.pageTitle {
+  text-align: center;
+}
+
+.staticPageWrapper {
+  width: calc(100% - 48px);
+  max-width: 1056px;
+  margin: 24px auto;
+
+  @media (--viewportMedium) {
+    width: calc(100% - 72px);
+    margin: 72px auto;
+  }
+}
+
+.coverImage {
+  width: 100%;
+  height: 528px;
+  border-radius: 4px;
+  object-fit: cover;
+  margin: 32px 0 40px;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @media (--viewportMedium) {
+    flex-wrap: nowrap;
+  }
+}
+
+.contentSide {
+  font-style: italic;
+
+  @media (--viewportMedium) {
+    width: 193px;
+    margin-right: 103px;
+    margin-top: 8px;
+  }
+}
+
+.contentMain {
+  width: 90%;
+  margin-bottom: 50px;
+  padding-bottom: 25px;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: var(--boxShadowSectionLocationHover);
+  }
+
+  @media (--viewportMedium) {
+    max-width: 750px;
+  }
+}
+
+.subtitle {
+  @apply --marketplaceH3FontStyles;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+
+.headerSub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.paragraph {
+  padding: 10px;
+}
+
+.coverImage {
+  max-width: 50%;
+  height: auto;
+}

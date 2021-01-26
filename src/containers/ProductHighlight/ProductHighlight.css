@@ -1,0 +1,95 @@
+@import '../../marketplace.css';
+
+.pageTitle {
+  text-align: center;
+}
+
+.staticPageWrapper {
+  width: calc(100% - 48px);
+  max-width: 1056px;
+  margin: 24px auto;
+
+  @media (--viewportMedium) {
+    width: calc(100% - 72px);
+    margin: 72px auto;
+  }
+}
+
+.coverImage {
+  width: 100%;
+  height: auto;
+  margin: 20px 30px 20px 10px;
+
+  @media (--viewportMedium) {
+    width: 40%;
+    height: auto;
+    margin: 0px 0 40px;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    box-shadow: var(--boxShadowSectionLocationHover);
+  }
+
+}
+
+.contentWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @media (--viewportMedium) {
+    flex-wrap: nowrap;
+  }
+}
+
+.contentMain {
+  width: 100%;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+
+  
+  @media (--viewportMedium) {
+    max-width: 100%;
+    flex-direction: row;
+  }
+}
+
+.subtitle {
+  @apply --marketplaceH3FontStyles;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+
+.dividerline {
+  margin-bottom: 50px;
+  padding-bottom: 25px;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: var(--boxShadowSectionLocationHover);
+  }
+
+}
+
+.headerSub {
+  display: flex;
+  color: var(--marketplaceColorDark);
+  flex-direction: column;
+  align-items: center;
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.paragraph {
+}
+
+
+.text {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
