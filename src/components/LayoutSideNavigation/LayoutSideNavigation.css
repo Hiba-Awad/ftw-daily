@@ -39,7 +39,7 @@
      * Calculate right padding to match Footer right border
      * and left padding together with border should be 60px.
      */
-    padding: 112px 36px 82px 59px;
+    padding: 50px 30px 82px 30px;
     background-color: var(--matterColorLight);
     {/*}
     border-left-width: 1px;

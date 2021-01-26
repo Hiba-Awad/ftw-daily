@@ -26,7 +26,7 @@
   @apply --marketplaceLinkStyles;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   height: 100%;
 
   /* Font */
@@ -48,8 +48,8 @@
   }
 
   @media (--viewportMedium) {
-    border-bottom-width: 4px;
-    padding: 16px 10px 14px 10px;
+    border-bottom-width: 3px;
+    padding: 5px 5px 0px 5px;
   }
 }
 
@@ -61,6 +61,7 @@
   outline: 0;
 }
 
+ 
 .selectedTabContent {
   border-bottom-color: var(--marketplaceColor);
   color: var(--marketplaceColor);

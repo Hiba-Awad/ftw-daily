@@ -5,9 +5,9 @@
 }
 
 .staticPageWrapper {
-  width: calc(100% - 48px);
+  width: calc(100% - 72px);
   max-width: 1056px;
-  margin: 24px auto;
+  margin: 72px auto;
 
   @media (--viewportMedium) {
     width: calc(100% - 72px);
@@ -25,7 +25,9 @@
 
 .contentWrapper {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  justify-content: center;
+
 
   @media (--viewportMedium) {
     flex-wrap: nowrap;
@@ -43,9 +45,14 @@
 }
 
 .contentMain {
-  width: 90%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
   @media (--viewportMedium) {
-    max-width: 650px;
+    max-width: 750px;
+    flex-direction: row;
+
   }
 }
 
@@ -56,9 +63,26 @@
 }
 
 .dividerline {
-  border-bottom: solid;
+flex: 1;
+flex-wrap: wrap;
+padding: 15px;
+
+&:hover {
+  transform: scale(1.02);
+  box-shadow: var(--boxShadowListingCard);
+}
+
+}
+
+.graphic {
+  border-radius: 100%;
+  border: solid;
   border-color: var(--marketplaceColor);
-  border-width: 4px;
-  border-length: 50%;
-  margin-bottom: 30px;
+  width: 100px; 
+  height: 100px;
+  justify-content: center;
+}
+
+.image {
+  text-align: center;
 }

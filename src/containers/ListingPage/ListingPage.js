@@ -60,6 +60,7 @@ import SectionRulesMaybe from './SectionRulesMaybe';
 import SectionMapMaybe from './SectionMapMaybe';
 import SectionTabInfo from './SectionTabInfo';
 import SectionSizeOptions from './SectionSizeOptions';
+import SectionListingInfoTab from './SectionListingInfoTab';
 import css from './ListingPage.css';
 
 const MIN_LENGTH_FOR_LONG_WORDS_IN_TITLE = 16;
@@ -459,7 +460,7 @@ export class ListingPageComponent extends Component {
                     fetchLineItemsInProgress={fetchLineItemsInProgress}
                     fetchLineItemsError={fetchLineItemsError}
                   />
-                  <SectionTabInfo publicData={publicData} />
+                  <SectionListingInfoTab publicData={publicData} />
                 </div>
               </div>
             </div>

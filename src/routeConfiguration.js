@@ -4,11 +4,14 @@ import {
   AuthenticationPage,
   CheckoutPage,
   ContactDetailsPage,
+  ContactUsPage,
   EditListingPage,
   EmailVerificationPage,
+  HelpPage,
   InboxPage,
   LandingPage,
   ListingPage,
+  LogisticsPage,
   ManageListingsPage,
   NotFoundPage,
   PasswordChangePage,
@@ -24,6 +27,9 @@ import {
   StyleguidePage,
   TermsOfServicePage,
   TransactionPage,
+  DP_avajamesnycPage,
+  PH_avajamesnycPage,
+  DP_metalandstonePage,
 } from './containers';
 
 // routeConfiguration needs to initialize containers first
@@ -63,6 +69,21 @@ const routeConfiguration = () => {
       path: '/about',
       name: 'AboutPage',
       component: AboutPage,
+    },
+    {
+      path: '/shipping-and-returns',
+      name: 'LogisticsPage',
+      component: LogisticsPage,
+    },
+    {
+      path: '/reviews-how-it-works',
+      name: 'HelpPage',
+      component: HelpPage,
+    },
+    {
+      path: '/contact-us',
+      name: 'ContactUsPage',
+      component: ContactUsPage,
     },
     {
       path: '/s',
@@ -339,6 +360,21 @@ const routeConfiguration = () => {
       path: '/notfound',
       name: 'NotFoundPage',
       component: props => <NotFoundPage {...props} />,
+    },
+    {
+      path: '/designer-profile-ava-james-nyc-eugena-delman',
+      name: 'ava-james-nyc',
+      component: props => <DP_avajamesnycPage {...props} />,
+    },
+    {
+      path: '/product-highlight-ava-james-nyc-madrid-dress-in-dark-green',
+      name: 'ava-james-nyc-product',
+      component: props => <PH_avajamesnycPage {...props} />,
+    },
+    {
+      path: '/designer-profile-metal-and-stone-creations-lisette-bez',
+      name: 'metal-and-stone-creations',
+      component: props => <DP_metalandstonePage {...props} />,
     },
 
     // Do not change this path!

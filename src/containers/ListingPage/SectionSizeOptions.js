@@ -10,16 +10,16 @@ const SectionSizeOptions = props => {
     setSelectedSize(newValue);
   };
 
-  if (publicData && publicData.Variant) {
-    const sizes = publicData.Variant;
+  if (publicData && publicData.variant) {
+    const sizes = publicData.variant;
 
     const variantTabs = sizes.map((variant, index) => {
       return {
-        text: <h3 className={css.sizeTab}>{variant}</h3>,
+        text: <div className={css.sizeTab}>{variant}</div>,
         selected: selectedSize === variant,
         onClick: handleChange(variant),
       };
-    });
+    }); 
 
     return (
       <div className={css.sectionSizeOptions}>

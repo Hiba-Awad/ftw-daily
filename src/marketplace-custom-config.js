@@ -34,16 +34,7 @@
  */
 
 export const filters = [
-  {
-    id: 'dates',
-    label: 'Dates',
-    type: 'BookingDateRangeFilter',
-    group: 'primary',
-    // Note: BookingDateRangeFilter is fixed filter,
-    // you can't change "queryParamNames: ['dates'],"
-    queryParamNames: ['dates'],
-    config: {},
-  },
+
   {
     id: 'price',
     label: 'Price',
@@ -57,14 +48,14 @@ export const filters = [
     config: {
       min: 0,
       max: 1000,
-      step: 5,
+      step: 10,
     },
   },
   {
     id: 'keyword',
     label: 'Keyword',
     type: 'KeywordFilter',
-    group: 'primary',
+    group: 'secondary',
     // Note: KeywordFilter is fixed filter,
     // you can't change "queryParamNames: ['keywords'],"
     queryParamNames: ['keywords'],
@@ -93,10 +84,10 @@ export const filters = [
     },
   },
   {
-    id: 'amenities',
-    label: 'Amenities',
+    id: 'brands',
+    label: 'Brands',
     type: 'SelectMultipleFilter',
-    group: 'secondary',
+    group: 'primary',
     queryParamNames: ['pub_amenities'],
     config: {
       // Optional modes: 'has_all', 'has_any'

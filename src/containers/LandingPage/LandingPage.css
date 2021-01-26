@@ -72,6 +72,7 @@
   background: var(--matterColorLight);
 }
 
+
 /* Square corners for the last section if it's even */
 .section:nth-of-type(2n):last-of-type {
   @media (--viewportMedium) {
@@ -98,7 +99,7 @@
   @media (--viewportLarge) {
     max-width: 1128px;
     padding: 0 36px 0 36px;
-    margin: var(--LandingPage_sectionMarginTopLarge) auto 93px auto;
+    margin: var(--LandingPage_sectionMarginTopLarge) auto 30px auto;
   }
 
   @media (--viewportXLarge) {

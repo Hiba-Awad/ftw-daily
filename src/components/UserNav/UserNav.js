@@ -36,7 +36,7 @@ const UserNav = props => {
       },
     },
     {
-      text: 'My Reviews',
+      text: 'my reviews',
       selected: selectedPageName === 'ReviewDetailsPage',
       disabled: false,
       linkProps: {

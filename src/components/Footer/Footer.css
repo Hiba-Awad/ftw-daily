@@ -10,11 +10,11 @@
   background-color: var(--footerColor);
 
   @media (--viewportMedium) {
-    padding: 0 24px 33px 24px;
+    padding: 0 24px 15px 24px;
   }
 
   @media (--viewportLarge) {
-    padding: 0 0 15px 0;
+    padding: 0 0 5px 0;
     border-top: none;
   }
 }
@@ -23,11 +23,11 @@
  * view from the outermost paddings*/
 .topBorderWrapper {
   @media (--viewportMedium) {
-    padding-top: 20px;
+    padding-top: 10px;
   }
 
   @media (--viewportLarge) {
-    padding-top: 25px;
+    padding-top: 15px;
 
     border-top-style: solid;
     border-top-width: 1px;
@@ -60,7 +60,7 @@
   margin-bottom: 24px;
 
   @media (--viewportMedium) {
-    display: none;
+    display: flex;
   }
 }
 
@@ -94,7 +94,7 @@
   flex-basis: 0px;
   display: none;
   margin-right: 24px;
-  margin-bottom: 24px;
+  margin-bottom: 14px;
 
   @media (--viewportMedium) {
     display: block;
@@ -124,12 +124,16 @@
 }
 
 .organizationInfo {
-
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 }
 
 .organizationDescription,
 .organizationCopyright {
   @apply --marketplaceDefaultFontStyles;
+  font-size: 12px;
   margin-bottom: 0px;
   color: var(--matterColorDark);
 }
@@ -139,7 +143,7 @@
 }
 
 .copyrightLink {
-  color: var(--matterColor);
+  color: var(--matterColorDark);
   transition: var(--transitionStyleButton);
 
   &:hover {
@@ -151,9 +155,9 @@
 /* Desktop and Mobile: links to more information */
 .infoLinks {
   order: 1;
-  flex-basis: 165px;
+  flex-basis: 350px;
   margin-right: 24px;
-  margin-bottom: 24px;
+  margin-bottom: 14px;
 
   @media (--viewportMedium) {
     padding-top: 2px;
@@ -178,7 +182,8 @@
 .link {
   /* Font */
   @apply --marketplaceDefaultFontStyles;
-  line-height: 40px;
+  font-size: 13px;
+  line-height: 25px;
   color: var(--matterColorDark);
   transition: var(--transitionStyleButton);
 
@@ -198,8 +203,8 @@
 
 /* Desktop and Mobile: searches - first column */
 .searches {
-  order: 3;
-  flex-basis: 165px;
+  order: 2;
+  flex-basis: 350px;
   margin-right: 24px;
   margin-bottom: 24px;
 
@@ -211,26 +216,21 @@
 
 /* Desktop and Mobile: searches - second column */
 /* This is not always visible */
-.searchesExtra {
-  order: 4;
-  flex-basis: 165px;
-  margin-right: 24px;
-  margin-bottom: 24px;
 
-  @media (--viewportMedium) {
-    padding-top: 2px;
-    margin-right: 12px;
-  }
-}
 
 /* Desktop: extra links (social media links and legal links) */
 .extraLinks {
   flex-shrink: 0;
-  order: 5;
+  order: 3;
   display: none;
-  flex-basis: 109px;
+  flex-basis: 350px;
   margin-right: 24px;
   margin-bottom: 24px;
+  padding-top: 2px;
+  font: var(--marketplaceDefaultFontStyles);
+  color: var(--matterColorDark);
+  font-size: 13px;
+  line-height: 1.1;
 
   @media (--viewportMedium) {
     display: flex;
@@ -310,7 +310,7 @@
 .organizationCopyrightMobile {
   /* Font */
   @apply --marketplaceTinyFontStyles;
-  color: var(--matterColorAnti);
+  color: var(--matterColorDark);
   transition: var(--transitionStyleButton);
 
   /* Tell parent component how much space this one prefers */

@@ -193,6 +193,7 @@ export class SearchPageComponent extends Component {
             showAsModalMaxWidth={MODAL_BREAKPOINT}
             history={history}
           />
+          {/*}
           <ModalInMobile
             className={css.mapPanel}
             id="SearchPage.map"
@@ -201,6 +202,8 @@ export class SearchPageComponent extends Component {
             showAsModalMaxWidth={MODAL_BREAKPOINT}
             onManageDisableScrolling={onManageDisableScrolling}
           >
+
+            {/*}
             <div className={css.mapWrapper}>
               {shouldShowSearchMap ? (
                 <SearchMap
@@ -219,7 +222,9 @@ export class SearchPageComponent extends Component {
                 />
               ) : null}
             </div>
+                
           </ModalInMobile>
+          {*/}
         </div>
       </Page>
     );

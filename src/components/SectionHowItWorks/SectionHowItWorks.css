@@ -18,8 +18,15 @@
 }
 
 .step {
+  display: flex;
+flex-direction: column;
+align-items: center;
+  
   @media (--viewportMedium) {
+    flex-direction: row;
+    align-items: center;
     margin-right: 40px;
+    padding: 20px;
   }
 }
 
@@ -45,4 +52,31 @@
   @media (--viewportMedium) {
     margin-top: 24px;
   }
+}
+
+.graphic {
+  width: 150px;
+  height: 150px;
+}
+
+.arithmetic {
+  font-weight: 500;
+  color: #DA4167; 
+  font-size: 50px;
+}
+
+.sectionMainContainer {
+  border: solid;
+  border-width: 5px;
+  border-color: var(--marketplaceColorMedium);
+  
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: var(--boxShadowSectionLocationHover);
+  }
+}
+
+.substep {
+  width: 225px;
+  justify-content: center;
 }

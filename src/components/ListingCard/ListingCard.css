@@ -4,6 +4,7 @@
   /* Layout */
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 
   /* Remove link's hover effect */
   &:hover {
@@ -60,6 +61,7 @@
 .priceValue {
   /* Font */
   @apply --marketplaceH3FontStyles;
+  font-size: 14px;
   color: var(--matterColorDark);
 
 
@@ -70,6 +72,7 @@
   @media (--viewportMedium) {
     margin-top: 0;
     margin-bottom: 0;
+    font-size: 14px;
   }
 }
 
@@ -96,9 +99,9 @@
 .title {
   /* Font */
   @apply --marketplaceH3FontStyles;
-  color: var(--matterColorAnti);
+  color: var(--matterColor);
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
 
   /* Remove default margins from font */
   margin-top: 0;
@@ -107,15 +110,16 @@
   @media (--viewportMedium) {
     margin-top: 0;
     margin-bottom: 20px;
+    font-size: 14px;
   }
 }
 
 .authorInfo {
   /* Font */
   @apply --marketplaceH5FontStyles;
-  color: var(--matterColor);
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 14px;  
+  color: var(--matterColorDark);
+  font-weight: 400;
 
   /* Remove default margins from font */
   margin-top: 0px;
@@ -123,6 +127,7 @@
 
   @media (--viewportMedium) {
     margin-top: 5px;
+    font-size: 14px;
     margin-bottom: 0;
   }
 }

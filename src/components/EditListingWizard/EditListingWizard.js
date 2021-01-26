@@ -39,8 +39,8 @@ const availabilityMaybe = config.enableAvailability ? [AVAILABILITY] : [];
 export const TABS = [
   DESCRIPTION,
   PRICING,
-  POLICY,
   LOCATION,
+  POLICY,
   FEATURES,
   ...availabilityMaybe,
   PHOTOS,

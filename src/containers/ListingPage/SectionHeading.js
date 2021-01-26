@@ -32,7 +32,6 @@ const SectionHeading = props => {
       <h1 className={css.heading}>{hostLink}</h1>
       <p></p>
       <h1 className={css.title}>{richTitle}</h1>
-      <p></p>
 
       <div className={css.desktopPriceContainer}>
         <div className={css.desktopPriceValue} title={priceTitle}>

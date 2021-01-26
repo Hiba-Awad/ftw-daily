@@ -350,12 +350,12 @@
 
   & .menuItemBorder {
     width: 6px;
-    background-color: var(--matterColorDark);
+    background-color: var(--marketplaceColor);
   }
 
   &:hover {
     & .menuItemBorder {
-      background-color: var(--matterColorDark);
+      background-color: var(--marketplaceColor);
     }
   }
 }

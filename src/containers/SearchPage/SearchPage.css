@@ -31,14 +31,16 @@
 
 .container {
   /* Layout */
-  width: 100%;
-  flex-grow: 1;
   display: flex;
 
   @media (--viewportMedium) {
     position: relative;
     padding-top: var(--topbarHeightDesktop);
     min-height: var(--SearchPage_containerHeight);
+  }
+
+  @media (--viewportLarge) {
+    padding-left: 5%;
   }
 }
 
@@ -54,11 +56,9 @@
      * .container is using flexbox,
      * This specifies that searchResultContainer is taking 60% from the viewport width
      */
-    flex-basis: 50%;
   }
 
   @media (--viewportLarge) {
-    flex-basis: 62.5%;
     padding: 23px 0 0 0;
   }
 }
@@ -157,7 +157,7 @@
 }
 
 .mapWrapper {
-  width: 100%;
+  width: 1000%;
   height: 100%;
 }
 

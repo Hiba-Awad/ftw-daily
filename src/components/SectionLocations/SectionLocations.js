@@ -10,8 +10,12 @@ import css from './SectionLocations.css';
 
 import avajamesnycImage from './images/avajamesnyc.jpg';
 import marcobagaImage from './images/marcobaga.jpg';
-import spinozaImage from './images/spinoza.jpeg';
+import metalandstoneImage from './images/metalandstone.jpg';
 import formerlyyanImage from './images/formerlyyan.jpg';
+import ouisaImage from './images/ouisa.jpg';
+import arteagaImage from './images/arteaga.jpg';
+import rhondacoleImage from './images/rhondacole.jpg';
+import spinozaImage from './images/spinoza.jpeg';
 
 
 class LocationImage extends Component {
@@ -22,10 +26,10 @@ class LocationImage extends Component {
 }
 const LazyImage = lazyLoadWithDimensions(LocationImage);
 
-const locationLink = (name, image, searchQuery) => {
+const locationLink = (name, image, id) => {
   const nameText = <span className={css.locationName}>{name}</span>;
   return (
-    <NamedLink name="SearchPage" to={{ search: searchQuery }} className={css.location}>
+    <NamedLink name="ProfilePage" params={{ id }} className={css.location}>
       <div className={css.imageWrapper}>
         <div className={css.aspectWrapper}>
           <LazyImage src={image} alt={name} className={css.locationImage} />
@@ -48,31 +52,108 @@ const SectionLocations = props => {
 
   return (
     <div className={classes}>
+
       <div className={css.title}>
         <FormattedMessage id="SectionLocations.title" />
       </div>
+
       <div className={css.locations}>
+        <div className={css.designers}>
         {locationLink(
           'ava james nyc',
           avajamesnycImage,
-          '?address=Helsinki%2C%20Finland&bounds=60.2978389%2C25.254484899999966%2C59.9224887%2C24.782875800000056&origin=60.16985569999999%2C24.93837910000002'
+          '5fff3aba-cdb2-4208-8213-aba6df523dd6'
         )}
+        <div className={css.subtext}>
+        <FormattedMessage id="SectionLocations.avajamesnyc" />
+        </div>
+        </div>
+
+        <div className={css.designers}>
         {locationLink(
           'marco baga',
           marcobagaImage,
-          '?address=Rovaniemi%2C%20Finland&bounds=67.18452510000002%2C27.32667850000007%2C66.1553745%2C24.736871199999996&origin=66.50394779999999%2C25.729390599999988'
-        )}
+          '5fff3aba-cdb2-4208-8213-aba6df523dd6'
+          )}
+        <div className={css.subtext}>
+        <FormattedMessage id="SectionLocations.marcobaga" />
+        </div>
+        </div>
+
+        <div className={css.designers}>
         {locationLink(
-          'spinoza',
-          spinozaImage,
-          '?address=Ruka%2C%20Finland&bounds=66.1704578%2C29.14246849999995%2C66.1614402%2C29.110453699999994&origin=66.16594940000002%2C29.12646110000003'
-        )}
+          'metal & stone creations',
+          metalandstoneImage,
+          '5fff3aba-cdb2-4208-8213-aba6df523dd6'
+)}
+        <div className={css.subtext}>
+        <FormattedMessage id="SectionLocations.metalandstone" />
+        </div>
+        </div>
+
+        <div className={css.designers}>
         {locationLink(
           'formerly yan',
           formerlyyanImage,
-          '?address=Ruka%2C%20Finland&bounds=66.1704578%2C29.14246849999995%2C66.1614402%2C29.110453699999994&origin=66.16594940000002%2C29.12646110000003'
-        )}
+          '5fff3aba-cdb2-4208-8213-aba6df523dd6'
+)}
+        <div className={css.subtext}>
+        <FormattedMessage id="SectionLocations.formerlyyan" />
+        </div>
+        </div>
+
       </div>
+
+{/*}Second Row of Designers - Arteaga, SPINOZA, Rhonda Cole, OUISA {*/}
+
+      <div className={css.locations}>
+        <div className={css.designers}>
+        {locationLink(
+          'arteaga',
+          arteagaImage,
+          '5fff3aba-cdb2-4208-8213-aba6df523dd6'
+        )}
+        <div className={css.subtext}>
+        <FormattedMessage id="SectionLocations.arteaga" />
+        </div>
+        </div>
+
+        <div className={css.designers}>
+        {locationLink(
+          'spinoza',
+          spinozaImage,
+          '5fff3aba-cdb2-4208-8213-aba6df523dd6'
+        )}
+        <div className={css.subtext}>
+        <FormattedMessage id="SectionLocations.spinoza" />
+        </div>
+        </div>
+
+        <div className={css.designers}>
+        {locationLink(
+          'rhonda cole',
+          rhondacoleImage,
+          '5fff3aba-cdb2-4208-8213-aba6df523dd6'
+        )}
+        <div className={css.subtext}>
+        <FormattedMessage id="SectionLocations.rhondacole" />
+        </div>
+        </div>
+
+        <div className={css.designers}>
+        {locationLink(
+          'ouisa',
+          ouisaImage,
+          '5fff3aba-cdb2-4208-8213-aba6df523dd6'
+        )}
+        <div className={css.subtext}>
+        <FormattedMessage id="SectionLocations.ouisa" />
+        </div>
+        </div>
+
+
+      </div>
+
     </div>
   );
 };

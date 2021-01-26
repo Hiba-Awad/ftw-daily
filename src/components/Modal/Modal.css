@@ -73,7 +73,7 @@
 
   &:enabled:hover,
   &:enabled:active {
-    color: var(--matterColorLight);
+    color: var(--matterColorDark);
   }
 }
 

@@ -50,6 +50,7 @@
 
 .title {
   margin: 0 24px 24px 24px;
+  font-size: 25px;
 
   @media (--viewportMedium) {
     margin: 0 24px 48px 24px;
@@ -91,8 +92,8 @@
      *
      * flex-basis: calc((100%/columnCount) - (guttersBetweenColumns / columnCount))
      */
-    flex-basis: calc(33% - 12px);
-    margin-right: 15px;
+    flex-basis: calc(25% - 12px);
+    margin-right: 12px;
   }
 
   @media (--viewportXLarge) {
@@ -110,7 +111,7 @@
      *
      * flex-basis: calc((100%/columnCount) - (guttersBetweenColumns / columnCount))
      */
-    flex-basis: calc(33.33% - 12px);
+    flex-basis: calc(25% - 12px);
     margin-right: 12px;
     margin-bottom: 36px;
   }

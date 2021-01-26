@@ -10,6 +10,10 @@ import {
   Footer,
   ExternalLink,
 } from '../../components';
+import onlineshopping from './onlineshopping.png';
+import appreciation from './appreciation.png';
+import together from './together.png';
+
 
 import css from './AboutPage.css';
 
@@ -38,10 +42,14 @@ const AboutPage = () => {
 
           <div className={css.contentWrapper}>
             <div className={css.contentMain}>
+
               <div className={css.dividerline}>
               <h2>
                 our story.
               </h2>
+              <div className={css.image}>
+              <img className={css.graphic} src={onlineshopping} alt="onlineshopping" />
+              </div>
               <p>
               We wanted to support small designers and we didn't know how. 
               </p>
@@ -58,14 +66,17 @@ const AboutPage = () => {
               We made it easier for you. Stress-free shopping: who would've thought?
               </p>
               </div>
-              <div className={css.dividerline}>
 
+              <div className={css.dividerline}>
               <h2>
                 our designers.
               </h2>
-<p>Revvie's focus is to curate a collection of incredible designers who cultivate craftsmanship while leaving the smallest footprint possible.</p>
+              <div className={css.image}>
+              <img className={css.graphic} src={appreciation} alt="appreciation" />
+</div>
+<p>We want to curate a collection of incredible designers who cultivate craftsmanship while leaving the smallest footprint possible.</p>
 <p>
-Many of our designers choose to manufacture locally in America using small-batch manufacturing methods. Others employ highly specialized factories in Europe or Latin America to produce the highest quality product. 
+Many of our designers manufacture locally in America using small-batch manufacturing methods. Others employ highly specialized factories in Europe or Latin America for the best quality product. 
 </p>
 <p>We also wanted to bring our designers' stories to you so you can directly see the person behind the brand and understand who you're supporting. 
 </p>
@@ -73,20 +84,24 @@ Many of our designers choose to manufacture locally in America using small-batch
 </p>
 <p>Thank you for your support.</p>
               </div>
+
               <div className={css.dividerline}>
               <h2>
                 the team.
               </h2>
+              <div className={css.image}>
+              <img className={css.graphic} src={together} alt="together" />
+              </div>
               <p>
               We are two long-time friends who were frustrated with the entire online shopping process. Plus, we were sick and tired of fast fashion and realized that there was an entire universe of amazing designers making beautiful products who were yet to be discovered. We put two and two together and came up with Revvie.
               </p>
               <p>
-              Eugena founded her own size-inclusive brand called Ava James NYC after a decade-long career in finance. She's originally from Korea but spent her childhood in Hong Kong. She is obsessed with figure skating and lives in New York with her hubby and two kids. 
+              Eugena founded her own size-inclusive brand called Ava James NYC after a decade-long career in finance. She's Korean but grew up in Hong Kong. She is obsessed with figure skating and lives in New York with her hubby and two kids. 
               </p>
-              <p>Hiba is a computer aficionado who came to the US from her hometown Aleppo, Syria to study computer science at MIT. She's a passionate social justice advocate and loves listening to jazz and snacking while coding. </p>
+              <p>Hiba is a computer aficionado who came to the US from her hometown in Aleppo, Syria to study computer science at MIT. She's a passionate social justice advocate and loves listening to jazz and snacking while coding. </p>
 
-</div>
-            </div>
+          </div>
+          </div>
           </div>
         </LayoutWrapperMain>
 

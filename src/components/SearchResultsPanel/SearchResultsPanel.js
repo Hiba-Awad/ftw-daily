@@ -20,8 +20,8 @@ const SearchResultsPanel = props => {
     ) : null;
 
   // Panel width relative to the viewport
-  const panelMediumWidth = 50;
-  const panelLargeWidth = 62.5;
+  const panelMediumWidth = 100;
+  const panelLargeWidth = 100;
   const cardRenderSizes = [
     '(max-width: 767px) 100vw',
     `(max-width: 1023px) ${panelMediumWidth}vw`,

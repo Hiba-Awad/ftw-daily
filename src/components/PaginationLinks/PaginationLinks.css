@@ -101,7 +101,7 @@
   padding: 21px 5px 18px 5px;
   border-bottom-style: solid;
   border-bottom-width: 3px;
-  border-bottom-color: var(--matterColorDark);
+  border-bottom-color: var(--marketplaceColor);
 
   /* Color */
   color: var(--matterColorDark);

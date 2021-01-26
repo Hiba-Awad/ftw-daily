@@ -36,7 +36,7 @@
 
     @media (--viewportLarge) {
       border-radius: 40px;
-      border: solid 36px var(--matterColorBright);
+      border: solid 6px var(--matterColorBright);
     }
   }
 
@@ -45,22 +45,23 @@
   --marketplaceColor: #DA4167;
   --marketplaceColorLight: #ABA9A9;
   --marketplaceColorDark: #000000;
+  --marketplaceColorMedium: #F5E3E0;
 
   /* Used with inline CSS SVGs */
-  --marketplaceColorEncoded: %23c0392b;
+  --marketplaceColorEncoded: %23DA4167;
 
-  --successColor: #5F4BB6;
-  --successColorDark: #662E9B;
-  --successColorLight: #f0fff6;
+  --successColor: #8AC926;
+  --successColorDark: #315C2B;
+  --successColorLight: #ADF6B1;
   --failColor: #ff0000;
-  --failColorLight: #fff0f0;
-  --attentionColor: #FFDC5E;
-  --attentionColorLight: #fff7f0;
+  --failColorLight: #BB4430;
+  --attentionColor: #DD8318;
+  --attentionColorLight: #FFC100;
   --bannedColorLight: var(--marketplaceColorLight);
   --bannedColorDark: var(--marketplaceColor);
 
   --matterColorDark: #000000;
-  --matterColor: #4a4a4a;
+  --matterColor: #656565;
   --matterColorAnti: #b2b2b2;
   --matterColorNegative: #e7e7e7;
   --matterColorBright: #fcfcfc;
@@ -208,7 +209,8 @@
     &:hover,
     &:focus {
       outline: none;
-      background-color: var(--marketplaceColorDark);
+      background-color: var(--marketplaceColorMedium);
+      color: var(--marketplaceColorDark);
       text-decoration: none;
       box-shadow: var(--boxShadowButton);
     }
@@ -226,12 +228,12 @@
   --marketplaceButtonStylesPrimary {
     @apply --marketplaceButtonStyles;
 
-    background-color: var(--successColor);
+    background-color: var(--marketplaceColor);
     color: var(--matterColorLight);
 
     &:hover,
     &:focus {
-      background-color: var(--successColorDark);
+      background-color: var(--marketplaecColorMedium);
     }
     &:disabled {
       background-color: var(--matterColorNegative);

@@ -26,6 +26,7 @@
 .contentWrapper {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 
   @media (--viewportMedium) {
     flex-wrap: nowrap;
@@ -46,7 +47,7 @@
   width: 90%;
 
   @media (--viewportMedium) {
-    max-width: 650px;
+    max-width: 750px;
   }
 }
 
@@ -58,9 +59,26 @@
 
 
 .dividerline {
-  border-bottom: solid;
-  border-color: var(--marketplaceColor);
+  border: solid;
+  border-color: var(--marketplaceColorMedium);
   border-width: 4px;
-  border-length: 50%;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+  padding-bottom: 25px;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: var(--boxShadowSectionLocationHover);
+  }
+
+}
+
+.headerSub {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5px;
+}
+
+.paragraph {
+  padding: 10px;
 }

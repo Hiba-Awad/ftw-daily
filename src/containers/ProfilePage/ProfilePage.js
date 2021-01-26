@@ -7,6 +7,7 @@ import classNames from 'classnames';
 import { types as sdkTypes } from '../../util/sdkLoader';
 import { REVIEW_TYPE_OF_PROVIDER, REVIEW_TYPE_OF_CUSTOMER, propTypes } from '../../util/types';
 import { ensureCurrentUser, ensureUser } from '../../util/data';
+import { createSlug } from '../../util/urlHelpers';
 import { withViewport } from '../../util/contextHelpers';
 import { isScrollingDisabled } from '../../ducks/UI.duck';
 import { getMarketplaceEntities } from '../../ducks/marketplaceData.duck';
@@ -78,6 +79,9 @@ export class ProfilePageComponent extends Component {
     const isCurrentUser =
       ensuredCurrentUser.id && profileUser.id && ensuredCurrentUser.id.uuid === profileUser.id.uuid;
     const displayName = profileUser.attributes.profile.displayName;
+    const designerProfileLink = profileUser.attributes.profile.publicData.designer_profile;
+    const productHighlightLink = profileUser.attributes.profile.publicData.product_highlight;
+    console.log(designerProfileLink);
     const bio = profileUser.attributes.profile.bio;
     const hasBio = !!bio;
     const hasListings = listings.length > 0;
@@ -190,12 +194,16 @@ export class ProfilePageComponent extends Component {
         </h1>
         {hasBio ? <p className={css.bio}>{bio}</p> : null}
         <div className={css.bioLinks}>
-        <FreeBreakfastOutlinedIcon></FreeBreakfastOutlinedIcon>
+        <FreeBreakfastOutlinedIcon style={{ color: "black"}} ></FreeBreakfastOutlinedIcon>
+        {hasBio ? <NamedLink className={css.outboundLink} name={designerProfileLink}>
         <FormattedMessage id="ProfilePage.designerProfile" />
+        </NamedLink> : null}
         </div>
         <div className={css.bioLinks}>
-        <HighlightOutlinedIcon></HighlightOutlinedIcon>
+        <HighlightOutlinedIcon style={{ color: "black"}}></HighlightOutlinedIcon>
+        {hasBio ? <NamedLink className={css.outboundLink} name={productHighlightLink}>
         <FormattedMessage id="ProfilePage.productHighlight" />
+        </NamedLink> : null}
         </div>
         {isMobileLayout ? mobileReviews : desktopReviews}
         {hasListings ? (

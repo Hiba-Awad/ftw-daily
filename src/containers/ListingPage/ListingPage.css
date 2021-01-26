@@ -30,9 +30,10 @@
   display: block;
   width: 100%;
   position: relative;
+  padding-bottom: 20px;
 
   @media (--viewportMedium) {
-    padding: 0;
+    padding: 36px 36px 0 36px;
   }
 
   @media (--viewportLarge) {
@@ -43,14 +44,14 @@
 /* Firefox doesn't support image aspect ratio inside flexbox */
 .aspectWrapper {
   position: relative; /* allow positioning own listing action bar */
-  padding-bottom: 66.6667%; /* 3:2 Aspect Ratio */
-  background-color: var(--matterColorNegative); /* Loading BG color */
+  padding-bottom: 150%; /* 3:2 Aspect Ratio */
+  background-color: var(--matterColorLight); /* Loading BG color */
 
   /* Image carousel can be opened from the image, therefore we should show a pointer */
   cursor: pointer;
 
   @media (--viewportMedium) {
-    padding-bottom: 0; /* No fixed aspect on desktop layouts */
+    padding-bottom: 0%; /* No fixed aspect on desktop layouts */
   }
 }
 
@@ -128,6 +129,8 @@
   left: 0;
   right: 0;
   width: 100%;
+  max-height:90vh;
+  object-fit: contain;
 
   transition: var(--transitionStyleButton);
 
@@ -137,9 +140,9 @@
     bottom: auto;
     left: auto;
     right: auto;
-    height: calc(0.41 * 100vw);
-    max-height: 50vh;
-    object-fit: cover;
+   {/*} height: calc(0.41 * 100vw);{*/}
+    max-height:100vh;
+    object-fit: contain;
     border-radius: var(--borderRadius);
 
     &:hover {
@@ -210,18 +213,20 @@
 }
 
 .mainContent {
-  flex-basis: 100%;
   margin-bottom: 23px;
+  margin-left: 30px;
 
   @media (--viewportMedium) {
     margin-top: 50px;
     margin-bottom: 51px;
-    flex-shrink: 0;
+    flex-shrink: 1;
+    margin-left: 0px;
   }
 
   @media (--viewportLarge) {
     margin-top: 50px;
     margin-bottom: 0px;
+    margin-left: 0px;
     /* contentContainer's full width - (bookingColumn + two paddings + margin + border) */
     /* HA: remove booking column 
 max-width: calc(100% - 433px);
@@ -290,12 +295,12 @@ flex-basis: calc(100% - 433px);
 
 .sectionHeading {
   margin-top: 0px;
-  margin-bottom: 34px;
+  margin-bottom: 15px;
 
   @media (--viewportMedium) {
     display: flex;
     flex-direction: column;
-    margin-bottom: 31px;
+    margin-bottom: 15px;
   }
 }
 .desktopPriceContainer {
@@ -338,7 +343,7 @@ flex-basis: calc(100% - 433px);
 
 .heading {
   margin-bottom: 33px;
-  padding: 0 24px;
+  padding: 0px;
   margin-top: 0px;
   @media (--viewportMedium) {
     margin-bottom: 0;
@@ -352,6 +357,7 @@ flex-basis: calc(100% - 433px);
   font-family: var(--headerFontFamily);
   color: var(--matterColorDark);
   font-weight: 200;
+  font-size: 25px;
   
 
   /* Layout */
@@ -367,7 +373,7 @@ flex-basis: calc(100% - 433px);
 .author {
   width: 100%;
   @apply --marketplaceH5FontStyles;
-  margin-top: 7px;
+  margin-top: 15px;
   margin-bottom: 0;
 
   @media (--viewportMedium) {
@@ -380,8 +386,15 @@ flex-basis: calc(100% - 433px);
 .authorNameLink {
   color: var(--matterColorDark);
   font-family: var(--fontFamily);
-  font-size: 60px;
+  font-size: 35px;
   font-weight: 300;
+  margin-top: 30px;
+  line-height: 1.2;
+
+  @media (--viewportMedium) {
+    display: inline;
+    font-size: 50px;
+  }
 }
 
 .contactWrapper {
@@ -600,13 +613,47 @@ flex-basis: calc(100% - 433px);
 }
 
 .sectionSizeOptions {
-  max-width: 30%;
+  max-width: 80%;
 }
 
 .variantsTabNav {
   margin: 0px;
 }
+
 .sizeTab {
-  @apply --marketplaceH3FontStyles;
+  @apply --marketplaceH4FontStyles;
   margin: 0px;
+  font-size: 12px;
+
+  @media (--viewportMedium) {
+    font-size: 14px;
+  }
+
+}
+
+.SectionListingInfoTab {
+  padding: 10px 10px 0 0;
+
+  @media (--viewportMedium) {
+  padding: 10px 130px 0 0;
+  }
+
+}
+
+.headerTab {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.infoTab {
+  font-size: 12px;
+  font-weight: 400;
+  white-space: pre-line;
+  line-height: normal;
+}
+
+.selectedTabContent {
+  border-bottom-color: var(--marketplaceColor);
+  color: var(--marketplaceColor);
 }

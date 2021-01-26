@@ -10,6 +10,8 @@ import {
   Footer,
   ExternalLink,
 } from '../../components';
+import LocalShippingOutlinedIcon from '@material-ui/icons/LocalShippingOutlined';
+import UndoIcon from '@material-ui/icons/Undo';
 
 import css from './LogisticsPage.css';
 
@@ -39,10 +41,11 @@ const LogisticsPage = () => {
           <div className={css.contentWrapper}>
             <div className={css.contentMain}>
             <div className={css.dividerline}>
-              <h2>
-              shipping.
+            <div className={css.headerSub}><LocalShippingOutlinedIcon style={{ fontSize: 40, paddingRight: "8px" }}></LocalShippingOutlinedIcon><h2>
+               shipping.
               </h2>
-
+              </div>
+              <div className={css.paragraph}>
               <p>
               All of the products on Revvie are shipped directly by the brands.
               </p>
@@ -53,11 +56,14 @@ const LogisticsPage = () => {
               International shipping is currently unavailable but we are working on it! Stay in touch and we'll let you know when it's up and running.
               </p>
 </div>
+</div>
 
 <div className={css.dividerline}>
-              <h2>
-              returns.
+<div className={css.headerSub}><UndoIcon style={{ fontSize: 40, paddingRight: "8px"}}></UndoIcon><h2>
+               returns.
               </h2>
+              </div> 
+              <div className={css.paragraph}> 
               <p>
               Not happy with your order? 
               </p>
@@ -67,7 +73,9 @@ const LogisticsPage = () => {
               <p>
               Please note that final sale items may not be available for return. Refer to "delivery & returns" for each product to see if the item is eligible for a return and if so, the return window.
               </p>
-              <h4>easy return instructions</h4>
+              <p></p>
+              <p></p> 
+              <h3><b>easy return instructions</b></h3>
               <p>
               If a product is eligible for return and is within the product's return window, do the following: 
               </p>
@@ -86,8 +94,9 @@ const LogisticsPage = () => {
               <p>
               If the item is not eligible for return or if the return window has passed, the "Return" button will be greyed out. 
                 </p>
-</div>
 
+</div>
+</div>
             </div>
           </div>
         </LayoutWrapperMain>

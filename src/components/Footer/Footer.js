@@ -24,7 +24,11 @@ const renderSocialMediaLinks = intl => {
   const goToTwitter = intl.formatMessage({ id: 'Footer.goToTwitter' });
 
   const fbLink = siteFacebookPage ? (
-    <ExternalLink key="linkToFacebook" href={siteFacebookPage} className={css.icon} title={goToFb}>
+    <ExternalLink 
+    key="linkToFacebook" 
+    href={siteFacebookPage} 
+    className={css.icon} 
+    title={goToFb}>
       <IconSocialMediaFacebook />
     </ExternalLink>
   ) : null;
@@ -40,7 +44,7 @@ const renderSocialMediaLinks = intl => {
     </ExternalLink>
   ) : null;
 
-  const instragramLink = siteInstagramPage ? (
+  const instagramLink = siteInstagramPage ? (
     <ExternalLink
       key="linkToInstagram"
       href={siteInstagramPage}
@@ -50,7 +54,7 @@ const renderSocialMediaLinks = intl => {
       <IconSocialMediaInstagram />
     </ExternalLink>
   ) : null;
-  return [fbLink, twitterLink, instragramLink].filter(v => v != null);
+  return [instagramLink, twitterLink, fbLink].filter(v => v != null);
 };
 
 const Footer = props => {
@@ -72,12 +76,12 @@ const Footer = props => {
                   </NamedLink>
                 </li>
                 <li className={css.listItem}>
-                  <NamedLink name="AboutPage" className={css.link}>
+                  <NamedLink name="LogisticsPage" className={css.link}>
                     <FormattedMessage id="Footer.toFAQPage" />
                   </NamedLink>
                 </li>
                 <li className={css.listItem}>
-                  <NamedLink name="LandingPage" className={css.link}>
+                  <NamedLink name="HelpPage" className={css.link}>
                     <FormattedMessage id="Footer.toHelpPage" />
                   </NamedLink>
                 </li>
@@ -96,7 +100,7 @@ const Footer = props => {
                   </NamedLink>
                 </li>
                 <li className={css.listItem}>
-                  <NamedLink name="AboutPage" to={{ hash: '#contact' }} className={css.link}>
+                  <NamedLink name="ContactUsPage" to={{ hash: '#contact' }} className={css.link}>
                     <FormattedMessage id="Footer.toContactPage" />
                   </NamedLink>
                 </li>
@@ -104,7 +108,9 @@ const Footer = props => {
             </div>
 
             {/*}This is a placeholder for the newsletter subscriber box {*/}
-            <div className={css.extraLinks}></div>
+            <div className={css.extraLinks}>
+            <FormattedMessage id="Footer.newsletter" />
+            </div>
           </div>
 
           <div className={css.copyrightAndTermsMobile}>
