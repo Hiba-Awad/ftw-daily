@@ -20,7 +20,6 @@ const SectionListingInfoTab = props => {
   const handleChange = selectedTab => () => {
     setSelectedTab(selectedTab);
   };
-  const { editors_note, size_fit, details_care } = publicData;
   const infoTabs = [
     {
       text: <div className={css.infoTab}>editor's note</div>,
@@ -57,6 +56,8 @@ const SectionListingInfoTab = props => {
         </p>
       </div>
     );
+  } else {
+    return null;
   }
 };
 SectionListingInfoTab.defaultProps = { className: null, rootClassName: null };
