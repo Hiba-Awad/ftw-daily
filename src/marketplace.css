@@ -256,8 +256,8 @@
 
     &:hover,
     &:focus {
-      background-color: var(--matterColorLight);
-      border-color: var(--matterColorAnti);
+      background-color: var(--marketplaceColorMedium);
+      border-color: var(--marketplaceColorMedium);
     }
     &:disabled {
       background-color: var(--matterColorNegative);

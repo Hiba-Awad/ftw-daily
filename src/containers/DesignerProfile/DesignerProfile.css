@@ -2,6 +2,7 @@
 
 .pageTitle {
   text-align: center;
+  padding-bottom: 10px;
 }
 
 .staticPageWrapper {
@@ -16,7 +17,7 @@
 }
 
 .coverImage {
-  width: 100%;
+  width: 80%;
   height: 528px;
   border-radius: 4px;
   object-fit: cover;
@@ -44,13 +45,14 @@
 }
 
 .contentMain {
-  width: 90%;
+  width: 70%;
   margin-bottom: 50px;
-  padding-bottom: 25px;
+  padding: 25px;
+  box-shadow: var(--boxShadowSectionLocationHover);
+
 
   &:hover {
     transform: scale(1.02);
-    box-shadow: var(--boxShadowSectionLocationHover);
   }
 
   @media (--viewportMedium) {
@@ -79,7 +81,19 @@
   padding: 10px;
 }
 
-.coverImage {
+.coverImageSPINOZA {
   max-width: 50%;
   height: auto;
+}
+
+.coverImageSPINOZA2 {
+  max-width: 25%;
+  height: auto;
+}
+
+.coverImageSPINOZAdiv {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }

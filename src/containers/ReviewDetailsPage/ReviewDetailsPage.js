@@ -48,7 +48,7 @@ export const ReviewDetailsPageComponent = props => {
     setReviewModal(true);
   };
 
-  const title = intl.formatMessage({ id: 'ContactDetailsPage.title' });
+  const title = intl.formatMessage({ id: 'ReviewPage.title' });
   const orderReviewCards = (
     <ul>
       {ordersToReview.map(order => {
@@ -82,6 +82,12 @@ export const ReviewDetailsPageComponent = props => {
             {fetchReviewsError ? 'DAMN ERROR' : null}
             <Reviews onManageDisableScrolling={onManageDisableScrolling} reviews={reviews} />
           </div>
+          <h2 className={css.reviewsHeading}>
+              <FormattedMessage
+                id="ListingPage.reviewsHeading2"
+                values={{ count: reviews.length }}
+              />
+            </h2>
           <div className={css.content}>{orderReviewCards}</div>
         </LayoutWrapperMain>
         <LayoutWrapperFooter>

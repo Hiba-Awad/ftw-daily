@@ -66,13 +66,14 @@ align-items: center;
 }
 
 .sectionMainContainer {
-  border: solid;
-  border-width: 5px;
+  border: none;
+  border-width: 1px;
   border-color: var(--marketplaceColorMedium);
+  box-shadow: var(--boxShadowSectionLocationHover);
+
   
   &:hover {
     transform: scale(1.02);
-    box-shadow: var(--boxShadowSectionLocationHover);
   }
 }
 

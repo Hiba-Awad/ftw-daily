@@ -97,27 +97,26 @@ const Review = props => {
   console.log(user);
   return (
     <div className={css.review}>
-      <Avatar className={css.avatar} user={user} />
-      <ReviewImages
-        images={images}
-        imageCarouselOpen={imageCarouselOpen}
-        onImageCarouselClose={() => setImageCarouselOpen(false)}
-        handleViewPhotosClick={handleViewPhotosClick}
-        onManageDisableScrolling={onManageDisableScrolling}
-      />
-      <div>
-        <p className={css.reviewContent}>{comments}</p>
-        <p className={css.reviewInfo}>
-          {authorInfo}
-          <span className={css.separator}>•</span>
-          {dateString}
-          <span className={css.desktopSeparator}>•</span>
-          <span className={css.separator}>•</span>
-          {fit}
-          <span className={css.desktopSeparator}>•</span>
-          <span className={css.desktopSeparator}>•</span>
-          recommend {recommend}
-        </p>
+      <div className={css.containerLeft}>
+        <ReviewImages
+          images={images}
+          imageCarouselOpen={imageCarouselOpen}
+          onImageCarouselClose={() => setImageCarouselOpen(false)}
+          handleViewPhotosClick={handleViewPhotosClick}
+          onManageDisableScrolling={onManageDisableScrolling}
+        />
+      </div>
+      <div className={css.containerRight}>
+        <div className={css.containerRightTop}>
+          <p className={css.reviewDate}>{dateString}</p>
+          <Avatar className={css.avatar} user={user} />
+        </div>
+        <div className={css.textContent}>
+          <p className={css.reviewContent}>"{comments}"</p>
+          <p className={css.reviewInfo}>{authorInfo}</p>
+          <p className={css.reviewInfo}>Fit: {fit}</p>
+          <p className={css.reviewInfo}>Recommend? {recommend}</p>
+        </div>
       </div>
     </div>
   );

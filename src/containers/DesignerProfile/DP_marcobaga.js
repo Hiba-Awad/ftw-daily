@@ -37,7 +37,7 @@ const DP_marcobagaPage = () => {
 
         <LayoutWrapperMain className={css.staticPageWrapper}>
           <h6 className={css.pageTitle} style={{color: "#DA4167",}}>DESIGNER PROFILE {'\u2B24'} MARCO BAGA</h6>
-          <h1 className={css.pageTitle}>marina gil-lemesheva on luxury, sustainability, and cultural inspiration.</h1>
+          <h1 className={css.pageTitle}>marina gil-lemesheva on luxury, sustainability, and travel inspiration.</h1>
 
           <div className={css.contentWrapper}>
             <div className={css.contentMain}>
@@ -114,6 +114,9 @@ const DP_marcobagaPage = () => {
               </p>
               <p>
               Thank you. Yes, I hand make everything myself here in New York. I source my leather locally and the leather origins are usually Italy or Latin America. Most of my leathers are deadstock. For instance, I saw this beautiful red leather that I used for my Matryoshka bags and obviously that meant that it could only be a very limited run.
+              </p>
+              <p>
+              In terms of my production process, I sketch, hand pick local materials, and then make the patterns at my studio in Brooklyn.  My die cuts are made in Chelsea studio, where most of the cutting is happening. Assembling, stitching, painting and hardware installations are done back in Brooklyn studio. And yes, it all is done by hand. Et voila!  
               </p>
 
               <p style={{fontWeight: 'bold'}}>

@@ -205,7 +205,7 @@ export const fetchOrders = userEmail => (dispatch, getState, sdk) => {
 
         const featchListingPromise = dispatch(getListingInformation(listingUUID)).then(data => {
           console.log('DENORMALIZED HELL');
-          console.log(data[0]);
+          console.log(data);
           element.listing = data[0];
         });
         featchListingPromises.push(featchListingPromise);

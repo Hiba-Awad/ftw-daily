@@ -98,7 +98,7 @@ Many of our designers manufacture locally in America using small-batch manufactu
               <p>
               Eugena founded her own size-inclusive brand called Ava James NYC after a decade-long career in finance. She's Korean but grew up in Hong Kong. She is obsessed with figure skating and lives in New York with her hubby and two kids. 
               </p>
-              <p>Hiba is a computer aficionado who came to the US from her hometown in Aleppo, Syria to study computer science at MIT. She's a passionate social justice advocate and loves listening to jazz and snacking while coding. </p>
+              <p>Hiba is a computer aficionado who came to the US from her hometown in Aleppo, Syria to study computer science at MIT. She lives in Brooklyn and loves snacking while coding. </p>
 
           </div>
           </div>

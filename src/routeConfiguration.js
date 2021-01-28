@@ -30,6 +30,19 @@ import {
   DP_avajamesnycPage,
   PH_avajamesnycPage,
   DP_metalandstonePage,
+  PH_metalandstonePage,
+  DP_marcobagaPage,
+  PH_marcobagaPage,
+  DP_formerlyyanPage,
+  PH_formerlyyanPage,
+  DP_arteagaPage,
+  PH_arteagaPage,
+  DP_spinozaPage,
+  PH_spinozaPage,
+  DP_rhondacolePage,
+  PH_rhondacolePage,
+  DP_ouisaPage,
+  PH_ouisaPage,
 } from './containers';
 
 // routeConfiguration needs to initialize containers first
@@ -375,6 +388,82 @@ const routeConfiguration = () => {
       path: '/designer-profile-metal-and-stone-creations-lisette-bez',
       name: 'metal-and-stone-creations',
       component: props => <DP_metalandstonePage {...props} />,
+    },
+
+    {
+      path: '/product-highlight-metal-and-stone-creations-natures-grip-ring',
+      name: 'metal-and-stone-creations-product',
+      component: props => <PH_metalandstonePage {...props} />,
+    },
+
+    {
+      path: '/designer-profile-marco-baga-marina-gil-lemesheva',
+      name: 'marco-baga',
+      component: props => <DP_marcobagaPage {...props} />,
+    },
+
+    {
+      path: '/product-highlight-marco-baga-kanagawa-wave-tote',
+      name: 'marco-baga-product',
+      component: props => <PH_marcobagaPage {...props} />,
+    },
+
+    {
+      path: '/designer-profile-formerly-yan-amanda-schechter',
+      name: 'formerly-yan',
+      component: props => <DP_formerlyyanPage {...props} />,
+    },
+
+    {
+      path: '/product-highlight-formerly-yan-convertible-midi-snap-dress',
+      name: 'formerly-yan-product',
+      component: props => <PH_formerlyyanPage {...props} />,
+    },
+
+    {
+      path: '/designer-profile-arteaga-marisol-arteaga',
+      name: 'arteaga',
+      component: props => <DP_arteagaPage {...props} />,
+    },
+
+    {
+      path: '/product-highlight-arteaga-the-paola-tunic-dress',
+      name: 'arteaga-product',
+      component: props => <PH_arteagaPage {...props} />,
+    },
+    {
+      path: '/designer-profile-spinoza-silja-kim',
+      name: 'spinoza',
+      component: props => <DP_spinozaPage {...props} />,
+    },
+
+    {
+      path: '/product-highlight-spinoza-the-ivy-sunglasses',
+      name: 'spinoza-product',
+      component: props => <PH_spinozaPage {...props} />,
+    },
+    {
+      path: '/designer-profile-rhonda-cole',
+      name: 'rhonda-cole',
+      component: props => <DP_rhondacolePage {...props} />,
+    },
+
+    {
+      path: '/product-highlight-rhonda-cole-cappella-shirt',
+      name: 'rhonda-cole-product',
+      component: props => <PH_rhondacolePage {...props} />,
+    },
+
+    {
+      path: '/designer-profile-ouisa-bryn-taylor',
+      name: 'ouisa',
+      component: props => <DP_ouisaPage {...props} />,
+    },
+
+    {
+      path: '/product-highlight-ouisa-the-lillet-stretch-dress',
+      name: 'ouisa-product',
+      component: props => <PH_ouisaPage {...props} />,
     },
 
     // Do not change this path!

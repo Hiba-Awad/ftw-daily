@@ -5,8 +5,21 @@
 }
 
 .sectionImages {
-  width: 25%;
-  height: 25%;
+  max-width: 100%;
+  height: auto;
+}
+
+.viewPhotos {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--marketplaceColorLight);
+  border: none;
+  padding: 3px 3px 3px 3px;
+
+  &:hover {
+    color: var(--marketplaceColorDark);
+    text-decoration: underline;
+  }
 }
 
 .reviewItem {
@@ -22,34 +35,63 @@
 }
 
 .review {
+  padding: 10px;
   display: flex;
   flex-direction: row;
-  flex-basis: 564px;
-  flex-shrink: 1;
-  flex-grow: 0;
+  box-shadow: var(--boxShadowListingCard);
+
+  @media (--viewportMedium) {
+  max-width: 450px;
+  }
 }
 
 .avatar {
-  flex-shrink: 0;
-  margin-right: 22px;
+  display: flex;
+  flex-direction: row;
+  margin-right: 10px;
+}
+
+.containerLeft {
+  padding: 5px;
+  max-width: 25%;
+}
+
+.containerRight {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+
+.containerRightTop {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .reviewContent {
-  @apply --marketplaceH4FontStyles;
-  font-style: italic;
+  @apply --marketplaceBodyFontStyles;
+  font-family: 'Georgia';
+  font-size: 12px;
   margin: 0;
   white-space: pre-line;
 }
 
 .reviewInfo {
-  @apply --marketplaceH5FontStyles;
-  margin-top: 10px;
+  @apply --marketplaceDefaultFontStyles;
+  font-size: 12px;
+  margin-top: 2px;
   margin-bottom: 0px;
   color: var(--matterColorAnti);
 
   @media (--viewportMedium) {
-    margin-top: 9px;
+    margin-top: 2px;
   }
+}
+
+.textContent{
+
 }
 
 .separator {

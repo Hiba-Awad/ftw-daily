@@ -73,7 +73,7 @@ const SectionLocations = props => {
         {locationLink(
           'marco baga',
           marcobagaImage,
-          '5fff3aba-cdb2-4208-8213-aba6df523dd6'
+          '601171c1-ec55-401c-bd36-e2e7f00f2ec0'
           )}
         <div className={css.subtext}>
         <FormattedMessage id="SectionLocations.marcobaga" />
@@ -82,9 +82,9 @@ const SectionLocations = props => {
 
         <div className={css.designers}>
         {locationLink(
-          'metal & stone creations',
+          'metal & stone',
           metalandstoneImage,
-          '5fff3aba-cdb2-4208-8213-aba6df523dd6'
+          '600716f5-356d-433d-a9f2-2e0950504ad6'
 )}
         <div className={css.subtext}>
         <FormattedMessage id="SectionLocations.metalandstone" />
@@ -95,7 +95,7 @@ const SectionLocations = props => {
         {locationLink(
           'formerly yan',
           formerlyyanImage,
-          '5fff3aba-cdb2-4208-8213-aba6df523dd6'
+          '601187f0-45d8-4671-b5cf-5550e2b437ad'
 )}
         <div className={css.subtext}>
         <FormattedMessage id="SectionLocations.formerlyyan" />
@@ -111,7 +111,7 @@ const SectionLocations = props => {
         {locationLink(
           'arteaga',
           arteagaImage,
-          '5fff3aba-cdb2-4208-8213-aba6df523dd6'
+          '601190c7-6359-4f9e-9af7-8af74dab50ee'
         )}
         <div className={css.subtext}>
         <FormattedMessage id="SectionLocations.arteaga" />
@@ -122,7 +122,7 @@ const SectionLocations = props => {
         {locationLink(
           'spinoza',
           spinozaImage,
-          '5fff3aba-cdb2-4208-8213-aba6df523dd6'
+          '6011af1f-2236-43ef-a77a-b94f771a3999'
         )}
         <div className={css.subtext}>
         <FormattedMessage id="SectionLocations.spinoza" />
@@ -133,7 +133,7 @@ const SectionLocations = props => {
         {locationLink(
           'rhonda cole',
           rhondacoleImage,
-          '5fff3aba-cdb2-4208-8213-aba6df523dd6'
+          '6011badf-0453-4c2a-95da-c65191b99371'
         )}
         <div className={css.subtext}>
         <FormattedMessage id="SectionLocations.rhondacole" />
@@ -144,7 +144,7 @@ const SectionLocations = props => {
         {locationLink(
           'ouisa',
           ouisaImage,
-          '5fff3aba-cdb2-4208-8213-aba6df523dd6'
+          '6011c643-7a8d-47de-8982-83119fe8b410'
         )}
         <div className={css.subtext}>
         <FormattedMessage id="SectionLocations.ouisa" />

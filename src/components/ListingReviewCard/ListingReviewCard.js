@@ -9,7 +9,7 @@ import { ensureListing, ensureUser } from '../../util/data';
 import { richText } from '../../util/richText';
 import { createSlug } from '../../util/urlHelpers';
 import config from '../../config';
-import { SecondaryButton, ResponsiveImage } from '../../components';
+import { PrimaryButton, ResponsiveImage } from '../../components';
 
 import css from './ListingReviewCard.css';
 
@@ -102,7 +102,7 @@ export const ListingReviewCard = props => {
           <div className={css.orderDate}>{order.orderDate}</div>
         </div>
       </div>
-      <SecondaryButton onClick={onClick}>Review Order</SecondaryButton>
+      <PrimaryButton className={css.button} onClick={onClick}>write review</PrimaryButton>
     </div>
   );
 };
