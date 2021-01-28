@@ -34,7 +34,6 @@
  */
 
 export const filters = [
-
   {
     id: 'price',
     label: 'Price',
@@ -76,9 +75,10 @@ export const filters = [
       // Note: label is not added through the translation files
       // to make filter customizations a bit easier.
       options: [
-        { key: 'smoke', label: 'Smoke' },
-        { key: 'electric', label: 'Electric' },
-        { key: 'wood', label: 'Wood' },
+        { key: 'apparel', label: 'Apparel' },
+        { key: 'footwear', label: 'Footwear' },
+        { key: 'jewelry', label: 'Jewelry' },
+        { key: 'accessories', label: 'Accessories' },
         { key: 'other', label: 'Other' },
       ],
     },
@@ -131,6 +131,21 @@ export const filters = [
           key: 'own_food_allowed',
           label: 'Own food allowed',
         },
+      ],
+    },
+  },
+
+  {
+    id: 'shipping',
+    label: 'Shipping',
+    type: 'SelectSingleFilter',
+    group: 'secondary',
+    queryParamNames: ['pub_shipping_options'],
+    config: {
+      options: [
+        { key: 'ground', label: 'Ground Shipping (FREE)' },
+        { key: 'expedited', label: 'Expedited Shipping ($25)' },
+        { key: 'overnight', label: 'Overnight' },
       ],
     },
   },
