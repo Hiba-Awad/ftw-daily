@@ -9,7 +9,7 @@ import { LINE_ITEM_NIGHT, LINE_ITEM_DAY, propTypes } from '../../util/types';
 import * as validators from '../../util/validators';
 import { formatMoney } from '../../util/currency';
 import { types as sdkTypes } from '../../util/sdkLoader';
-import { Button, Form, FieldCurrencyInput } from '../../components';
+import { Button, Form, FieldCurrencyInput, FieldCheckbox, FieldTextInput } from '../../components';
 import css from './EditListingPricingForm.css';
 
 const { Money } = sdkTypes;
@@ -44,6 +44,22 @@ export const EditListingPricingFormComponent = props => (
 
       const pricePerUnitMessage = intl.formatMessage({
         id: translationKey,
+      });
+
+      const priceOnSaleMessage = intl.formatMessage({
+        id: 'EditListingPricingForm.ProductOnSaleMessage',
+      });
+
+      const priceOriginalMessage = intl.formatMessage({
+        id: 'EditListingPricingForm.PriceOriginal',
+      });
+
+      const preOrderMessage = intl.formatMessage({
+        id: 'EditListingPricingForm.preOrderMessage',
+      });
+
+      const preOrderWindowMessage = intl.formatMessage({
+        id: 'EditListingPricingForm.preOrderWindowMessage',
       });
 
       const pricePlaceholderMessage = intl.formatMessage({
@@ -99,7 +115,37 @@ export const EditListingPricingFormComponent = props => (
             currencyConfig={config.currencyConfig}
             validate={priceValidators}
           />
-
+          <FieldCheckbox
+            id="on_sale"
+            name="on_sale"
+            className={css.onSaleCheckbox}
+            autoFocus
+            label={priceOnSaleMessage}
+          />
+          <FieldCurrencyInput
+            id="price_original"
+            name="price_original"
+            className={css.priceInput}
+            autoFocus
+            label={priceOriginalMessage}
+            placeholder={pricePlaceholderMessage}
+            currencyConfig={config.currencyConfig}
+          />
+          <FieldCheckbox
+            id="preorder"
+            name="preorder"
+            className={css.preOrderCheckbox}
+            autoFocus
+            label={preOrderMessage}
+          />
+          <FieldTextInput
+            id="preorder_window"
+            name="preorder_window"
+            type="number"
+            className={css.preOrderWindow}
+            autoFocus
+            label={preOrderWindowMessage}
+          />
           <Button
             className={css.submitButton}
             type="submit"

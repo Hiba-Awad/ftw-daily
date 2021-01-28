@@ -5,12 +5,12 @@ import { FormattedMessage } from '../../util/reactIntl';
 
 import { LISTING_STATE_DRAFT } from '../../util/types';
 import { ensureListing } from '../../util/data';
-import { EditListingFeaturesForm } from '../../forms';
+import { EditListingDeliveryReturnForm } from '../../forms';
 import { ListingLink } from '../../components';
 
 import css from './EditListingFeaturesPanel.css';
 
-const FEATURES_NAME = 'amenities';
+const FEATURES_NAME = 'Delivery and Returns';
 
 const EditListingFeaturesPanel = props => {
   const {
@@ -41,22 +41,46 @@ const EditListingFeaturesPanel = props => {
     <FormattedMessage id="EditListingFeaturesPanel.createListingTitle" />
   );
 
-  const amenities = publicData && publicData.amenities;
-  const initialValues = { amenities };
-
   return (
     <div className={classes}>
       <h1 className={css.title}>{panelTitle}</h1>
-      <EditListingFeaturesForm
+      <EditListingDeliveryReturnForm
         className={css.form}
-        name={FEATURES_NAME}
-        initialValues={initialValues}
+        initialValues={{
+          made_to_order: publicData.made_to_order,
+          made_to_order_window: publicData.made_to_order_window,
+          shipping: publicData.shipping,
+          brand_shipping_location: publicData.brand_shipping_location,
+          return_eligible: publicData.return_eligible,
+          return_window: publicData.return_window,
+          return_start: publicData.return_start,
+          variant: publicData.variant,
+        }}
         onSubmit={values => {
-          const { amenities = [] } = values;
+          const {
+            made_to_order,
+            made_to_order_window,
+            shipping = [],
+            brand_shipping_location,
+            return_eligible,
+            return_window,
+            return_start,
+            variant = [],
+          } = values;
 
           const updatedValues = {
-            publicData: { amenities },
+            publicData: {
+              made_to_order,
+              made_to_order_window,
+              shipping,
+              brand_shipping_location,
+              return_eligible,
+              return_window,
+              return_start,
+              variant,
+            },
           };
+          console.log('submitting');
           onSubmit(updatedValues);
         }}
         onChange={onChange}

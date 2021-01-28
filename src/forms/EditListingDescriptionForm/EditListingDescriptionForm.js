@@ -126,39 +126,35 @@ const EditListingDescriptionFormComponent = props => (
             type="textarea"
             label={descriptionMessage}
             placeholder={descriptionPlaceholderMessage}
-            validate={composeValidators(required(descriptionRequiredMessage))}
+            validate={required(descriptionRequiredMessage)}
           />
 
-          
-<FieldTextInput
-            id="sizeandfit"
-            name="sizeandfit"
+          <FieldTextInput
+            id="size_fit"
+            name="size_fit"
             className={css.description}
             type="textarea"
             label={sizeandfitMessage}
             placeholder={sizeandfitPlaceholderMessage}
-            validate={composeValidators(required(sizeandfitRequiredMessage))}
+            validate={required(sizeandfitRequiredMessage)}
           />
 
-<FieldTextInput
-            id="detailsandcare"
-            name="detailsandcare"
+          <FieldTextInput
+            id="details_care"
+            name="details_care"
             className={css.description}
             type="textarea"
             label={detailsandcareMessage}
             placeholder={detailsandcarePlaceholderMessage}
-            validate={composeValidators(required(detailsandcareRequiredMessage))}
+            validate={required(detailsandcareRequiredMessage)}
           />
 
-{/*}
           <CustomCategorySelectFieldMaybe
             id="category"
             name="category"
             categories={categories}
             intl={intl}
           />
-
-      {*/}
 
           <Button
             className={css.submitButton}
