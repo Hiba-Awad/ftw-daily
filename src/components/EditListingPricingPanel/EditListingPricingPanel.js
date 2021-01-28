@@ -59,7 +59,7 @@ const EditListingPricingPanel = props => {
           price,
           publicData: {
             on_sale,
-            price_original: price_original.amount / 100,
+            price_original: price_original? price_original.amount / 100: null,
             preorder,
             preorder_window,
           },
