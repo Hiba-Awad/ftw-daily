@@ -129,6 +129,7 @@ const EditListingDeliveryReturnFormComponent = props => (
             name="made_to_order_window"
             className={css.madeToOrderWindow}
             autoFocus
+            type = "text"
             label={madeToOrderWindowMessage}
           />
 
@@ -146,6 +147,7 @@ const EditListingDeliveryReturnFormComponent = props => (
             name="brand_shipping_location"
             className={css.madeToOrderWindow}
             autoFocus
+            type ="text"
             label={brandShippingFromMessage}
             validate={shippingLocationRequired}
           />
@@ -156,7 +158,6 @@ const EditListingDeliveryReturnFormComponent = props => (
             className={css.return_eligible}
             autoFocus
             label={returnEligibleMessage}
-            validate={returnEligibleRequired}
           />
 
           <FieldTextInput

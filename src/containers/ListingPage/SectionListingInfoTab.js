@@ -49,7 +49,7 @@ const SectionListingInfoTab = props => {
     },
   ];
 
-  if (publicData && publicData.editors_note) {
+  if (publicData && publicData.category) {
     return (
       <div className={css.SectionListingInfoTab}>
         <div className={css.sectionButtonTabNavHorizontal}>
