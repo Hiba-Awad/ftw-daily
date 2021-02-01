@@ -26,7 +26,7 @@
       url('../../assets/BackgroundImage.png');
 
     /* Add loading color for the div */
-    background-color: var(--matterColor);
+    background-color: var(--matterColorMedium);
 
     /* Cover the whole screen with the background image */
     background-size: cover;
@@ -46,6 +46,7 @@
   --marketplaceColorLight: #ABA9A9;
   --marketplaceColorDark: #000000;
   --marketplaceColorMedium: #F5E3E0;
+  --marketplaceColorBackground: #ffffff;
 
   /* Used with inline CSS SVGs */
   --marketplaceColorEncoded: %23DA4167;

@@ -8,8 +8,8 @@ body {
   -webkit-font-smoothing: antialiased; /* http://szafranek.net/blog/2009/02/22/font-smoothing-explained/ */
   -moz-osx-font-smoothing: grayscale; /* http://szafranek.net/blog/2009/02/22/font-smoothing-explained/ */
   text-rendering: optimizeSpeed;
-
-  background-color: var(--matterColorBright);
+ 
+  background-color: var(--marketplaceColorBackground);
 }
 
 ::selection {
@@ -74,7 +74,7 @@ ul {
 
 legend,
 label {
-  @apply --marketplaceH5FontStyles;
+  @apply --marketplaceH4FontStyles;
   font-weight: var(--fontWeightSemiBold);
   display: block;
   margin-top: 0;

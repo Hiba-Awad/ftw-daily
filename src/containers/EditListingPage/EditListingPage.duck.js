@@ -11,6 +11,7 @@ import {
   fetchStripeAccount,
 } from '../../ducks/stripeConnectAccount.duck';
 import { fetchCurrentUser } from '../../ducks/user.duck';
+import { util as sdkUtil } from '../../util/sdkLoader';
 
 const { UUID } = sdkTypes;
 
@@ -499,7 +500,17 @@ export function requestCreateListingDraft(data) {
     const queryParams = {
       expand: true,
       include: ['author', 'images'],
-      'fields.image': ['variants.landscape-crop', 'variants.landscape-crop2x'],
+      'fields.image': ['variants.portrait-crop', 'variants.portrait-crop2x'],
+      'imageVariant.portrait-crop': sdkUtil.objectQueryString({
+        w: 400,
+        h: 600,
+        fit: 'scale',
+      }),
+      'imageVariant.portrait-crop2x': sdkUtil.objectQueryString({
+        w: 800,
+        h: 1200,
+        fit: 'scale',
+      }),
     };
 
     return sdk.ownListings

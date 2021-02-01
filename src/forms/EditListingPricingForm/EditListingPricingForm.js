@@ -125,7 +125,7 @@ export const EditListingPricingFormComponent = props => (
           <FieldCurrencyInput
             id="price_original"
             name="price_original"
-            className={css.priceInput}
+            className={css.priceInputSub}
             autoFocus
             label={priceOriginalMessage}
             placeholder={pricePlaceholderMessage}
@@ -142,7 +142,7 @@ export const EditListingPricingFormComponent = props => (
             id="preorder_window"
             name="preorder_window"
             type="number"
-            className={css.preOrderWindow}
+            className={css.priceInputSub}
             autoFocus
             label={preOrderWindowMessage}
           />

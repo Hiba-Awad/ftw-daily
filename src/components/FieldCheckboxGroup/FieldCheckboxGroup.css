@@ -2,7 +2,7 @@
 
 .root {
   margin: 0;
-  padding: 0;
+  padding: 10px;
   border: none;
 }
 
@@ -23,6 +23,6 @@
   page-break-inside: avoid;
 
   @media (--viewportMedium) {
-    padding: 4px 0;
+    padding: 2px 0;
   }
 }

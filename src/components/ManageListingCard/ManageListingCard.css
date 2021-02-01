@@ -87,7 +87,7 @@
 /* Firefox doesn't support image aspect ratio inside flexbox */
 .aspectWrapper {
   padding-bottom: 150%; /* 2:3 Aspect Ratio */
-  background: var(--matterColorNegative); /* Loading BG color */
+  background: var(--marketplaceColorBackground); /* Loading BG color */
   margin-bottom: 1px; /* Fix 1px bug */
 }
 
@@ -96,6 +96,9 @@
   @apply --ManageListingCard_coverEverything;
   width: 100%;
   border-radius: 2px;
+  position: absolute;
+  bottom: 0;
+  top: auto;
 }
 
 .menubarWrapper {

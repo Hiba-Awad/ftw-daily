@@ -45,7 +45,7 @@
 .aspectWrapper {
   position: relative; /* allow positioning own listing action bar */
   padding-bottom: 150%; /* 3:2 Aspect Ratio */
-  background-color: var(--matterColorLight); /* Loading BG color */
+  background-color: var(--marketplaceColorBackground); /* Loading BG color */
 
   /* Image carousel can be opened from the image, therefore we should show a pointer */
   cursor: pointer;

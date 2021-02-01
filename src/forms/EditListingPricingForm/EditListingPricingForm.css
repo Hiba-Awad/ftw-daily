@@ -21,8 +21,20 @@
 .priceInput {
   flex-shrink: 0;
   width: 100%;
-  padding-bottom: 30px;
+  color: var(--marketplaceColorDark);
+  padding-bottom: 15px;
 }
+
+.priceInputSub {
+  flex-shrink: 0;
+  width: 75%;
+  color: var(--marketplaceColorDark);
+  padding-left: 26px;
+  padding-bottom: 15px;
+  padding-top: 3px;
+
+}
+
 
 .css.onSaleCheckbox {
   padding-bottom: 30px;
@@ -42,3 +54,5 @@
     margin-top: 100px;
   }
 }
+
+

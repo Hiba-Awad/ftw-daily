@@ -32,7 +32,7 @@ import { util as sdkUtil } from '../../util/sdkLoader';
 // Pagination page size might need to be dynamic on responsive page layouts
 // Current design has max 3 columns 42 is divisible by 2 and 3
 // So, there's enough cards to fill all columns on full pagination pages
-const RESULT_PAGE_SIZE = 42;
+const RESULT_PAGE_SIZE = 44;
 
 export class ManageListingsPageComponent extends Component {
   constructor(props) {
@@ -253,12 +253,12 @@ ManageListingsPage.loadData = (params, search) => {
        'imageVariant.portrait-crop': sdkUtil.objectQueryString({
          w: 400,
          h: 600,
-         fit: 'crop',
+         fit: 'scale',
        }),
        'imageVariant.portrait-crop2x': sdkUtil.objectQueryString({
          w: 800,
          h: 1200,
-         fit: 'crop',
+         fit: 'scale',
        }),    
     'limit.images': 1,
   });

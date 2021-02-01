@@ -21,7 +21,7 @@
 }
 
 .firstNameRoot {
-  width: calc(34% - 9px);
+  width: calc(100% - 9px);
 }
 
 .lastNameRoot {
