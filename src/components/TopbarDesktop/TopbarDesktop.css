@@ -64,11 +64,15 @@
 .logoLink {
   @apply --TopbarDesktop_linkHover;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
   padding: 21px 24px 21px 24px;
   height: 100%;
 
   @media (--viewportLarge) {
     padding: 21px 36px 21px 36px;
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -234,6 +238,8 @@
 .signupLink {
   @apply --TopbarDesktop_linkHover;
   flex-shrink: 0;
+  display: flex;
+    align-items: center;
   height: 100%;
   padding: 0 12px 0 12px;
 
@@ -247,6 +253,8 @@
 .loginLink {
   @apply --TopbarDesktop_linkHover;
   flex-shrink: 0;
+  display: flex;
+    align-items: center;
   height: 100%;
   padding: 0 12px 0 12px;
 
