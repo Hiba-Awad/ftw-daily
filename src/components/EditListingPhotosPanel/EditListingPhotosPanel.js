@@ -56,6 +56,7 @@ class EditListingPhotosPanel extends Component {
           images={images}
           onImageUpload={onImageUpload}
           onSubmit={values => {
+            console.log('here');
             const { addImage, ...updateValues } = values;
             onSubmit(updateValues);
           }}

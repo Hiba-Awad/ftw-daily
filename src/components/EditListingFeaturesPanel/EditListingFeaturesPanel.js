@@ -57,6 +57,8 @@ const EditListingFeaturesPanel = props => {
           variant: publicData.variant,
         }}
         onSubmit={values => {
+          console.log('here');
+          console.log('values', values);
           const {
             made_to_order,
             made_to_order_window,

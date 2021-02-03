@@ -188,7 +188,7 @@ export class EditListingPhotosFormComponent extends Component {
                     const { input, meta } = props;
                     return (
                       <div className={css.imageRequiredWrapper}>
-                        <input {...input} />
+                        <input {...input} value={images} />
                         <ValidationError fieldMeta={meta} />
                       </div>
                     );

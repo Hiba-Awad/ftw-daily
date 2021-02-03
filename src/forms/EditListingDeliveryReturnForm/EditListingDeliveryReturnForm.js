@@ -111,7 +111,6 @@ const EditListingDeliveryReturnFormComponent = props => (
         })
       );
       const options = findOptionsForSelectFilter('shipping', filterConfig);
-      console.log(options);
       return (
         <Form className={classes} onSubmit={handleSubmit}>
           {errorMessage}
