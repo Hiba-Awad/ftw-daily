@@ -17,8 +17,7 @@ const ReviewModal = props => {
     isOpen,
     onCloseModal,
     onManageDisableScrolling,
-    onSubmitReview,
-    revieweeName,
+    onSubmit,
     reviewSent,
     sendReviewInProgress,
     sendReviewError,
@@ -26,7 +25,7 @@ const ReviewModal = props => {
 
   const classes = classNames(rootClassName || css.root, className);
   const closeButtonMessage = intl.formatMessage({ id: 'ReviewModal.later' });
-  const reviewee = <span className={css.reviewee}>{revieweeName}</span>;
+  const reviewee = <span className={css.reviewee}>{'placeholder'}</span>;
 
   return (
     <Modal
@@ -36,7 +35,6 @@ const ReviewModal = props => {
       isOpen={isOpen}
       onClose={onCloseModal}
       onManageDisableScrolling={onManageDisableScrolling}
-      usePortal
       closeButtonMessage={closeButtonMessage}
     >
       <IconReviewUser className={css.modalIcon} />
@@ -47,7 +45,7 @@ const ReviewModal = props => {
         <FormattedMessage id="ReviewModal.description" />
       </p>
       <ReviewForm
-        onSubmit={onSubmitReview}
+        onSubmit={onSubmit}
         reviewSent={reviewSent}
         sendReviewInProgress={sendReviewInProgress}
         sendReviewError={sendReviewError}

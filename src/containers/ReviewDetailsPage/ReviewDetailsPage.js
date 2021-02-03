@@ -60,6 +60,44 @@ export const ReviewDetailsPageComponent = props => {
       })}
     </ul>
   );
+
+  const onSubmit = values => {
+    console.log('submitting review form');
+    const { images, ...updateValues } = values;
+    const photos = images.map(image => {
+      return image.file;
+    });
+    const params = {
+      listingUUID: orderToReview.listingUUID,
+      email: currentUser.attributes.email,
+      photos,
+      ...updateValues,
+    };
+    console.log('Trying to submit');
+    const orderId = orderToReview.orderId;
+    onSubmitReview(orderId, params)
+      .then(() => {
+        if (reviewSubmitted) {
+          setReviewModal(false);
+        }
+      })
+      .catch(() => {});
+  };
+
+  const reviewModal = (
+    <ReviewModal
+      isOpen={isReviewModalOpen}
+      onManageDisableScrolling={onManageDisableScrolling}
+      onSubmit={onSubmit}
+      reviewSent={reviewSubmitted}
+      sendReviewInProgress={saveReviewInProgress}
+      sendReviewError={saveReviewError}
+      onCloseModal={() => {
+        setReviewModal(false);
+        onChange();
+      }}
+    />
+  );
   return (
     <Page title={title} scrollingDisabled={scrollingDisabled}>
       <LayoutSideNavigation>
@@ -83,12 +121,10 @@ export const ReviewDetailsPageComponent = props => {
             <Reviews onManageDisableScrolling={onManageDisableScrolling} reviews={reviews} />
           </div>
           <h2 className={css.reviewsHeading}>
-              <FormattedMessage
-                id="ListingPage.reviewsHeading2"
-                values={{ count: reviews.length }}
-              />
-            </h2>
+            <FormattedMessage id="ListingPage.reviewsHeading2" values={{ count: reviews.length }} />
+          </h2>
           <div className={css.content}>{orderReviewCards}</div>
+          <div className={css.content}>{reviewModal}</div>
         </LayoutWrapperMain>
         <LayoutWrapperFooter>
           <Footer />

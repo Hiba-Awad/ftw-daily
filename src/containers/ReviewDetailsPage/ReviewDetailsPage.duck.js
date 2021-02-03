@@ -47,8 +47,6 @@ export default function reducer(state = initialState, action = {}) {
         ...state,
         saveReviewInProgress: true,
         saveReviewError: null,
-        // add review
-        reviews: [action.payload, ...state.reviews],
       };
     case SAVE_REVIEW_DETAILS_SUCCESS:
       return {
@@ -56,6 +54,8 @@ export default function reducer(state = initialState, action = {}) {
         saveReviewInProgress: false,
         reviewDetailsChanged: true,
         reviewSubmitted: true,
+        // add review
+        reviews: [action.payload, ...state.reviews],
       };
     case SAVE_REVIEW_ERROR:
       return {
@@ -182,7 +182,6 @@ const getListingInformation = listingUUID => (dispatch, getState, sdk) => {
   return sdk.listings
     .show(params)
     .then(response => {
-      console.log('DAMN DATA');
       console.log(response);
       return denormalisedResponseEntities(response);
     })
@@ -192,8 +191,6 @@ const getListingInformation = listingUUID => (dispatch, getState, sdk) => {
 };
 
 export const fetchOrders = userEmail => (dispatch, getState, sdk) => {
-  console.log('HERE I AM FETCHING DAMN ORDERS');
-  console.log(getState().user);
   dispatch(fetchOrdersRequest());
   return axios
     .get(`/orders/${userEmail}`)
@@ -236,11 +233,11 @@ export const fetchReviews = userEmail => (dispatch, getState, sdk) => {
 /**
  * Save Review and return saved review
  */
-export const saveReview = params => (dispatch, getState, sdk) => {
+export const saveReview = (orderId, params) => (dispatch, getState, sdk) => {
   dispatch(saveReviewDetailsRequest());
 
   return axios
-    .post('/reviews', params)
+    .post(`/review/${orderId}`, params)
     .then(response => {
       const review = response.data;
       console.log(response.data);

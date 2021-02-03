@@ -88,7 +88,7 @@ const tabCompleted = (tab, listing) => {
     case DESCRIPTION:
       return !!(description && title && publicData.details_care && publicData.size_fit);
     case FEATURES:
-      return !!(publicData && publicData.amenities);
+      return !!(publicData && publicData.shipping);
     case POLICY:
       return !!(publicData && typeof publicData.rules !== 'undefined');
     case LOCATION:
