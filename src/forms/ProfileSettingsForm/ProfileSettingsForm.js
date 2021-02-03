@@ -266,6 +266,7 @@ class ProfileSettingsFormComponent extends Component {
                     placeholder={firstNamePlaceholder}
                     validate={firstNameRequired}
                   />
+                  {/*}
                   <FieldTextInput
                     className={css.lastName}
                     type="text"
@@ -275,6 +276,7 @@ class ProfileSettingsFormComponent extends Component {
                     placeholder={lastNamePlaceholder}
                     validate={lastNameRequired}
                   />
+                {*/}
                 </div>
               </div>
               <div className={classNames(css.sectionContainer, css.lastSection)}>

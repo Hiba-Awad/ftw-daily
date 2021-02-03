@@ -327,12 +327,12 @@ export const fetchCurrentUser = (params = null) => (dispatch, getState, sdk) => 
     'imageVariant.square-xsmall': sdkUtil.objectQueryString({
       w: 40,
       h: 40,
-      fit: 'crop',
+      fit: 'scale',
     }),
     'imageVariant.square-xsmall2x': sdkUtil.objectQueryString({
       w: 80,
       h: 80,
-      fit: 'crop',
+      fit: 'scale',
     }),
   };
 

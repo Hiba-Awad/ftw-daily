@@ -145,7 +145,7 @@ export const filters = [
       options: [
         { key: 'ground', label: 'Ground Shipping (FREE)' },
         { key: 'expedited', label: 'Expedited Shipping ($25)' },
-        { key: 'overnight', label: 'Overnight' },
+        { key: 'overnight', label: 'Overnight ($30)' },
       ],
     },
   },

@@ -12,20 +12,12 @@
   display: flex;
   flex-direction: column;
 
+
   @media (--viewportMedium) {
     padding-top: 1px;
   }
 }
 
-.features {
-  margin-top: 24px;
-  margin-bottom: 24px;
-
-  @media (--viewportMedium) {
-    margin-bottom: 30px;
-    margin-top: 30px;
-  }
-}
 
 .error {
   color: var(--failColor);
@@ -43,21 +35,20 @@
   }
 }
 
-.css.preOrderCheckbox {
+.shippingoptions {
+}
+
+.textInputSub {
+  flex-shrink: 0;
+  width: 75%;
+  color: var(--marketplaceColorDark);
+  padding-left: 26px;
   padding-bottom: 30px;
 }
 
-.css.madeToOrderWindow {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-.css.return_eligible {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-.css.return_window {
-  margin-top: 30px;
-  margin-bottom: 30px;
+.textLabel {
+  flex-shrink: 0;
+  width: 100%;
+  color: var(--marketplaceColorDark);
+  padding-bottom: 5px;
 }

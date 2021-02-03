@@ -340,12 +340,12 @@ SearchPage.loadData = (params, search) => {
    'imageVariant.portrait-crop': sdkUtil.objectQueryString({
      w: 400,
      h: 600,
-     fit: 'crop',
+     fit: 'scale',
    }),
    'imageVariant.portrait-crop2x': sdkUtil.objectQueryString({
      w: 800,
      h: 1200,
-     fit: 'crop',
+     fit: 'scale',
    }),
     'limit.images': 1,
   });

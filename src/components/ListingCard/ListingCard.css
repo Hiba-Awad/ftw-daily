@@ -28,13 +28,13 @@
 /* Firefox doesn't support image aspect ratio inside flexbox */
 .aspectWrapper {
   padding-bottom: 150%; /* 2:3 Aspect Ratio */
-  background: var(--matterColorNegative); /* Loading BG color */
+  background-color: var(--marketplaceColorBackground);
 }
 
 .rootForImage {
   /* Layout - image will take space defined by aspect ratio wrapper */
   position: absolute;
-  top: 0;
+  top: auto;
   bottom: 0;
   left: 0;
   right: 0;

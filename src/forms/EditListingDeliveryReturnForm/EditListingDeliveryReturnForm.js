@@ -119,20 +119,21 @@ const EditListingDeliveryReturnFormComponent = props => (
           <FieldCheckbox
             id="made_to_order"
             name="made_to_order"
-            className={css.preOrderCheckbox}
+            className={css.textLabel}
             autoFocus
             label={madeToOrderMessage}
           />
           <FieldTextInput
             id="made_to_order_window"
             name="made_to_order_window"
-            className={css.madeToOrderWindow}
+            className={css.textInputSub}
             autoFocus
+            type = "text"
             label={madeToOrderWindowMessage}
           />
 
           <FieldCheckboxGroup
-            className={css.features}
+            className={css.shippingoptions}
             id="shipping"
             name="shipping"
             options={options}
@@ -143,8 +144,9 @@ const EditListingDeliveryReturnFormComponent = props => (
           <FieldTextInput
             id="brand_shipping_location"
             name="brand_shipping_location"
-            className={css.madeToOrderWindow}
+            className={css.textLabel}
             autoFocus
+            type ="text"
             label={brandShippingFromMessage}
             validate={shippingLocationRequired}
           />
@@ -155,19 +157,18 @@ const EditListingDeliveryReturnFormComponent = props => (
             className={css.return_eligible}
             autoFocus
             label={returnEligibleMessage}
-            validate={returnEligibleRequired}
           />
 
           <FieldTextInput
             id="return_window"
             name="return_window"
             type="number"
-            className={css.return_window}
+            className={css.textInputSub}
             autoFocus
             label={returnWindowMessage}
           />
           <FieldSelect
-            className={css.features}
+            className={css.textInputSub}
             id="return_start"
             name="return_start"
             label={returnPeriodStartMessage}
@@ -183,7 +184,7 @@ const EditListingDeliveryReturnFormComponent = props => (
           <FieldTextInput
             id="variant"
             name="variant"
-            className={css.variant}
+            className={css.textInput}
             autoFocus
             label={variantMessage}
           />
