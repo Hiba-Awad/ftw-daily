@@ -222,7 +222,14 @@ export const fetchReviews = userEmail => (dispatch, getState, sdk) => {
   return axios
     .get('/reviewsUser', { params: { email: userEmail } })
     .then(response => {
-      const reviews = response.data;
+      let data = response.data;
+      const { currentUser } = getState().user;
+      const author = ensureCurrentUser(currentUser);
+      let reviews = data.map(review => {
+        review.author = author;
+        return review;
+      });
+
       dispatch(fetchReviewsSuccess(reviews));
     })
     .catch(e => {
@@ -233,11 +240,21 @@ export const fetchReviews = userEmail => (dispatch, getState, sdk) => {
 /**
  * Save Review and return saved review
  */
-export const saveReview = (orderId, params) => (dispatch, getState, sdk) => {
+export const saveReview = (orderId, photos, params) => (dispatch, getState, sdk) => {
   dispatch(saveReviewDetailsRequest());
-
-  return axios
-    .post(`/review/${orderId}`, params)
+  var bodyFormData = new FormData();
+  Object.keys(params).forEach(key => {
+    bodyFormData.append(key, params[key]);
+  });
+  photos.forEach(file => {
+    bodyFormData.append('image', file, file.name);
+  });
+  return axios({
+    method: 'post',
+    url: `/review/${orderId}`,
+    data: bodyFormData,
+    headers: { 'Content-Type': 'multipart/form-data' },
+  })
     .then(response => {
       const review = response.data;
       console.log(response.data);

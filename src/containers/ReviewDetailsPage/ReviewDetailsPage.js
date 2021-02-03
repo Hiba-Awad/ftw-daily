@@ -70,12 +70,11 @@ export const ReviewDetailsPageComponent = props => {
     const params = {
       listingUUID: orderToReview.listingUUID,
       email: currentUser.attributes.email,
-      photos,
       ...updateValues,
     };
     console.log('Trying to submit');
     const orderId = orderToReview.orderId;
-    onSubmitReview(orderId, params)
+    onSubmitReview(orderId, photos, params)
       .then(() => {
         if (reviewSubmitted) {
           setReviewModal(false);
@@ -189,7 +188,7 @@ const mapDispatchToProps = dispatch => ({
   onManageDisableScrolling: (componentId, disableScrolling) =>
     dispatch(manageDisableScrolling(componentId, disableScrolling)),
   onChange: () => dispatch(saveReviewDetailsClear()),
-  onSubmitReview: values => dispatch(saveReview(values)),
+  onSubmitReview: (orderId, photos, params) => dispatch(saveReview(orderId, photos, params)),
 });
 
 const ReviewDetailsPage = compose(
