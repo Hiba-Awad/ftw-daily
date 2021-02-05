@@ -9,7 +9,7 @@ import { REVIEW_TYPE_OF_PROVIDER, REVIEW_TYPE_OF_CUSTOMER, propTypes } from '../
 import { ensureCurrentUser, ensureUser } from '../../util/data';
 import { createSlug } from '../../util/urlHelpers';
 import { withViewport } from '../../util/contextHelpers';
-import { isScrollingDisabled } from '../../ducks/UI.duck';
+import { manageDisableScrolling, isScrollingDisabled } from '../../ducks/UI.duck';
 import { getMarketplaceEntities } from '../../ducks/marketplaceData.duck';
 import {
   Page,
@@ -45,26 +45,12 @@ export class ProfilePageComponent extends Component {
       // keep track of which reviews tab to show in desktop viewport
       showReviewsType: REVIEW_TYPE_OF_PROVIDER,
     };
-
-    this.showOfProviderReviews = this.showOfProviderReviews.bind(this);
-    this.showOfCustomerReviews = this.showOfCustomerReviews.bind(this);
-  }
-
-  showOfProviderReviews() {
-    this.setState({
-      showReviewsType: REVIEW_TYPE_OF_PROVIDER,
-    });
-  }
-
-  showOfCustomerReviews() {
-    this.setState({
-      showReviewsType: REVIEW_TYPE_OF_CUSTOMER,
-    });
   }
 
   render() {
     const {
       scrollingDisabled,
+      onManageDisableScrolling,
       currentUser,
       user,
       userShowError,
@@ -122,69 +108,18 @@ export class ProfilePageComponent extends Component {
       </p>
     );
 
-    const reviewsOfProvider = reviews.filter(r => r.attributes.type === REVIEW_TYPE_OF_PROVIDER);
-
-    const reviewsOfCustomer = reviews.filter(r => r.attributes.type === REVIEW_TYPE_OF_CUSTOMER);
-
     const mobileReviews = (
       <div className={css.mobileReviews}>
-        <h2 className={css.mobileReviewsTitle}>
-          <FormattedMessage
-            id="ProfilePage.reviewsOfProviderTitle"
-            values={{ count: reviewsOfProvider.length }}
-          />
-        </h2>
         {queryReviewsError ? reviewsError : null}
-        <Reviews reviews={reviewsOfProvider} />
-        <h2 className={css.mobileReviewsTitle}>
-          <FormattedMessage
-            id="ProfilePage.reviewsOfCustomerTitle"
-            values={{ count: reviewsOfCustomer.length }}
-          />
-        </h2>
-        {queryReviewsError ? reviewsError : null}
-        <Reviews reviews={reviewsOfCustomer} />
+        <Reviews reviews={reviews} onManageDisableScrolling={onManageDisableScrolling} />
       </div>
     );
 
-    const desktopReviewTabs = [
-      {
-        text: (
-          <h3 className={css.desktopReviewsTitle}>
-            <FormattedMessage
-              id="ProfilePage.reviewsOfProviderTitle"
-              values={{ count: reviewsOfProvider.length }}
-            />
-          </h3>
-        ),
-        selected: this.state.showReviewsType === REVIEW_TYPE_OF_PROVIDER,
-        onClick: this.showOfProviderReviews,
-      },
-      {
-        text: (
-          <h3 className={css.desktopReviewsTitle}>
-            <FormattedMessage
-              id="ProfilePage.reviewsOfCustomerTitle"
-              values={{ count: reviewsOfCustomer.length }}
-            />
-          </h3>
-        ),
-        selected: this.state.showReviewsType === REVIEW_TYPE_OF_CUSTOMER,
-        onClick: this.showOfCustomerReviews,
-      },
-    ];
-
     const desktopReviews = (
       <div className={css.desktopReviews}>
-        <ButtonTabNavHorizontal className={css.desktopReviewsTabNav} tabs={desktopReviewTabs} />
-
         {queryReviewsError ? reviewsError : null}
 
-        {this.state.showReviewsType === REVIEW_TYPE_OF_PROVIDER ? (
-          <Reviews reviews={reviewsOfProvider} />
-        ) : (
-          <Reviews reviews={reviewsOfCustomer} />
-        )}
+        <Reviews reviews={reviews} onManageDisableScrolling={onManageDisableScrolling} />
       </div>
     );
 
@@ -195,16 +130,20 @@ export class ProfilePageComponent extends Component {
         </h1>
         {hasBio ? <p className={css.bio}>{bio}</p> : null}
         <div className={css.bioLinks}>
-        <FreeBreakfastOutlinedIcon style={{ color: "black"}} ></FreeBreakfastOutlinedIcon>
-        {hasBio ? <NamedLink className={css.outboundLink} name={designerProfileLink}>
-        <FormattedMessage id="ProfilePage.designerProfile" />
-        </NamedLink> : null}
+          <FreeBreakfastOutlinedIcon style={{ color: 'black' }}></FreeBreakfastOutlinedIcon>
+          {hasBio ? (
+            <NamedLink className={css.outboundLink} name={designerProfileLink}>
+              <FormattedMessage id="ProfilePage.designerProfile" />
+            </NamedLink>
+          ) : null}
         </div>
         <div className={css.bioLinks}>
-        <HighlightOutlinedIcon style={{ color: "black"}}></HighlightOutlinedIcon>
-        {hasBio ? <NamedLink className={css.outboundLink} name={productHighlightLink}>
-        <FormattedMessage id="ProfilePage.productHighlight" />
-        </NamedLink> : null}
+          <HighlightOutlinedIcon style={{ color: 'black' }}></HighlightOutlinedIcon>
+          {hasBio ? (
+            <NamedLink className={css.outboundLink} name={productHighlightLink}>
+              <FormattedMessage id="ProfilePage.productHighlight" />
+            </NamedLink>
+          ) : null}
         </div>
         <div className={css.bioLinks}>
         <BookmarkIcon style={{ color: "black"}}></BookmarkIcon>
@@ -230,7 +169,6 @@ export class ProfilePageComponent extends Component {
             </ul>
           </div>
         ) : null}
-
       </div>
     );
 
@@ -341,8 +279,16 @@ const mapStateToProps = state => {
   };
 };
 
+const mapDispatchToProps = dispatch => ({
+  onManageDisableScrolling: (componentId, disableScrolling) =>
+    dispatch(manageDisableScrolling(componentId, disableScrolling)),
+});
+
 const ProfilePage = compose(
-  connect(mapStateToProps),
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  ),
   withViewport,
   injectIntl
 )(ProfilePageComponent);

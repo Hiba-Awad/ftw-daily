@@ -158,6 +158,19 @@ export const sendEnquiryError = e => ({ type: SEND_ENQUIRY_ERROR, error: true, p
 
 // ================ Thunks ================ //
 
+const getUser = userId => (dispatch, getState, sdk) => {
+  return sdk.users
+    .show({
+      id: userId,
+      include: ['profileImage'],
+      'fields.image': ['variants.square-small', 'variants.square-small2x'],
+    })
+    .then(response => {
+      return response;
+    })
+    .catch(e => dispatch(fetchReviewsError(storableError(e))));
+};
+
 export const showListing = (listingId, isOwn = false) => (dispatch, getState, sdk) => {
   dispatch(showListingRequest(listingId));
   dispatch(fetchCurrentUser());

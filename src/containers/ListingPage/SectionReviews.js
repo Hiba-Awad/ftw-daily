@@ -5,7 +5,7 @@ import { Reviews } from '../../components';
 import css from './ListingPage.css';
 
 const SectionReviews = props => {
-  const { reviews, fetchReviewsError } = props;
+  const { reviews, fetchReviewsError, onManageDisableScrolling } = props;
 
   const reviewsError = (
     <h2 className={css.errorText}>
@@ -19,7 +19,7 @@ const SectionReviews = props => {
         <FormattedMessage id="ListingPage.reviewsHeading" values={{ count: reviews.length }} />
       </h2>
       {fetchReviewsError ? reviewsError : null}
-      <Reviews reviews={reviews} />
+      <Reviews onManageDisableScrolling={onManageDisableScrolling} reviews={reviews} />
     </div>
   );
 };
