@@ -234,10 +234,10 @@
 
     &:hover,
     &:focus {
-      background-color: var(--marketplaecColorMedium);
+      background-color: var(--marketplaceColorMedium);
     }
     &:disabled {
-      background-color: var(--matterColorNegative);
+      background-color: var(--matterColor);
       color: var(--matterColorLight);
     }
   }
@@ -338,7 +338,7 @@
     }
 
     @media (--viewportMedium) {
-      padding: 4px 0 2px 0;
+      padding: 4px 0 10px 0;
     }
   }
 
@@ -503,12 +503,12 @@
     width: auto;
 
     /* Sizing (touch area) */
-    padding: 24px;
+    padding: 35px;
     margin: 0;
     border: 0;
 
     @media (--viewportMedium) {
-      padding: 27px 30px;
+      padding: 40px 30px;
       position: absolute;
     }
 

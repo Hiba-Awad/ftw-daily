@@ -14,11 +14,13 @@ import {
   Form,
   PrimaryButton,
   FieldTextInput,
+  FieldRadioButton,
   FieldSelect,
   ValidationError,
 } from '../../components';
 import { types as sdkTypes } from '../../util/sdkLoader';
 import css from './ReviewForm.css';
+import { DriveEta } from '@material-ui/icons';
 
 const { UUID } = sdkTypes;
 const ACCEPT_IMAGES = 'image/*';
@@ -149,6 +151,7 @@ export class ReviewFormComponent extends Component {
                 onRemoveImage={onRemoveImage}
               >
                 <Field
+                  className={css.imagesIndividual}
                   id="addImage"
                   name="addImage"
                   accept={ACCEPT_IMAGES}
@@ -198,7 +201,7 @@ export class ReviewFormComponent extends Component {
                 />
               </AddImages>
               <FieldTextInput
-                className={css.reviewContent}
+                className={css.reviewcomment}
                 type="textarea"
                 id={formId ? `${formId}.reviewContent` : 'reviewContent'}
                 name="comments"
@@ -206,11 +209,15 @@ export class ReviewFormComponent extends Component {
                 placeholder={reviewContentPlaceholderMessage}
                 validate={required(reviewContentRequiredMessage)}
               />
+
+              <div className={css.bodyStats}>
               <FieldSelect
+                className={css.reviewContentBody}
                 id={formId ? `${formId}.reviewContent` : 'reviewContent'}
                 name="height"
-                label="height"
+                label="height*"
               >
+                <option value="5'0">shorter than 5'0</option>
                 <option value="5'0">5'0</option>
                 <option value="5'1">5'1</option>
                 <option value="5'2">5'2</option>
@@ -219,19 +226,25 @@ export class ReviewFormComponent extends Component {
                 <option value="5'5">5'5</option>
                 <option value="5'6">5'6</option>
                 <option value="5'7">5'7</option>
+                <option value="5'4">5'8</option>
+                <option value="5'5">5'9</option>
+                <option value="5'6">6'0</option>
+                <option value="5'7">taller than 6'0</option>
               </FieldSelect>
 
               <FieldTextInput
-                className={css.reviewContent}
+                className={css.reviewContentBody}
                 type="textarea"
                 id={formId ? `${formId}.weight` : 'weight'}
                 name="weight"
-                label="weight (lbs)"
+                label="weight* (lbs)"
                 placeholder="120lbs"
               />
+              </div>
 
+        <div className={css.reviewContentStats}>
               <FieldTextInput
-                className={css.reviewContent}
+                className={css.stats}
                 type="textarea"
                 id={formId ? `${formId}.bust` : 'bust'}
                 name="bust"
@@ -239,7 +252,7 @@ export class ReviewFormComponent extends Component {
               />
 
               <FieldTextInput
-                className={css.reviewContent}
+                className={css.stats}
                 type="textarea"
                 id={formId ? `${formId}.waist` : 'waist'}
                 name="waist"
@@ -247,55 +260,90 @@ export class ReviewFormComponent extends Component {
               />
 
               <FieldTextInput
-                className={css.reviewContent}
+                className={css.stats}
                 type="textarea"
                 id={formId ? `${formId}.hips` : 'hips'}
                 name="hips"
                 label="hips (inches)"
               />
+              </div>
 
-              <FieldSelect className={css.features} id="fit" name="fit" label={reviewFit}>
-                <option id="runsSmall" key="runsSmall" value="runs small">
-                  runs small
-                </option>
-                <option id="runsTrue" key="runsTrue" value="runs true to size">
-                  runs true to size
-                </option>
-                <option id="runsLarge" key="runsLarge" value="runs large">
-                  runs large
-                </option>
-                validate={required(reviewFitRequiredMessage)}
-              </FieldSelect>
+              <div className={css.reviewRemaining}>
 
-              <FieldSelect
-                className={css.features}
-                id="recommend"
+            <div className={css.sectionContainer}>
+            <h3 className={css.subTitle}>
+              <FormattedMessage id="ReviewForm.fit" />
+            </h3>
+              <div className={css.radioButtonRow}>
+              <FieldRadioButton
+                id="fitsmall"
+                name="fit"
+                label= "runs small"
+                value="runs small"
+                showAsRequired="please select yes or no"
+              />
+              <FieldRadioButton
+                id="fittruetosize"
+                name="fit"
+                label="fits true to size"
+                value="fits true to size"
+                showAsRequired="please select yes or no"
+              />
+               <FieldRadioButton
+                id="fitlarge"
+                name="fit"
+                label="runs large"
+                value="runs large"
+                showAsRequired="please select yes or no"
+              />
+            </div>
+            </div>
+
+            <div className={css.sectionContainer}>
+            <h3 className={css.subTitle}>
+              <FormattedMessage id="ReviewForm.recommend" />
+            </h3>
+              <div className={css.radioButtonRow}>
+              <FieldRadioButton
+                id="recommendyes"
                 name="recommend"
-                label={reviewRecommend}
-              >
-                <option id="yes" key="yes" value="yes">
-                  Yes
-                </option>
-                <option id="no" key="no" value="no">
-                  No
-                </option>
-                validate={required(reviewRecommendRequiredMessage)}
-              </FieldSelect>
+                label= "yes"
+                value="yes"
+                showAsRequired="please select yes or no"
+              />
+              <FieldRadioButton
+                id="recommendno"
+                name="recommend"
+                label="no"
+                value="no"
+                showAsRequired="please select yes or no"
+              />
+            </div>
+            </div>
 
-              <FieldSelect
-                className={css.features}
-                id="anonymous"
+            <div className={css.sectionContainer}>
+            <h3 className={css.subTitle}>
+              <FormattedMessage id="ReviewForm.anonymous" />
+            </h3>
+              <div className={css.radioButtonRow}>
+              <FieldRadioButton
+                id="anonymousyes"
                 name="anonymous"
-                label={reviewAnonymous}
-              >
-                <option id="yes" key="yes" value="yes">
-                  Yes
-                </option>
-                <option id="no" key="no" value="no">
-                  No
-                </option>
-                validate={required(reviewAnonymousdRequiredMessage)}
-              </FieldSelect>
+                label= "yes"
+                value="yes"
+                showAsRequired="please select yes or no"
+              />
+              <FieldRadioButton
+                id="anonymousno"
+                name="anonymous"
+                label="no"
+                value="no"
+                showAsRequired="please select yes or no"
+              />
+            </div>
+            </div>
+            
+              </div>
 
               {errorArea}
               <PrimaryButton

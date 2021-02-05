@@ -11,6 +11,11 @@ import {
   ExternalLink,
 } from '../../components';
 
+import published from './published.png';
+import verified from './verified.png';
+import writereview from './writereview.png';
+
+
 import css from './HelpPage.css';
 
 const HelpPage = () => {
@@ -38,58 +43,53 @@ const HelpPage = () => {
 
           <div className={css.contentWrapper}>
             <div className={css.contentMain}>
-            <div className={css.dividerline}>
-              <h2>
-              how it works.
-              </h2>
+            
+            <div className={css.contentRow}>
+              <div className={css.contentText}>
+                <p style={{fontWeight: 'bold'}}>Check if you have an eligible review</p>
+                <p>We only allow verified reviewers to post reviews.</p>
+                <p>If you have purchased from one of our partner brands and would like to write a review, create an account using the same email you used to make the purchase. </p>
+                <p>Go to "my reviews" and you will see the eligible review.</p>
+              
+              </div>
+              <div className={css.contentStep}>
+                <h4>001</h4>
+              </div>
+              <div className={css.contentIcon}>
+              <img className={css.graphic} src={verified} alt="verified review" />
+              </div>
+            </div>
 
-              <p>
-              All of the products on Revvie are shipped directly by the brands.
-              </p>
-              <p>
-              Please refer to "delivery & returns" on the product page to see available shipping rates. Most brands offer free shipping and several expedited options. 
-              </p>
-              <p>
-              International shipping is currently unavailable but we are working on it! Stay in touch and we'll let you know when it's up and running.
-              </p>
-</div>
+            <div className={css.contentRow}>
+              <div className={css.contentIcon}>
+                <img className={css.graphic} src={writereview} alt="writereview" />
+              </div>
+              <div className={css.contentStep}>
+                <h4>002</h4>
+              </div>
+              <div className={css.contentText}>
+                <p style={{fontWeight: 'bold'}}>Write the review</p>
+                <p>If you have an eligible review, open the form and fill out the review.</p>
+                <p>Remember, small brands rely on your voice and experience to help spread the word and establish trust in the brand and product. Make it count!</p>
+                <p>You can submit your review anonymously. Make sure to select the "anonymous" option before hitting submit!</p>              
+              </div>
+            </div>
 
-<div className={css.dividerline}>
-              <h2>
-              returns.
-              </h2>
-              <p>
-              Not happy with your order? 
-              </p>
-              <p>
-              No problem! We offer free (and easy) returns on eligible items (which are most regular priced items) that are within the brand's return window. 
-              </p>
-              <p>
-              Please note that final sale items may not be available for return. Refer to "delivery & returns" for each product to see if the item is eligible for a return and if so, the return window.
-              </p>
-              <h4>easy return instructions</h4>
-              <p>
-              If a product is eligible for return and is within the product's return window, do the following: 
-              </p>
-              <p>
-              1. Go to "my account" in the top right menu.
-              </p>
-              <p>
-              2. Click "my orders" on the left-hand menu and select the product you wish to return. 
-              </p>
-              <p>
-              3. Tap the "Return" button and fill in the form. Once you submit your request, you will receive a prepaid mailing label within 12 hours. 
-              </p>
-              <p>
-              4. Drop off your package at the relevant carrier's drop points. You are responsible for repacking and shipping the item on time. 
-              </p>
-              <p>
-              If the item is not eligible for return or if the return window has passed, the "Return" button will be greyed out. 
-                </p>
-</div>
-
+            <div className={css.contentRow}>
+                <div className={css.contentText}>
+                  <p style={{fontWeight: 'bold'}}>Hit "Publish" and you're good to go!</p>
+                  <p>Once you hit publish, your review will be available for others to see. </p>
+                  <p>Thank you so much for sharing your experience. We (and our designers) are so grateful.</p>
+                </div>
+                <div className={css.contentStep}>
+                  <h4>003</h4>
+                </div>
+                <div className={css.contentIcon}>
+                  <img className={css.graphic} src={published} alt="publishedreview" />
+                </div>
             </div>
           </div>
+        </div>
         </LayoutWrapperMain>
 
         <LayoutWrapperFooter>

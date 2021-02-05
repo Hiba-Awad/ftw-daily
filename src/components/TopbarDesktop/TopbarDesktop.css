@@ -126,12 +126,12 @@
   flex-shrink: 0;
   height: 100%;
   padding: 0 12px 0 12px;
-  color: var(--marketplaceColor);
+  color: var(--marketplaceColorDark);
   margin-top: 0;
   margin-bottom: 0;
 
   &:hover {
-    color: var(--marketplaceColorDark);
+    color: var(--marketplaceColor);
   }
 
   @media (--viewportMedium) {

@@ -29,6 +29,8 @@ import {
   TransactionPage,
   DP_avajamesnycPage,
   PH_avajamesnycPage,
+  DP_lafemmeaperoPage,
+  PH_lafemmeaperoPage,
   DP_metalandstonePage,
   PH_metalandstonePage,
   DP_marcobagaPage,
@@ -43,6 +45,10 @@ import {
   PH_rhondacolePage,
   DP_ouisaPage,
   PH_ouisaPage,
+  DP_sylthviragoPage,
+  PH_sylthviragoPage,
+  DP_harperthelabelPage,
+  PH_harperthelabelPage,
 } from './containers';
 
 // routeConfiguration needs to initialize containers first
@@ -466,6 +472,41 @@ const routeConfiguration = () => {
       component: props => <PH_ouisaPage {...props} />,
     },
 
+    {
+      path: '/designer-profile-la-femme-apero-lea-enderlin-sarah-lequimener',
+      name: 'la-femme-apero',
+      component: props => <DP_lafemmeaperoPage {...props} />,
+    },
+
+    {
+      path: '/product-highlight-la-robe-legere-fendue',
+      name: 'la-femme-apero-product',
+      component: props => <PH_lafemmeaperoPage {...props} />,
+    },
+
+    {
+      path: '/designer-profile-sylth-virago-danielle-goldman-athanasia-diamantis-svec',
+      name: 'sylth-virago',
+      component: props => <DP_sylthviragoPage {...props} />,
+    },
+
+    {
+      path: '/product-highlight-persephone-in-white-mocha-ocean',
+      name: 'sylth-virago-product',
+      component: props => <PH_sylthviragoPage {...props} />,
+    },
+
+    {
+      path: '/designer-profile-harper-the-label-claire-harper',
+      name: 'harper-the-label',
+      component: props => <DP_harperthelabelPage {...props} />,
+    },
+
+    {
+      path: '/product-highlight-storms-will-roll-crossbody',
+      name: 'harper-the-label-product',
+      component: props => <PH_harperthelabelPage {...props} />,
+    },
     // Do not change this path!
     //
     // The API expects that the application implements /reset-password endpoint

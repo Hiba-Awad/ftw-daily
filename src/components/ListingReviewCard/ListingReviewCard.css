@@ -3,19 +3,21 @@
 .root {
   /* Layout */
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 25px;
   width: 100%;
   background-color: #ffffff;
   box-shadow: var(--boxShadowListingCard);
+  padding: 10px;
 
 
   @media (--viewportMedium) {
-    width: 750px;
-    flex-direction: row;
-    padding: 5px 5px 5px 5px;
-    margin-bottom: 15px;
-
+    width: 425px;
+    height: 150px;
+    margin-left: 10px; 
+    margin-right: 10px;
   }
   /* Remove link's hover effect */
   &:hover {
@@ -28,10 +30,11 @@
   display: block;
   position: relative;
   transition: var(--transitionStyleButton);
-  width: 100%;
+  width: 35%;
   
   @media (--viewportMedium) {
-  width: 15%;
+  max-width: 125px;
+  max-height: 125px;
   }
 }
 
@@ -58,10 +61,12 @@
   flex-direction: row;
   margin-bottom: 15px;
   margin-top: 10px;
+  width: 300px; 
+  padding: 16px 20px 2px 20px;
 
   @media (--viewportMedium) {
     padding: 16px 20px 2px 20px;
-    width: 500px;
+    width: 500px; 
   }
   
 }
@@ -111,6 +116,7 @@
 .mainInfo {
   display: flex;
   flex-direction: column;
+
 }
 
 .title {

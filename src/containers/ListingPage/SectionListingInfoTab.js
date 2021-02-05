@@ -20,7 +20,7 @@ const SectionListingInfoTab = props => {
   const [selectedTab, setSelectedTab] = useState('');
   const handleChange = selectedTab => () => {
     setSelectedTab(selectedTab);  
-  };
+  }; 
   const infoTabs = [
     {
       text: <div className={css.headerTab}>editor's note</div>,
@@ -53,7 +53,7 @@ const SectionListingInfoTab = props => {
     return (
       <div className={css.SectionListingInfoTab}>
         <div className={css.sectionButtonTabNavHorizontal}>
-          <ButtonTabNavHorizontal className={css.variants} tabs={infoTabs} />
+          <ButtonTabNavHorizontal className={css.variants} tabs={infoTabs} skin="light"/>
         </div>
         <p className={css.infoTab}>
           {richText(publicData[selectedTab], {
