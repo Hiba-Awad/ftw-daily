@@ -6,6 +6,7 @@ import { ButtonTabNavHorizontal } from '../../components';
 import { richText } from '../../util/richText';
 import { FormattedMessage } from '../../util/reactIntl';
 import css from './ListingPage.css';
+import SectionReviews from './SectionReviews';
 
 const EDITOR_NOTE = 'editors_note';
 const SIZE_FIT = 'size_fit';
@@ -15,11 +16,18 @@ const REVIEWS = 'reviews';
 const MIN_LENGTH_FOR_LONG_WORDS_IN_DESCRIPTION = 20;
 
 const SectionListingInfoTab = props => {
-  const { className, rootClassName, publicData } = props;
+  const {
+    className,
+    rootClassName,
+    publicData,
+    onManageDisableScrolling,
+    reviews,
+    fetchReviewsError,
+  } = props;
   const classes = classNames(rootClassName || css.root, className);
-  const [selectedTab, setSelectedTab] = useState('');
+  const [selectedTab, setSelectedTab] = useState(EDITOR_NOTE);
   const handleChange = selectedTab => () => {
-    setSelectedTab(selectedTab);  
+    setSelectedTab(selectedTab);
   };
   const infoTabs = [
     {
@@ -37,11 +45,7 @@ const SectionListingInfoTab = props => {
       selected: selectedTab === { DETAILS_CARE },
       onClick: handleChange(DETAILS_CARE),
     },
-    {
-      text: <div className={css.headerTab}>delivery & returns</div>,
-      selected: selectedTab === { SHIPPING },
-      onClick: handleChange(SHIPPING),
-    },
+
     {
       text: <div className={css.headerTab}>reviews</div>,
       selected: selectedTab === { REVIEWS },
@@ -49,17 +53,34 @@ const SectionListingInfoTab = props => {
     },
   ];
 
-  if (publicData && publicData.category) {
+  const tabContent = selectedTab => {
+    switch (selectedTab) {
+      case REVIEWS:
+        return (
+          <SectionReviews
+            onManageDisableScrolling={onManageDisableScrolling}
+            reviews={reviews}
+            fetchReviewsError={fetchReviewsError}
+          />
+        );
+      default:
+        return (
+          <p className={css.infoTab}>
+            {richText(publicData[selectedTab], {
+              longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS_IN_DESCRIPTION,
+            })}
+          </p>
+        );
+    }
+  };
+
+  if (publicData && publicData.details_care) {
     return (
       <div className={css.SectionListingInfoTab}>
         <div className={css.sectionButtonTabNavHorizontal}>
           <ButtonTabNavHorizontal className={css.variants} tabs={infoTabs} />
         </div>
-        <p className={css.infoTab}>
-          {richText(publicData[selectedTab], {
-            longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS_IN_DESCRIPTION,
-          })}
-        </p>
+        {tabContent(selectedTab)}
       </div>
     );
   } else {

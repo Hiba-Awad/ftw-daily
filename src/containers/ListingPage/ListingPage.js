@@ -460,7 +460,12 @@ export class ListingPageComponent extends Component {
                     fetchLineItemsInProgress={fetchLineItemsInProgress}
                     fetchLineItemsError={fetchLineItemsError}
                   />
-                  <SectionListingInfoTab publicData={publicData} />
+                  <SectionListingInfoTab
+                    publicData={publicData}
+                    onManageDisableScrolling={onManageDisableScrolling}
+                    reviews={reviews}
+                    fetchReviewsError={fetchReviewsError}
+                  />
                 </div>
               </div>
             </div>

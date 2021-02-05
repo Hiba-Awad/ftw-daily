@@ -196,18 +196,18 @@ export const fetchOrders = userEmail => (dispatch, getState, sdk) => {
     .get(`/orders/${userEmail}`)
     .then(response => {
       let orders = response.data;
-      let featchListingPromises = [];
+      let fetchListingPromises = [];
       orders.forEach(element => {
         const listingUUID = element.listingUUID;
 
-        const featchListingPromise = dispatch(getListingInformation(listingUUID)).then(data => {
+        const fetchListingPromise = dispatch(getListingInformation(listingUUID)).then(data => {
           console.log('DENORMALIZED HELL');
           console.log(data);
           element.listing = data[0];
         });
-        featchListingPromises.push(featchListingPromise);
+        fetchListingPromises.push(fetchListingPromise);
       });
-      Promise.all(featchListingPromises).then(() => {
+      Promise.all(fetchListingPromises).then(() => {
         dispatch(fetchOrdersSuccess(orders));
       });
     })
@@ -224,9 +224,9 @@ export const fetchReviews = userEmail => (dispatch, getState, sdk) => {
     .then(response => {
       let data = response.data;
       const { currentUser } = getState().user;
-      const author = ensureCurrentUser(currentUser);
+      const user = ensureCurrentUser(currentUser);
       let reviews = data.map(review => {
-        review.author = author;
+        review.user = user;
         return review;
       });
 

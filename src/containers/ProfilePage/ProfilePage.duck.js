@@ -3,6 +3,7 @@ import { fetchCurrentUser } from '../../ducks/user.duck';
 import { denormalisedResponseEntities } from '../../util/data';
 import { storableError } from '../../util/errors';
 import { util as sdkUtil } from '../../util/sdkLoader';
+import axios from 'axios';
 
 // ================ Action types ================ //
 
@@ -129,16 +130,16 @@ export const queryUserListings = userId => (dispatch, getState, sdk) => {
       author_id: userId,
       include: ['author', 'images'],
       'fields.image': ['variants.portrait-crop', 'variants.portrait-crop2x'],
-   'imageVariant.portrait-crop': sdkUtil.objectQueryString({
-     w: 400,
-     h: 600,
-     fit: 'scale',
-   }),
-   'imageVariant.portrait-crop2x': sdkUtil.objectQueryString({
-     w: 800,
-     h: 1200,
-     fit: 'scale',
-   }),
+      'imageVariant.portrait-crop': sdkUtil.objectQueryString({
+        w: 400,
+        h: 600,
+        fit: 'scale',
+      }),
+      'imageVariant.portrait-crop2x': sdkUtil.objectQueryString({
+        w: 800,
+        h: 1200,
+        fit: 'scale',
+      }),
     })
     .then(response => {
       // Pick only the id and type properties from the response listings
@@ -151,15 +152,12 @@ export const queryUserListings = userId => (dispatch, getState, sdk) => {
 };
 
 export const queryUserReviews = userId => (dispatch, getState, sdk) => {
-  sdk.reviews
-    .query({
-      subject_id: userId,
-      state: 'public',
-      include: ['author', 'author.profileImage'],
-      'fields.image': ['variants.square-small', 'variants.square-small2x'],
-    })
+  return axios
+    .get('/reviewsBrand', { params: { brandUUID: userId.uuid } })
     .then(response => {
-      const reviews = denormalisedResponseEntities(response);
+      const reviews = response.data;
+      console.log(response);
+      console.log(response.data);
       dispatch(queryReviewsSuccess(reviews));
     })
     .catch(e => dispatch(queryReviewsError(e)));

@@ -63,12 +63,13 @@ const Review = props => {
   } = review;
   const [imageCarouselOpen, setImageCarouselOpen] = React.useState(false);
   const date = createdAt;
-  const dateString = intl.formatDate(date, { month: 'long', year: 'numeric' });
+  const dateString = intl.formatDate(date, { month: 'long', day: 'numeric', year: 'numeric' });
   const authorInfo = anonymous ? null : (
     <p className={css.error}>
       <UserDisplayName user={user} intl={intl} />
     </p>
   );
+  const { email, weight, heigh } = userData;
 
   const handleViewPhotosClick = e => {
     // Stop event from bubbling up to prevent image click handler
@@ -116,6 +117,8 @@ const Review = props => {
           <p className={css.reviewInfo}>{authorInfo}</p>
           <p className={css.reviewInfo}>Fit: {fit}</p>
           <p className={css.reviewInfo}>Recommend? {recommend}</p>
+          <p className={css.weight}>{weight}</p>
+          <p className={css.heigh}>{heigh}</p>
         </div>
       </div>
     </div>

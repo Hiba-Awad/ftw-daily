@@ -69,6 +69,7 @@ export const ReviewDetailsPageComponent = props => {
     });
     const params = {
       listingUUID: orderToReview.listingUUID,
+      brandUUID: orderToReview.brandUUID,
       email: currentUser.attributes.email,
       ...updateValues,
     };
@@ -120,7 +121,10 @@ export const ReviewDetailsPageComponent = props => {
             <Reviews onManageDisableScrolling={onManageDisableScrolling} reviews={reviews} />
           </div>
           <h2 className={css.reviewsHeading}>
-            <FormattedMessage id="ListingPage.reviewsHeading2" values={{ count: reviews.length }} />
+            <FormattedMessage
+              id="ListingPage.reviewsHeading2"
+              values={{ count: ordersToReview.length }}
+            />
           </h2>
           <div className={css.content}>{orderReviewCards}</div>
           <div className={css.content}>{reviewModal}</div>
