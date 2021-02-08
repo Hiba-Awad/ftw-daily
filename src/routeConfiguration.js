@@ -49,6 +49,8 @@ import {
   PH_sylthviragoPage,
   DP_harperthelabelPage,
   PH_harperthelabelPage,
+  DP_primoluxePage,
+  PH_primoluxePage,
 } from './containers';
 
 // routeConfiguration needs to initialize containers first
@@ -390,6 +392,7 @@ const routeConfiguration = () => {
       name: 'ava-james-nyc-product',
       component: props => <PH_avajamesnycPage {...props} />,
     },
+  
     {
       path: '/designer-profile-metal-and-stone-creations-lisette-bez',
       name: 'metal-and-stone-creations',
@@ -506,6 +509,18 @@ const routeConfiguration = () => {
       path: '/product-highlight-storms-will-roll-crossbody',
       name: 'harper-the-label-product',
       component: props => <PH_harperthelabelPage {...props} />,
+    },
+
+    {
+      path: '/designer-profile-primo-luxe-georgette-mcgriff',
+      name: 'primo-luxe',
+      component: props => <DP_primoluxePage {...props} />,
+    },
+
+    {
+      path: '/product-highlight-storms-will-roll-crossbody',
+      name: 'primo-luxe-product',
+      component: props => <PH_primoluxePage {...props} />,
     },
     // Do not change this path!
     //

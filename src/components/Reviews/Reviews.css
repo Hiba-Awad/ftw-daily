@@ -4,6 +4,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
+  padding-top: 15px;
 
   &:hover {
     transform: scale(1.02);
@@ -24,6 +25,8 @@
 .sectionImages {
   max-width: 100%;
   height: auto;
+  cursor: pointer;
+
 }
 
 .viewPhotos {
@@ -52,7 +55,7 @@
 }
 
 .review {
-  padding: 10px;
+  padding: 20px;
   display: flex;
   flex-direction: row;
   box-shadow: var(--boxShadowListingCard);
@@ -102,7 +105,7 @@
   font-size: 12px;
   margin-top: 2px;
   margin-bottom: 0px;
-  color: var(--matterColorAnti);
+  color: var(--matterColorDark);
 
   @media (--viewportMedium) {
     margin-top: 2px;
@@ -164,4 +167,29 @@
   &:last-of-type {
     margin-right: 0;
   }
+}
+
+.reviewDate {
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.bodyStats {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding-bottom: 2px;
+  height: 25px;
+}
+
+.height {
+  @apply --marketplaceDefaultFontStyles;
+  font-size: 12px;
+}
+
+.weight {
+  @apply --marketplaceDefaultFontStyles;
+  font-size: 12px;
 }

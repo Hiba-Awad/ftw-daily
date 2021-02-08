@@ -69,7 +69,7 @@ const Review = props => {
       <UserDisplayName user={user} intl={intl} />
     </p>
   );
-  const { email, weight, heigh } = userData;
+  const { email, weight, height } = userData;
 
   const handleViewPhotosClick = e => {
     // Stop event from bubbling up to prevent image click handler
@@ -111,14 +111,25 @@ const Review = props => {
         <div className={css.containerRightTop}>
           <p className={css.reviewDate}>{dateString}</p>
           {/*}<Avatar className={css.avatar} user={user} />{*/}
+          <p className={css.reviewInfo}><b>Recommend?</b> {recommend}</p>
         </div>
         <div className={css.textContent}>
           <p className={css.reviewContent}>"{comments}"</p>
           <p className={css.reviewInfo}>{authorInfo}</p>
-          <p className={css.reviewInfo}>Fit: {fit}</p>
-          <p className={css.reviewInfo}>Recommend? {recommend}</p>
-          <p className={css.weight}>{weight}</p>
-          <p className={css.heigh}>{heigh}</p>
+          <div className={css.bodyStats}>
+            <p className={css.height}>Height: {height}</p>
+            <p className={css.height}>Weight (lbs): {weight}</p>
+          </div>
+          <div className={css.bodyStats}>
+            <p className={css.height}>Bust (in): {height}</p>
+            <p className={css.height}>Waist (in): {weight}</p>
+            <p className={css.height}>Hips (in): {weight}</p>
+          </div>
+          <div className={css.bodyStats}>
+             <p className={css.height}>Fit: {fit}</p>
+            <p className={css.height}>Size Purchased: </p>
+          </div>
+          
         </div>
       </div>
     </div>

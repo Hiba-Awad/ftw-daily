@@ -24,6 +24,7 @@ import {
   ListingCard,
   Reviews,
   ButtonTabNavHorizontal,
+  ExternalLink,
 } from '../../components';
 import { TopbarContainer, NotFoundPage } from '../../containers';
 import { loadData } from './ProfilePage.duck';
@@ -69,6 +70,8 @@ export class ProfilePageComponent extends Component {
     const designerProfileLink = profileUser.attributes.profile.publicData.designer_profile;
     const productHighlightLink = profileUser.attributes.profile.publicData.product_highlight;
     console.log(designerProfileLink);
+    const websiteLink = profileUser.attributes.profile.publicData.url;
+
     const bio = profileUser.attributes.profile.bio;
     const hasBio = !!bio;
     const hasListings = listings.length > 0;
@@ -130,7 +133,7 @@ export class ProfilePageComponent extends Component {
         </h1>
         {hasBio ? <p className={css.bio}>{bio}</p> : null}
         <div className={css.bioLinks}>
-          <FreeBreakfastOutlinedIcon style={{ color: 'black' }}></FreeBreakfastOutlinedIcon>
+          <FreeBreakfastOutlinedIcon className={css.icon} style={{ color: 'black' }}></FreeBreakfastOutlinedIcon>
           {hasBio ? (
             <NamedLink className={css.outboundLink} name={designerProfileLink}>
               <FormattedMessage id="ProfilePage.designerProfile" />
@@ -138,7 +141,7 @@ export class ProfilePageComponent extends Component {
           ) : null}
         </div>
         <div className={css.bioLinks}>
-          <HighlightOutlinedIcon style={{ color: 'black' }}></HighlightOutlinedIcon>
+          <HighlightOutlinedIcon className={css.icon} style={{ color: 'black' }}></HighlightOutlinedIcon>
           {hasBio ? (
             <NamedLink className={css.outboundLink} name={productHighlightLink}>
               <FormattedMessage id="ProfilePage.productHighlight" />
@@ -146,11 +149,17 @@ export class ProfilePageComponent extends Component {
           ) : null}
         </div>
         <div className={css.bioLinks}>
-        <BookmarkIcon style={{ color: "black"}}></BookmarkIcon>
-        {hasBio ? <NamedLink className={css.outboundLink} name={productHighlightLink}>
-        <FormattedMessage id="ProfilePage.productHighlight" />
-        </NamedLink> : null}
+        <BookmarkIcon className={css.icon} style={{ color: "black"}}></BookmarkIcon>
+        {hasBio ? <ExternalLink className={css.outboundLink} href={websiteLink}>
+        {websiteLink}
+        </ExternalLink> : null}
         </div>
+        <h2 className={css.listingsTitle}>
+              <FormattedMessage
+                id="ProfilePage.reviewsTitle"
+                values={{ count: reviews.length }}
+              />
+            </h2>
         {isMobileLayout ? mobileReviews : desktopReviews}
         {hasListings ? (
           <div className={listingsContainerClasses}>
