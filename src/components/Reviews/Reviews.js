@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { injectIntl, intlShape, FormattedMessage } from '../../util/reactIntl';
 
 import { arrayOf, string } from 'prop-types';
@@ -26,14 +26,16 @@ const ReviewImages = props => {
   ) : null;
 
   return (
-    <div className={css.sectionImages} onClick={handleViewPhotosClick}>
-      <ResponsiveImage
-        rootClassName={css.rootForImage}
-        image={firstImage}
-        variants={['scaled-medium']}
-        sizes="(max-width: 767px) 100vw, 80vw"
-      />
-      {viewPhotosButton}
+    <div>
+      <div className={css.sectionImages} onClick={handleViewPhotosClick}>
+        <ResponsiveImage
+          rootClassName={css.rootForImage}
+          image={firstImage}
+          variants={['scaled-medium']}
+          sizes="(max-width: 767px) 100vw, 80vw"
+        />
+        {viewPhotosButton}
+      </div>
       <Modal
         id="Reviews.imageCarousel"
         scrollLayerClassName={css.carouselModalScrollLayer}
@@ -41,6 +43,7 @@ const ReviewImages = props => {
         isOpen={imageCarouselOpen}
         onClose={onImageCarouselClose}
         onManageDisableScrolling={onManageDisableScrolling}
+        usePortal
       >
         <ImageCarousel className={css.ImageCarousel} images={images} />
       </Modal>
@@ -52,24 +55,26 @@ const Review = props => {
   const { review, onManageDisableScrolling, intl } = props;
   const {
     user,
+    listing,
     recommend,
     listingUUID,
     imageUrls,
     fit,
     anonymous,
+    variant,
     comments,
     userData,
     createdAt,
   } = review;
-  const [imageCarouselOpen, setImageCarouselOpen] = React.useState(false);
+  const [imageCarouselOpen, setImageCarouselOpen] = useState(false);
   const date = createdAt;
-  const dateString = intl.formatDate(date, { month: 'long', day: 'numeric', year: 'numeric' });
+  const dateString = intl.formatDate(date, { month: 'short', day: 'numeric', year: 'numeric' });
   const authorInfo = anonymous ? null : (
-    <p className={css.error}>
-      <UserDisplayName user={user} intl={intl} />
+    <p className={css.reviewDate}>
+      by <UserDisplayName user={user} intl={intl} />
     </p>
   );
-  const { email, weight, height } = userData;
+  const { email, weight, height, bust, waist, hips } = userData;
 
   const handleViewPhotosClick = e => {
     // Stop event from bubbling up to prevent image click handler
@@ -111,25 +116,27 @@ const Review = props => {
         <div className={css.containerRightTop}>
           <p className={css.reviewDate}>{dateString}</p>
           {/*}<Avatar className={css.avatar} user={user} />{*/}
-          <p className={css.reviewInfo}><b>Recommend?</b> {recommend}</p>
+          <p>{authorInfo}</p>
         </div>
         <div className={css.textContent}>
           <p className={css.reviewContent}>"{comments}"</p>
-          <p className={css.reviewInfo}>{authorInfo}</p>
-          <div className={css.bodyStats}>
+          <div className={css.bodyStats1}>
             <p className={css.height}>Height: {height}</p>
             <p className={css.height}>Weight (lbs): {weight}</p>
           </div>
-          <div className={css.bodyStats}>
-            <p className={css.height}>Bust (in): {height}</p>
-            <p className={css.height}>Waist (in): {weight}</p>
-            <p className={css.height}>Hips (in): {weight}</p>
+          <div className={css.bodyStats1}>
+            <p className={css.height}>Bust-Waist-Hips (in): </p>
+            <p className={css.height}>{bust}"-</p>
+            <p className={css.height}>{waist}"-</p>
+            <p className={css.height}>{hips}"</p>
           </div>
-          <div className={css.bodyStats}>
+          <div className={css.bodyStats1}>
              <p className={css.height}>Fit: {fit}</p>
-            <p className={css.height}>Size Purchased: </p>
+            <p className={css.height}>Variant: {variant}</p>
           </div>
-          
+          <div className={css.bodyStats}>
+          <p className={css.height}><b>Recommend?</b> {recommend}</p>
+          </div>
         </div>
       </div>
     </div>

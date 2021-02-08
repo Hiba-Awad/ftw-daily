@@ -39,10 +39,6 @@ const ContactUsPage = () => {
           <div className={css.contentWrapper}>
             <div className={css.contentMain}>
               <div className={css.dividerline}>
- 
-              <p>
-              Do you have questions about your order? 
-              </p>
               <p> 
               Are you a designer who wants to join us? 
               </p>

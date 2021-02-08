@@ -6,28 +6,23 @@
   flex-direction: column;
   padding-top: 15px;
 
-  &:hover {
-    transform: scale(1.02);
-  }
 
   @media (--viewportMedium) {
-    flex-direction: column;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
   }
 
-@media (--viewportLarge) {
-  flex-direction: row;
-  max-width: 100%;
-  flex-wrap: wrap;
-}
 
 }
 
 .sectionImages {
+
+  cursor: pointer;
   max-width: 100%;
   height: auto;
-  cursor: pointer;
-
 }
+
 
 .viewPhotos {
   font-size: 10px;
@@ -35,6 +30,7 @@
   color: var(--marketplaceColorLight);
   border: none;
   padding: 3px 3px 3px 3px;
+  line-height: 1;
 
   &:hover {
     color: var(--marketplaceColorDark);
@@ -43,27 +39,30 @@
 }
 
 .reviewItem {
-  margin-bottom: 32px;
+  margin-bottom: 25px;
 
-  &:last-of-type {
-    margin-bottom: 0;
-  }
 
   @media (--viewportMedium) {
-    margin-bottom: 39px;
+    margin-bottom: 25px;
   }
 }
 
 .review {
   padding: 20px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   box-shadow: var(--boxShadowListingCard);
 
+  &:hover {
+    transform: scale(1.02);
+  }
+
   @media (--viewportMedium) {
-  width: 425px;
+  width: 350px;
   height: 250px;
-  margin: 10px;
+  margin: 5px;
+  flex-direction: row;
+
   }
 }
 
@@ -74,6 +73,10 @@
 }
 
 .containerLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
   padding: 5px;
   max-width: 125px;
 }
@@ -82,27 +85,34 @@
   padding: 5px;
   display: flex;
   flex-direction: column;
+  width: 100%;
+
+  @media (--viewportMedium) {
   width: 75%;
 }
-
+}
 .containerRightTop {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  height: 15px;
+  margin-bottom: 20px;
 }
 
 .reviewContent {
   @apply --marketplaceBodyFontStyles;
   font-family: 'Georgia';
-  font-size: 12px;
+  font-size: 10px;
   margin: 0;
   white-space: pre-line;
+  height: 50px;
+  line-height: 1.1;
 }
 
 .reviewInfo {
   @apply --marketplaceDefaultFontStyles;
-  font-size: 12px;
+  font-size: 10px;
   margin-top: 2px;
   margin-bottom: 0px;
   color: var(--matterColorDark);
@@ -172,21 +182,41 @@
 .reviewDate {
   font-size: 10px;
   font-weight: 400;
+  margin-top: 0px;
+  margin-bottom: 5px;
 }
 
 .bodyStats {
   display: flex;
+  flex-direction: column;
+  line-height: 1;
+
+  @media (--viewportMedium) {
+    flex-direction: row;
+    justify-content: space-between;
+    height: 20px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding-bottom: 2px;
+
+  }
+
+}
+
+.bodyStats1 {
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
+  height: 20px;
   margin-top: 2px;
   margin-bottom: 2px;
   padding-bottom: 2px;
-  height: 25px;
 }
 
 .height {
   @apply --marketplaceDefaultFontStyles;
-  font-size: 12px;
+  font-size: 10px;
+  line-height: 1;
 }
 
 .weight {

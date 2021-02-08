@@ -63,7 +63,7 @@ export class ReviewFormComponent extends Component {
         onImageUploadHandler={this.onImageUploadHandler}
         onRemoveImage={this.onRemoveImage}
         images={this.state.images}
-        initialValues={{ images: this.state.images }}
+        initialValues={{ images: this.state.images, recommend: true, anonymous: true }}
         render={fieldRenderProps => {
           const {
             className,
@@ -211,138 +211,143 @@ export class ReviewFormComponent extends Component {
               />
 
               <div className={css.bodyStats}>
-              <FieldSelect
-                className={css.reviewContentBody}
-                id={formId ? `${formId}.reviewContent` : 'reviewContent'}
-                name="height"
-                label="height*"
-              >
-                <option value="5'0">shorter than 5'0</option>
-                <option value="5'0">5'0</option>
-                <option value="5'1">5'1</option>
-                <option value="5'2">5'2</option>
-                <option value="5'3">5'3</option>
-                <option value="5'4">5'4</option>
-                <option value="5'5">5'5</option>
-                <option value="5'6">5'6</option>
-                <option value="5'7">5'7</option>
-                <option value="5'4">5'8</option>
-                <option value="5'5">5'9</option>
-                <option value="5'6">6'0</option>
-                <option value="5'7">taller than 6'0</option>
-              </FieldSelect>
+                <FieldSelect
+                  className={css.reviewContentBody}
+                  id={formId ? `${formId}.reviewContent` : 'reviewContent'}
+                  name="height"
+                  label="height*"
+                >
+                  <option value="5'0">shorter than 5'0</option>
+                  <option value="5'0">5'0</option>
+                  <option value="5'1">5'1</option>
+                  <option value="5'2">5'2</option>
+                  <option value="5'3">5'3</option>
+                  <option value="5'4">5'4</option>
+                  <option value="5'5">5'5</option>
+                  <option value="5'6">5'6</option>
+                  <option value="5'7">5'7</option>
+                  <option value="5'4">5'8</option>
+                  <option value="5'5">5'9</option>
+                  <option value="5'6">6'0</option>
+                  <option value="5'7">taller than 6'0</option>
+                </FieldSelect>
 
-              <FieldTextInput
-                className={css.reviewContentBody}
-                type="textarea"
-                id={formId ? `${formId}.weight` : 'weight'}
-                name="weight"
-                label="weight* (lbs)"
-                placeholder="120lbs"
-              />
+                <FieldTextInput
+                  className={css.reviewContentBody}
+                  type="textarea"
+                  id={formId ? `${formId}.weight` : 'weight'}
+                  name="weight"
+                  label="weight* (lbs)"
+                  placeholder="150lbs"
+                />
               </div>
 
-        <div className={css.reviewContentStats}>
-              <FieldTextInput
-                className={css.stats}
-                type="textarea"
-                id={formId ? `${formId}.bust` : 'bust'}
-                name="bust"
-                label="bust (inches)"
-              />
+              <div className={css.reviewContentStats}>
+                <FieldTextInput
+                  className={css.stats}
+                  type="textarea"
+                  id={formId ? `${formId}.bust` : 'bust'}
+                  name="bust"
+                  label="bust (inches)"
+                />
 
-              <FieldTextInput
-                className={css.stats}
-                type="textarea"
-                id={formId ? `${formId}.waist` : 'waist'}
-                name="waist"
-                label="waist (inches)"
-              />
+                <FieldTextInput
+                  className={css.stats}
+                  type="textarea"
+                  id={formId ? `${formId}.waist` : 'waist'}
+                  name="waist"
+                  label="waist (inches)"
+                />
 
-              <FieldTextInput
-                className={css.stats}
-                type="textarea"
-                id={formId ? `${formId}.hips` : 'hips'}
-                name="hips"
-                label="hips (inches)"
-              />
+                <FieldTextInput
+                  className={css.stats}
+                  type="textarea"
+                  id={formId ? `${formId}.hips` : 'hips'}
+                  name="hips"
+                  label="hips (inches)"
+                />
               </div>
 
               <div className={css.reviewRemaining}>
+                <div className={css.sectionContainer}>
+                  <h3 className={css.subTitle}>
+                    <FormattedMessage id="ReviewForm.fit" />
+                  </h3>
+                  <div className={css.radioButtonRow}>
+                    <FieldRadioButton
+                      id="fitsmall"
+                      name="fit"
+                      label="Runs small"
+                      value="Runs small"
+                      showAsRequired="please select yes or no"
+                    />
+                    <FieldRadioButton
+                      id="fittruetosize"
+                      name="fit"
+                      label="True to size"
+                      value="True to size"
+                      showAsRequired="please select yes or no"
+                    />
+                    <FieldRadioButton
+                      id="fitlarge"
+                      name="fit"
+                      label="Runs large"
+                      value="Runs large"
+                      showAsRequired="please select yes or no"
+                    />
+                    <FieldRadioButton
+                      id="fitna"
+                      name="fit"
+                      label="n/a"
+                      value="n/a"
+                      showAsRequired="please select yes or no"
+                    />
+                  </div>
+                </div>
 
-            <div className={css.sectionContainer}>
-            <h3 className={css.subTitle}>
-              <FormattedMessage id="ReviewForm.fit" />
-            </h3>
-              <div className={css.radioButtonRow}>
-              <FieldRadioButton
-                id="fitsmall"
-                name="fit"
-                label= "runs small"
-                value="runs small"
-                showAsRequired="please select yes or no"
-              />
-              <FieldRadioButton
-                id="fittruetosize"
-                name="fit"
-                label="fits true to size"
-                value="fits true to size"
-                showAsRequired="please select yes or no"
-              />
-               <FieldRadioButton
-                id="fitlarge"
-                name="fit"
-                label="runs large"
-                value="runs large"
-                showAsRequired="please select yes or no"
-              />
-            </div>
-            </div>
+                <div className={css.sectionContainer}>
+                  <h3 className={css.subTitle}>
+                    <FormattedMessage id="ReviewForm.recommend" />
+                  </h3>
+                  <div className={css.radioButtonRow}>
+                    <FieldRadioButton
+                      id="recommendyes"
+                      name="recommend"
+                      label="Yes"
+                      value={true}
+                      showAsRequired="please select yes or no"
+                    />
+                    <FieldRadioButton
+                      id="recommendno"
+                      name="recommend"
+                      label="No"
+                      value={false}
+                      showAsRequired="please select yes or no"
+                    />
+                  </div>
+                </div>
 
-            <div className={css.sectionContainer}>
-            <h3 className={css.subTitle}>
-              <FormattedMessage id="ReviewForm.recommend" />
-            </h3>
-              <div className={css.radioButtonRow}>
-              <FieldRadioButton
-                id="recommendyes"
-                name="recommend"
-                label= "yes"
-                value="yes"
-                showAsRequired="please select yes or no"
-              />
-              <FieldRadioButton
-                id="recommendno"
-                name="recommend"
-                label="no"
-                value="no"
-                showAsRequired="please select yes or no"
-              />
-            </div>
-            </div>
-
-            <div className={css.sectionContainer}>
-            <h3 className={css.subTitle}>
-              <FormattedMessage id="ReviewForm.anonymous" />
-            </h3>
-              <div className={css.radioButtonRow}>
-              <FieldRadioButton
-                id="anonymousyes"
-                name="anonymous"
-                label= "yes"
-                value="yes"
-                showAsRequired="please select yes or no"
-              />
-              <FieldRadioButton
-                id="anonymousno"
-                name="anonymous"
-                label="no"
-                value="no"
-                showAsRequired="please select yes or no"
-              />
-            </div>
-            </div>
-            
+                <div className={css.sectionContainer}>
+                  <h3 className={css.subTitle}>
+                    <FormattedMessage id="ReviewForm.anonymous" />
+                  </h3>
+                  <div className={css.radioButtonRow}>
+                    <FieldRadioButton
+                      id="anonymousyes"
+                      name="anonymous"
+                      label="yes"
+                      value={true}
+                      showAsRequired="please select yes or no"
+                    />
+                    <FieldRadioButton
+                      id="anonymousno"
+                      name="anonymous"
+                      label="no"
+                      value={false}
+                      showAsRequired="please select yes or no"
+                    />
+                  </div>
+                </div>
               </div>
 
               {errorArea}

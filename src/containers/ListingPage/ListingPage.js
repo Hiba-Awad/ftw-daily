@@ -462,6 +462,7 @@ export class ListingPageComponent extends Component {
                   />
                   <SectionListingInfoTab
                     publicData={publicData}
+                    description={description}
                     onManageDisableScrolling={onManageDisableScrolling}
                     reviews={reviews}
                     fetchReviewsError={fetchReviewsError}

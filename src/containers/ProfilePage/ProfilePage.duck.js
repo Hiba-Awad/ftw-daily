@@ -3,7 +3,10 @@ import { fetchCurrentUser } from '../../ducks/user.duck';
 import { denormalisedResponseEntities } from '../../util/data';
 import { storableError } from '../../util/errors';
 import { util as sdkUtil } from '../../util/sdkLoader';
+import { types as sdkTypes } from '../../util/sdkLoader';
+
 import axios from 'axios';
+const { UUID } = sdkTypes;
 
 // ================ Action types ================ //
 
@@ -150,15 +153,76 @@ export const queryUserListings = userId => (dispatch, getState, sdk) => {
     })
     .catch(e => dispatch(queryListingsError(storableError(e))));
 };
+const getUser = userId => (dispatch, getState, sdk) => {
+  return sdk.users
+    .show({
+      id: userId,
+      include: ['profileImage'],
+      'fields.image': ['variants.square-small', 'variants.square-small2x'],
+    })
+    .then(response => {
+      return denormalisedResponseEntities(response);
+    })
+    .catch(e => dispatch(queryReviewsError(storableError(e))));
+};
 
+const getListingInformation = listingUUID => (dispatch, getState, sdk) => {
+  const listingId = new UUID(listingUUID);
+  const params = {
+    id: listingId,
+    include: ['author', 'author.profileImage', 'images'],
+    'fields.image': [
+      // Listing page
+      'variants.landscape-crop',
+      'variants.landscape-crop2x',
+      'variants.landscape-crop4x',
+      'variants.landscape-crop6x',
+    ],
+    'imageVariant.portrait-crop': sdkUtil.objectQueryString({
+      w: 400,
+      h: 600,
+      fit: 'scale',
+    }),
+    'imageVariant.portrait-crop2x': sdkUtil.objectQueryString({
+      w: 800,
+      h: 1200,
+      fit: 'scale',
+    }),
+  };
+  return sdk.listings
+    .show(params)
+    .then(response => {
+      console.log(response);
+      return denormalisedResponseEntities(response);
+    })
+    .catch(e => {
+      dispatch(queryReviewsError(storableError(e)));
+    });
+};
 export const queryUserReviews = userId => (dispatch, getState, sdk) => {
   return axios
     .get('/reviewsBrand', { params: { brandUUID: userId.uuid } })
     .then(response => {
-      const reviews = response.data;
-      console.log(response);
-      console.log(response.data);
-      dispatch(queryReviewsSuccess(reviews));
+      let reviews = response.data;
+
+      let fetchPromises = [];
+      reviews.forEach(element => {
+        const listingUUID = element.listingUUID;
+        const userUUID = element.userUUID;
+        const fetchListingPromise = dispatch(getListingInformation(listingUUID)).then(data => {
+          element.listing = data[0];
+        });
+        fetchPromises.push(fetchListingPromise);
+        if (userUUID) {
+          const fetchUserPromise = dispatch(getUser(userUUID)).then(data => {
+            element.user = data[0];
+          });
+          fetchPromises.push(fetchUserPromise);
+        }
+      });
+      Promise.all(fetchPromises).then(() => {
+        dispatch(queryReviewsSuccess(reviews));
+      });
     })
     .catch(e => dispatch(queryReviewsError(e)));
 };
