@@ -15,7 +15,11 @@ import formerlyyanImage from './images/formerlyyan.jpg';
 import ouisaImage from './images/ouisa.jpg';
 import arteagaImage from './images/arteaga.jpg';
 import rhondacoleImage from './images/rhondacole.jpg';
-import spinozaImage from './images/spinoza.jpeg';
+import spinozaImage from './images/spinoza.jpg';
+import lafemmeaperoImage from './images/lafemmeapero.jpg';
+import sylthviragoImage from './images/sylthvirago.png';
+import harperImage from './images/harper.jpg';
+import primoluxeImage from './images/primoluxe.jpg';
 
 
 class LocationImage extends Component {
@@ -58,6 +62,19 @@ const SectionLocations = props => {
       </div>
 
       <div className={css.locations}>
+
+
+      <div className={css.designers}>
+        {locationLink(
+          'harper the label',
+          harperImage,
+          '601ca574-ef5b-4414-838b-e647bed770b8'
+        )}
+        <div className={css.subtext}>
+        <FormattedMessage id="SectionLocations.harperthelabel" />
+        </div>
+        </div>
+
         <div className={css.designers}>
         {locationLink(
           'ava james nyc',
@@ -66,6 +83,17 @@ const SectionLocations = props => {
         )}
         <div className={css.subtext}>
         <FormattedMessage id="SectionLocations.avajamesnyc" />
+        </div>
+        </div>
+
+        <div className={css.designers}>
+        {locationLink(
+          'la femme apero',
+          lafemmeaperoImage,
+          '601c33dd-9f09-4605-a781-72bab94f7581'
+        )}
+        <div className={css.subtext}>
+        <FormattedMessage id="SectionLocations.lafemmeapero" />
         </div>
         </div>
 
@@ -82,12 +110,23 @@ const SectionLocations = props => {
 
         <div className={css.designers}>
         {locationLink(
-          'metal & stone',
-          metalandstoneImage,
-          '600716f5-356d-433d-a9f2-2e0950504ad6'
-)}
+          'ouisa',
+          ouisaImage,
+          '6011c643-7a8d-47de-8982-83119fe8b410'
+        )}
         <div className={css.subtext}>
-        <FormattedMessage id="SectionLocations.metalandstone" />
+        <FormattedMessage id="SectionLocations.ouisa" />
+        </div>
+        </div>
+
+        <div className={css.designers}>
+        {locationLink(
+          'primo luxe',
+          primoluxeImage,
+          '6011c643-7a8d-47de-8982-83119fe8b410'
+        )}
+        <div className={css.subtext}>
+        <FormattedMessage id="SectionLocations.primoluxe" />
         </div>
         </div>
 
@@ -102,11 +141,9 @@ const SectionLocations = props => {
         </div>
         </div>
 
-      </div>
 
-{/*}Second Row of Designers - Arteaga, SPINOZA, Rhonda Cole, OUISA {*/}
 
-      <div className={css.locations}>
+
         <div className={css.designers}>
         {locationLink(
           'arteaga',
@@ -140,17 +177,30 @@ const SectionLocations = props => {
         </div>
         </div>
 
+
+ 
+
         <div className={css.designers}>
         {locationLink(
-          'ouisa',
-          ouisaImage,
-          '6011c643-7a8d-47de-8982-83119fe8b410'
+          'sylth virago',
+          sylthviragoImage,
+          '601c4afa-f72b-4f42-96eb-cd0f3f6ddfa6'
         )}
         <div className={css.subtext}>
-        <FormattedMessage id="SectionLocations.ouisa" />
+        <FormattedMessage id="SectionLocations.sylthvirago" />
         </div>
         </div>
 
+        <div className={css.designers}>
+        {locationLink(
+          'metal & stone',
+          metalandstoneImage,
+          '600716f5-356d-433d-a9f2-2e0950504ad6'
+)}
+        <div className={css.subtext}>
+        <FormattedMessage id="SectionLocations.metalandstone" />
+        </div>
+        </div>
 
       </div>
 

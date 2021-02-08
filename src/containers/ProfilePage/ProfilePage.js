@@ -30,6 +30,7 @@ import { loadData } from './ProfilePage.duck';
 import config from '../../config';
 import FreeBreakfastOutlinedIcon from '@material-ui/icons/FreeBreakfastOutlined';
 import HighlightOutlinedIcon from '@material-ui/icons/HighlightOutlined';
+import BookmarkIcon from '@material-ui/icons/Bookmark';
 
 import css from './ProfilePage.css';
 
@@ -143,6 +144,12 @@ export class ProfilePageComponent extends Component {
               <FormattedMessage id="ProfilePage.productHighlight" />
             </NamedLink>
           ) : null}
+        </div>
+        <div className={css.bioLinks}>
+        <BookmarkIcon style={{ color: "black"}}></BookmarkIcon>
+        {hasBio ? <NamedLink className={css.outboundLink} name={productHighlightLink}>
+        <FormattedMessage id="ProfilePage.productHighlight" />
+        </NamedLink> : null}
         </div>
         {isMobileLayout ? mobileReviews : desktopReviews}
         {hasListings ? (

@@ -219,8 +219,8 @@
   @media (--viewportMedium) {
     margin-top: 50px;
     margin-bottom: 51px;
-    flex-shrink: 1;
     margin-left: 0px;
+    width: 70%;
   }
 
   @media (--viewportLarge) {
@@ -635,7 +635,7 @@ flex-basis: calc(100% - 433px);
   padding: 10px 10px 0 0;
 
   @media (--viewportMedium) {
-  padding: 10px 130px 0 0;
+  padding: 25px 30px 0 0;
   }
 
 }
@@ -643,7 +643,7 @@ flex-basis: calc(100% - 433px);
 .headerTab {
   font-size: 12px;
   font-weight: 600;
-  line-height: 1;
+  line-height: 1.2;
 }
 
 .infoTab {
@@ -651,9 +651,4 @@ flex-basis: calc(100% - 433px);
   font-weight: 400;
   white-space: pre-line;
   line-height: normal;
-}
-
-.selectedTabContent {
-  border-bottom-color: var(--marketplaceColor);
-  color: var(--marketplaceColor);
 }

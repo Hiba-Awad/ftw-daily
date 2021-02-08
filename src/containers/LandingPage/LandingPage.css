@@ -41,8 +41,8 @@
   }
 
   @media (--viewportLarge) {
-    max-height: 800px;
-    min-height: 600px;
+    max-height: 500px;
+    min-height: 400px;
     height: calc(70vh - var(--topbarHeightDesktop));
   }
 }

@@ -20,6 +20,7 @@ const SectionListingInfoTab = props => {
     className,
     rootClassName,
     publicData,
+    description,
     onManageDisableScrolling,
     reviews,
     fetchReviewsError,
@@ -29,6 +30,9 @@ const SectionListingInfoTab = props => {
   const handleChange = selectedTab => () => {
     setSelectedTab(selectedTab);
   };
+  const reviewTab = (
+    <FormattedMessage id="ListingPage.reviewsTab" values={{ count: reviews.length }} />
+  );
   const infoTabs = [
     {
       text: <div className={css.headerTab}>editor's note</div>,
@@ -47,7 +51,7 @@ const SectionListingInfoTab = props => {
     },
 
     {
-      text: <div className={css.headerTab}>reviews</div>,
+      text: <div className={css.headerTab}>{reviewTab}</div>,
       selected: selectedTab === { REVIEWS },
       onClick: handleChange(REVIEWS),
     },
@@ -62,6 +66,14 @@ const SectionListingInfoTab = props => {
             reviews={reviews}
             fetchReviewsError={fetchReviewsError}
           />
+        );
+      case EDITOR_NOTE:
+        return (
+          <p className={css.infoTab}>
+            {richText(description, {
+              longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS_IN_DESCRIPTION,
+            })}
+          </p>
         );
       default:
         return (
@@ -78,7 +90,7 @@ const SectionListingInfoTab = props => {
     return (
       <div className={css.SectionListingInfoTab}>
         <div className={css.sectionButtonTabNavHorizontal}>
-          <ButtonTabNavHorizontal className={css.variants} tabs={infoTabs} />
+          <ButtonTabNavHorizontal className={css.variants} tabs={infoTabs} skin="light" />
         </div>
         {tabContent(selectedTab)}
       </div>

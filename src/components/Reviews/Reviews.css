@@ -2,6 +2,23 @@
 
 .root {
   margin: 0;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  @media (--viewportMedium) {
+    flex-direction: column;
+  }
+
+@media (--viewportLarge) {
+  flex-direction: row;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
 }
 
 .sectionImages {
@@ -41,7 +58,9 @@
   box-shadow: var(--boxShadowListingCard);
 
   @media (--viewportMedium) {
-  max-width: 450px;
+  width: 425px;
+  height: 250px;
+  margin: 10px;
   }
 }
 
@@ -53,7 +72,7 @@
 
 .containerLeft {
   padding: 5px;
-  max-width: 25%;
+  max-width: 125px;
 }
 
 .containerRight {

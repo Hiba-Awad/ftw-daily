@@ -44,7 +44,7 @@ const ReviewImages = props => {
         onClose={onImageCarouselClose}
         onManageDisableScrolling={onManageDisableScrolling}
       >
-        <ImageCarousel images={images} />
+        <ImageCarousel className={css.ImageCarousel} images={images} />
       </Modal>
     </div>
   );
@@ -76,7 +76,7 @@ const Review = props => {
 
   const listingAttributes = listing ? listing.attributes : null;
 
-  const { title, description } = listingAttributes;
+  const { title, description } = listingAttributes ? listingAttributes : null;
 
   const handleViewPhotosClick = e => {
     // Stop event from bubbling up to prevent image click handler
@@ -117,7 +117,7 @@ const Review = props => {
       <div className={css.containerRight}>
         <div className={css.containerRightTop}>
           <p className={css.reviewDate}>{dateString}</p>
-          <Avatar className={css.avatar} user={user} />
+          {/*}<Avatar className={css.avatar} user={user} />{*/}
         </div>
         <div className={css.textContent}>
           <p className={css.reviewContent}>"{comments}"</p>

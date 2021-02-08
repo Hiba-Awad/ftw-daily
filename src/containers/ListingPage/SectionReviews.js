@@ -15,9 +15,6 @@ const SectionReviews = props => {
 
   return (
     <div className={css.sectionReviews}>
-      <h2 className={css.reviewsHeading}>
-        <FormattedMessage id="ListingPage.reviewsHeading" values={{ count: reviews.length }} />
-      </h2>
       {fetchReviewsError ? reviewsError : null}
       <Reviews onManageDisableScrolling={onManageDisableScrolling} reviews={reviews} />
     </div>
