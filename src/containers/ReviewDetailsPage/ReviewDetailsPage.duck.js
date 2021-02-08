@@ -222,15 +222,25 @@ export const fetchReviews = userEmail => (dispatch, getState, sdk) => {
   return axios
     .get('/reviewsUser', { params: { email: userEmail } })
     .then(response => {
-      let data = response.data;
+      let reviews = response.data;
+
       const { currentUser } = getState().user;
       const user = ensureCurrentUser(currentUser);
-      let reviews = data.map(review => {
-        review.user = user;
-        return review;
-      });
+      let fetchListingPromises = [];
+      reviews.forEach(element => {
+        const listingUUID = element.listingUUID;
 
-      dispatch(fetchReviewsSuccess(reviews));
+        const fetchListingPromise = dispatch(getListingInformation(listingUUID)).then(data => {
+          console.log('DENORMALIZED HELL');
+          console.log(data);
+          element.listing = data[0];
+          element.user = user;
+        });
+        fetchListingPromises.push(fetchListingPromise);
+      });
+      Promise.all(fetchListingPromises).then(() => {
+        dispatch(fetchReviewsSuccess(reviews));
+      });
     })
     .catch(e => {
       dispatch(fetchReviewsError(storableError(e)));
@@ -258,9 +268,13 @@ export const saveReview = (orderId, photos, params) => (dispatch, getState, sdk)
     .then(response => {
       const review = response.data;
       console.log(response.data);
-      dispatch(saveReviewDetailsSuccess(review));
+      return Promise.all([
+        dispatch(saveReviewDetailsSuccess(review)),
 
-      dispatch(fetchOrders(params.email));
+        dispatch(fetchOrders(params.email)),
+      ]).then(() => {
+        return true;
+      });
     })
     .catch(e => {
       dispatch(saveReviewlError(storableError(e)));

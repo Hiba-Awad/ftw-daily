@@ -69,15 +69,17 @@ export const ReviewDetailsPageComponent = props => {
     });
     const params = {
       listingUUID: orderToReview.listingUUID,
+      variant: orderToReview.variant,
       brandUUID: orderToReview.brandUUID,
       email: currentUser.attributes.email,
+      userUUID: currentUser.id.uuid,
       ...updateValues,
     };
     console.log('Trying to submit');
     const orderId = orderToReview.orderId;
     onSubmitReview(orderId, photos, params)
-      .then(() => {
-        if (reviewSubmitted) {
+      .then(result => {
+        if (result) {
           setReviewModal(false);
         }
       })

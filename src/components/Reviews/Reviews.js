@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { injectIntl, intlShape, FormattedMessage } from '../../util/reactIntl';
 
 import { arrayOf, string } from 'prop-types';
@@ -26,14 +26,16 @@ const ReviewImages = props => {
   ) : null;
 
   return (
-    <div className={css.sectionImages} onClick={handleViewPhotosClick}>
-      <ResponsiveImage
-        rootClassName={css.rootForImage}
-        image={firstImage}
-        variants={['scaled-medium']}
-        sizes="(max-width: 767px) 100vw, 80vw"
-      />
-      {viewPhotosButton}
+    <div>
+      <div className={css.sectionImages} onClick={handleViewPhotosClick}>
+        <ResponsiveImage
+          rootClassName={css.rootForImage}
+          image={firstImage}
+          variants={['scaled-medium']}
+          sizes="(max-width: 767px) 100vw, 80vw"
+        />
+        {viewPhotosButton}
+      </div>
       <Modal
         id="Reviews.imageCarousel"
         scrollLayerClassName={css.carouselModalScrollLayer}
@@ -52,6 +54,7 @@ const Review = props => {
   const { review, onManageDisableScrolling, intl } = props;
   const {
     user,
+    listing,
     recommend,
     listingUUID,
     imageUrls,
@@ -61,7 +64,7 @@ const Review = props => {
     userData,
     createdAt,
   } = review;
-  const [imageCarouselOpen, setImageCarouselOpen] = React.useState(false);
+  const [imageCarouselOpen, setImageCarouselOpen] = useState(false);
   const date = createdAt;
   const dateString = intl.formatDate(date, { month: 'long', day: 'numeric', year: 'numeric' });
   const authorInfo = anonymous ? null : (
@@ -69,7 +72,11 @@ const Review = props => {
       <UserDisplayName user={user} intl={intl} />
     </p>
   );
-  const { email, weight, heigh } = userData;
+  const { email, weight, height } = userData;
+
+  const listingAttributes = listing ? listing.attributes : null;
+
+  const { title, description } = listingAttributes;
 
   const handleViewPhotosClick = e => {
     // Stop event from bubbling up to prevent image click handler
@@ -118,7 +125,7 @@ const Review = props => {
           <p className={css.reviewInfo}>Fit: {fit}</p>
           <p className={css.reviewInfo}>Recommend? {recommend}</p>
           <p className={css.weight}>{weight}</p>
-          <p className={css.heigh}>{heigh}</p>
+          <p className={css.height}>{height}</p>
         </div>
       </div>
     </div>

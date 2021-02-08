@@ -61,7 +61,7 @@ export class ReviewFormComponent extends Component {
         onImageUploadHandler={this.onImageUploadHandler}
         onRemoveImage={this.onRemoveImage}
         images={this.state.images}
-        initialValues={{ images: this.state.images }}
+        initialValues={{ images: this.state.images, recommend: true, anonymous: true }}
         render={fieldRenderProps => {
           const {
             className,
@@ -273,10 +273,10 @@ export class ReviewFormComponent extends Component {
                 name="recommend"
                 label={reviewRecommend}
               >
-                <option id="yes" key="yes" value="yes">
+                <option id="yes" key="yes" value={true}>
                   Yes
                 </option>
-                <option id="no" key="no" value="no">
+                <option id="no" key="no" value={false}>
                   No
                 </option>
                 validate={required(reviewRecommendRequiredMessage)}
@@ -288,10 +288,10 @@ export class ReviewFormComponent extends Component {
                 name="anonymous"
                 label={reviewAnonymous}
               >
-                <option id="yes" key="yes" value="yes">
+                <option id="yes" key="yes" value={true}>
                   Yes
                 </option>
-                <option id="no" key="no" value="no">
+                <option id="no" key="no" value={false}>
                   No
                 </option>
                 validate={required(reviewAnonymousdRequiredMessage)}
