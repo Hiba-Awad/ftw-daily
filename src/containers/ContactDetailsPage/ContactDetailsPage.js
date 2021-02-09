@@ -81,7 +81,6 @@ export const ContactDetailsPageComponent = props => {
             desktopClassName={css.desktopTopbar}
             mobileClassName={css.mobileTopbar}
           />
-          <UserNav selectedPageName="ContactDetailsPage" />
         </LayoutWrapperTopbar>
         <LayoutWrapperAccountSettingsSideNav currentTab="ContactDetailsPage" />
         <LayoutWrapperMain>

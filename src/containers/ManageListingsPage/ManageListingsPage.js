@@ -28,7 +28,6 @@ import {
 import css from './ManageListingsPage.css';
 import { util as sdkUtil } from '../../util/sdkLoader';
 
-
 // Pagination page size might need to be dynamic on responsive page layouts
 // Current design has max 3 columns 42 is divisible by 2 and 3
 // So, there's enough cards to fill all columns on full pagination pages
@@ -127,7 +126,6 @@ export class ManageListingsPageComponent extends Component {
         <LayoutSingleColumn>
           <LayoutWrapperTopbar>
             <TopbarContainer currentPage="ManageListingsPage" />
-            <UserNav selectedPageName="ManageListingsPage" />
           </LayoutWrapperTopbar>
           <LayoutWrapperMain>
             {queryInProgress ? loadingResults : null}
@@ -249,17 +247,17 @@ ManageListingsPage.loadData = (params, search) => {
     page,
     perPage: RESULT_PAGE_SIZE,
     include: ['images'],
-       'fields.image': ['variants.portrait-crop', 'variants.portrait-crop2x'],
-       'imageVariant.portrait-crop': sdkUtil.objectQueryString({
-         w: 400,
-         h: 600,
-         fit: 'scale',
-       }),
-       'imageVariant.portrait-crop2x': sdkUtil.objectQueryString({
-         w: 800,
-         h: 1200,
-         fit: 'scale',
-       }),    
+    'fields.image': ['variants.portrait-crop', 'variants.portrait-crop2x'],
+    'imageVariant.portrait-crop': sdkUtil.objectQueryString({
+      w: 400,
+      h: 600,
+      fit: 'scale',
+    }),
+    'imageVariant.portrait-crop2x': sdkUtil.objectQueryString({
+      w: 800,
+      h: 1200,
+      fit: 'scale',
+    }),
     'limit.images': 1,
   });
 };

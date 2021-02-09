@@ -109,7 +109,6 @@ export const ReviewDetailsPageComponent = props => {
             desktopClassName={css.desktopTopbar}
             mobileClassName={css.mobileTopbar}
           />
-          <UserNav selectedPageName="ReviewDetailsPage" />
         </LayoutWrapperTopbar>
         <LayoutWrapperMain>
           <div className={css.sectionReviews}>

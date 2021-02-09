@@ -32,7 +32,6 @@ const ReviewImages = props => {
           rootClassName={css.rootForImage}
           image={firstImage}
           variants={['scaled-medium']}
-          sizes="(max-width: 767px) 100vw, 80vw"
         />
         {viewPhotosButton}
       </div>
