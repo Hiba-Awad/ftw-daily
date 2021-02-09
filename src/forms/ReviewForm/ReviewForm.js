@@ -63,7 +63,7 @@ export class ReviewFormComponent extends Component {
         onImageUploadHandler={this.onImageUploadHandler}
         onRemoveImage={this.onRemoveImage}
         images={this.state.images}
-        initialValues={{ images: this.state.images, recommend: true, anonymous: true }}
+        initialValues={{ images: this.state.images }}
         render={fieldRenderProps => {
           const {
             className,
@@ -314,14 +314,14 @@ export class ReviewFormComponent extends Component {
                       id="recommendyes"
                       name="recommend"
                       label="Yes"
-                      value={true}
+                      value="true"
                       showAsRequired="please select yes or no"
                     />
                     <FieldRadioButton
                       id="recommendno"
                       name="recommend"
                       label="No"
-                      value={false}
+                      value="false"
                       showAsRequired="please select yes or no"
                     />
                   </div>
@@ -335,15 +335,15 @@ export class ReviewFormComponent extends Component {
                     <FieldRadioButton
                       id="anonymousyes"
                       name="anonymous"
-                      label="yes"
-                      value={true}
+                      label="Yes"
+                      value="true"
                       showAsRequired="please select yes or no"
                     />
                     <FieldRadioButton
                       id="anonymousno"
                       name="anonymous"
-                      label="no"
-                      value={false}
+                      label="No"
+                      value="false"
                       showAsRequired="please select yes or no"
                     />
                   </div>

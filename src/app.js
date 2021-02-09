@@ -17,7 +17,7 @@ import configureStore from './store';
 import routeConfiguration from './routeConfiguration';
 import Routes from './Routes';
 import config from './config';
-
+import axios from 'axios';
 // Flex template application uses English translations as default.
 import defaultMessages from './translations/en.json';
 
@@ -39,6 +39,8 @@ import defaultMessages from './translations/en.json';
 // Step 3:
 // If you are using a non-english locale, point `messagesInLocale` to correct .json file
 import messagesInLocale from './translations/fr.json';
+
+axios.defaults.baseURL = 'https://us-central1-revvie-app.cloudfunctions.net/api';
 
 // If translation key is missing from `messagesInLocale` (e.g. fr.json),
 // corresponding key will be added to messages from `defaultMessages` (en.json)
