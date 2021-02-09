@@ -39,9 +39,7 @@
   }
 
   @media (--viewportMedium) {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    
   }
 
 }
@@ -66,9 +64,9 @@
   }
 
   @media (--viewportMedium) {
-  width: 350px;
+  width: 450px;
   flex-direction: row;
-  margin-right: 10px;
+  margin-right: 20px;
 
   }
 }
