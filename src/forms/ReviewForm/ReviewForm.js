@@ -238,7 +238,7 @@ export class ReviewFormComponent extends Component {
                   id={formId ? `${formId}.weight` : 'weight'}
                   name="weight"
                   label="weight* (lbs)"
-                  placeholder="120lbs"
+                  placeholder="150lbs"
                 />
               </div>
 
@@ -277,22 +277,29 @@ export class ReviewFormComponent extends Component {
                     <FieldRadioButton
                       id="fitsmall"
                       name="fit"
-                      label="runs small"
-                      value="runs small"
+                      label="Runs small"
+                      value="Runs small"
                       showAsRequired="please select yes or no"
                     />
                     <FieldRadioButton
                       id="fittruetosize"
                       name="fit"
-                      label="fits true to size"
-                      value="fits true to size"
+                      label="True to size"
+                      value="True to size"
                       showAsRequired="please select yes or no"
                     />
                     <FieldRadioButton
                       id="fitlarge"
                       name="fit"
-                      label="runs large"
-                      value="runs large"
+                      label="Runs large"
+                      value="Runs large"
+                      showAsRequired="please select yes or no"
+                    />
+                    <FieldRadioButton
+                      id="fitna"
+                      name="fit"
+                      label="n/a"
+                      value="n/a"
                       showAsRequired="please select yes or no"
                     />
                   </div>
@@ -306,14 +313,14 @@ export class ReviewFormComponent extends Component {
                     <FieldRadioButton
                       id="recommendyes"
                       name="recommend"
-                      label="yes"
+                      label="Yes"
                       value={true}
                       showAsRequired="please select yes or no"
                     />
                     <FieldRadioButton
                       id="recommendno"
                       name="recommend"
-                      label="no"
+                      label="No"
                       value={false}
                       showAsRequired="please select yes or no"
                     />

@@ -191,6 +191,7 @@
 
 .bookButton {
   @apply --marketplaceButtonStylesPrimary;
+  font-size: 14px;
 
   /* Clear padding that is set for link elements looking like buttons */
   padding: 0;

@@ -4,164 +4,166 @@
   margin: 0;
   display: flex;
   flex-direction: column;
+  padding-top: 15px;
+
+
+  @media (--viewportMedium) {
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+
+}
+
+.sectionImages {
+
+  cursor: pointer;
+  max-width: 100%;
+  height: auto;
+}
+
+
+.viewPhotos {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--marketplaceColor);
+  border: none;
+  padding: 10px;
+  line-height: 1;
+  cursor: pointer;
+  background-color: var(--marketplaceColorBackground);
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  @media (--viewportMedium) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+}
+
+.reviewItem {
+  margin-bottom: 25px;
+
+
+  @media (--viewportMedium) {
+    margin-bottom: 25px;
+  }
+}
+
+.review {
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--boxShadowListingCard);
 
   &:hover {
     transform: scale(1.02);
   }
 
   @media (--viewportMedium) {
-    flex-direction: column;
-  }
-
-@media (--viewportLarge) {
-  flex-direction: row;
-  max-width: 100%;
-  flex-wrap: wrap;
-}
-
-}
-
-.sectionImages {
-  max-width: 100%;
-  height: auto;
-}
-
-.viewPhotos {
-  font-size: 10px;
-  font-weight: 500;
-  color: var(--marketplaceColorLight);
-  border: none;
-  padding: 3px 3px 3px 3px;
-
-  &:hover {
-    color: var(--marketplaceColorDark);
-    text-decoration: underline;
-  }
-}
-
-.reviewItem {
-  margin-bottom: 32px;
-
-  &:last-of-type {
-    margin-bottom: 0;
-  }
-
-  @media (--viewportMedium) {
-    margin-bottom: 39px;
-  }
-}
-
-.review {
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  box-shadow: var(--boxShadowListingCard);
-
-  @media (--viewportMedium) {
-  width: 425px;
-  height: 250px;
-  margin: 10px;
-  }
-}
-
-.avatar {
-  display: flex;
+  width: 350px;
   flex-direction: row;
   margin-right: 10px;
+
+  }
 }
 
-.containerLeft {
-  padding: 5px;
-  max-width: 125px;
+.containerTop {
+height: 80%;
+width: 100%;
+display: flex;
+flex-direction: column;
+
+  @media (--viewportMedium) {
+  flex-direction: row;
+  align-items: flex-start;
+  }
 }
 
-.containerRight {
-  padding: 5px;
+.containerImage {
   display: flex;
   flex-direction: column;
-  width: 75%;
+  width: 100%;
+ 
+  @media (--viewportMedium) {
+  width: 50%;
+}
 }
 
-.containerRightTop {
+.containerMain {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @media (--viewportMedium) {
+  width: 50%;
+}
+}
+
+.reviewDate {
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 0px;
+  margin-bottom: 2px;
+  
+}
+
+.containerAuthor {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 15px;
+  height: 15px;
 }
 
-.reviewContent {
+.textRecommend {
+  @apply --marketplaceH5FontStyles;
+font-weight: 300;
+margin-top: 5px;
+margin-bottom: 15px;
+}
+
+
+.reviewComments {
   @apply --marketplaceBodyFontStyles;
   font-family: 'Georgia';
   font-size: 12px;
-  margin: 0;
   white-space: pre-line;
+  line-height: 1.2;
+  margin-bottom: 20px;
 }
 
-.reviewInfo {
-  @apply --marketplaceDefaultFontStyles;
-  font-size: 12px;
-  margin-top: 2px;
-  margin-bottom: 0px;
-  color: var(--matterColorAnti);
-
-  @media (--viewportMedium) {
-    margin-top: 2px;
-  }
-}
-
-.textContent{
+.containerMeasurements {
+  margin-bottom: 20px;
 
 }
 
-.separator {
-  margin: 0 7px;
-}
-
-.desktopSeparator {
-  margin: 0 7px;
-  display: none;
-
-  @media (--viewportMedium) {
-    display: inline;
-  }
-}
-
-.mobileReviewRating {
-  display: block;
-  margin-top: 3px;
-  margin-bottom: 9px;
-
-  @media (--viewportMedium) {
-    display: none;
-  }
-}
-
-.desktopReviewRatingWrapper {
-  /* For aligning rating starts in the middle
-   * of a paragraph line */
-  position: relative;
-  display: none;
-
-  @media (--viewportMedium) {
-    display: inline;
-  }
-}
-
-.desktopReviewRating {
-  /* For aligning rating starts in the middle
-   * of a paragraph line */
-  display: inline-flex;
-  position: absolute;
-  top: 4px;
-  white-space: nowrap;
-}
-
-.reviewRatingStar {
+.bodyStats1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   height: 12px;
-  width: 12px;
-  margin-right: 2px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
 
-  &:last-of-type {
-    margin-right: 0;
-  }
+.subBodyStats1 {
+  display: flex;
+  flex-direction: row;
+}
+
+.height {
+  @apply --marketplaceDefaultFontStyles;
+  font-size: 10px;
+  line-height: 1;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  color: var(--matterColorAnti);
 }

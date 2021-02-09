@@ -22,6 +22,8 @@ export { default as DP_sylthviragoPage } from './DesignerProfile/DP_sylthvirago'
 export { default as PH_sylthviragoPage } from './ProductHighlight/PH_sylthvirago';
 export { default as DP_harperthelabelPage } from './DesignerProfile/DP_harperthelabel';
 export { default as PH_harperthelabelPage } from './ProductHighlight/PH_harperthelabel';
+export { default as DP_primoluxePage } from './DesignerProfile/DP_primoluxe';
+export { default as PH_primoluxePage } from './ProductHighlight/PH_primoluxe';
 export { default as AuthenticationPage } from './AuthenticationPage/AuthenticationPage';
 export { default as CheckoutPage } from './CheckoutPage/CheckoutPage';
 export { default as ContactDetailsPage } from './ContactDetailsPage/ContactDetailsPage';

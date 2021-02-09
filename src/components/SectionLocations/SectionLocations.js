@@ -123,7 +123,7 @@ const SectionLocations = props => {
         {locationLink(
           'primo luxe',
           primoluxeImage,
-          '6011c643-7a8d-47de-8982-83119fe8b410'
+          '601d915c-b066-4513-b41f-2e3abe66888a'
         )}
         <div className={css.subtext}>
         <FormattedMessage id="SectionLocations.primoluxe" />

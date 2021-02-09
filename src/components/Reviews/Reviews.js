@@ -60,23 +60,20 @@ const Review = props => {
     imageUrls,
     fit,
     anonymous,
+    variant,
     comments,
     userData,
     createdAt,
   } = review;
   const [imageCarouselOpen, setImageCarouselOpen] = useState(false);
   const date = createdAt;
-  const dateString = intl.formatDate(date, { month: 'long', day: 'numeric', year: 'numeric' });
+  const dateString = intl.formatDate(date, { month: 'short', year: 'numeric' });
   const authorInfo = anonymous ? null : (
-    <p className={css.error}>
-      <UserDisplayName user={user} intl={intl} />
+    <p className={css.reviewDate}>
+      by <UserDisplayName user={user} intl={intl} />
     </p>
   );
-  const { email, weight, height } = userData;
-
-  const listingAttributes = listing ? listing.attributes : null;
-
-  const { title, description } = listingAttributes ? listingAttributes : null;
+  const { email, weight, height, bust, waist, hips } = userData;
 
   const handleViewPhotosClick = e => {
     // Stop event from bubbling up to prevent image click handler
@@ -105,28 +102,46 @@ const Review = props => {
   console.log(user);
   return (
     <div className={css.review}>
-      <div className={css.containerLeft}>
-        <ReviewImages
-          images={images}
-          imageCarouselOpen={imageCarouselOpen}
-          onImageCarouselClose={() => setImageCarouselOpen(false)}
-          handleViewPhotosClick={handleViewPhotosClick}
-          onManageDisableScrolling={onManageDisableScrolling}
-        />
-      </div>
-      <div className={css.containerRight}>
-        <div className={css.containerRightTop}>
-          <p className={css.reviewDate}>{dateString}</p>
-          {/*}<Avatar className={css.avatar} user={user} />{*/}
+        <div className={css.containerImage}>
+          <ReviewImages
+            images={images}
+            imageCarouselOpen={imageCarouselOpen}
+            onImageCarouselClose={() => setImageCarouselOpen(false)}
+            handleViewPhotosClick={handleViewPhotosClick}
+            onManageDisableScrolling={onManageDisableScrolling}
+          />
         </div>
-        <div className={css.textContent}>
-          <p className={css.reviewContent}>"{comments}"</p>
-          <p className={css.reviewInfo}>{authorInfo}</p>
-          <p className={css.reviewInfo}>Fit: {fit}</p>
-          <p className={css.reviewInfo}>Recommend? {recommend}</p>
-          <p className={css.weight}>{weight}</p>
-          <p className={css.height}>{height}</p>
-        </div>
+        <div className={css.containerMain}>
+            {/*}<Avatar className={css.avatar} user={user} />{*/}
+            <div className={css.containerAuthor}>
+              <p className={css.reviewDate}>{dateString}</p>
+              <p>{authorInfo}</p>
+            </div>
+
+            <div className={css.containerMeasurements}>
+            <div className={css.bodyStats1}>
+              <p className={css.height}><b>Height:</b> {height}</p>
+              <p className={css.height}><b>Weight (lbs):</b> {weight}</p>
+            </div>
+            <div className={css.bodyStats1}>
+              <p className={css.height}><b>Bust-Waist-Hips (in):</b> </p>
+                <div className={css.subBodyStats1}>
+                <p className={css.height}>{bust}"-</p>
+                <p className={css.height}>{waist}"-</p>
+                <p className={css.height}>{hips}"</p>
+                </div>
+            </div>
+            <div className={css.bodyStats1}>
+              <p className={css.height}><b>Fit:</b> {fit}</p>
+              <p className={css.height}><b>Variant:</b> {variant}</p>
+            </div>
+         </div>
+
+            <p className={css.reviewComments}>"{comments}"</p>
+
+            <p className={css.textRecommend}><b>Recommend?</b> {recommend}</p>
+
+          
       </div>
     </div>
   );
