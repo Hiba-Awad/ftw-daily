@@ -4,6 +4,8 @@ import { FormattedMessage, intlShape } from '../../util/reactIntl';
 import classNames from 'classnames';
 import { ACCOUNT_SETTINGS_PAGES } from '../../routeConfiguration';
 import { propTypes } from '../../util/types';
+import { ensureCurrentUser } from '../../util/data';
+
 import {
   Avatar,
   InlineTextButton,
@@ -13,6 +15,7 @@ import {
   MenuContent,
   MenuItem,
   NamedLink,
+  UserNav,
 } from '../../components';
 import { TopbarSearchForm } from '../../forms';
 
@@ -42,6 +45,9 @@ const TopbarDesktop = props => {
   const isAuthenticatedOrJustHydrated = isAuthenticated || !mounted;
 
   const classes = classNames(rootClassName || css.root, className);
+  const ensuredCurrentUser = ensureCurrentUser(currentUser);
+
+  const brand = ensuredCurrentUser.attributes.profile.publicData.brand;
 
   const search = (
     <TopbarSearchForm
@@ -73,21 +79,34 @@ const TopbarDesktop = props => {
     return currentPage === page || isAccountSettingsPage ? css.currentPage : null;
   };
 
+  const yourListingsLink = (
+    <MenuItem key="ManageListingsPage">
+      <NamedLink
+        className={classNames(css.yourListingsLink, currentPageClass('ManageListingsPage'))}
+        name="ManageListingsPage"
+      >
+        <span className={css.menuItemBorder} />
+        <FormattedMessage id="TopbarDesktop.yourListingsLink" />
+      </NamedLink>
+    </MenuItem>
+  );
+
   const profileMenu = authenticatedOnClientSide ? (
     <Menu>
       <MenuLabel className={css.profileMenuLabel} isOpenClassName={css.profileMenuIsOpen}>
         <Avatar className={css.avatar} user={currentUser} disableProfileLink />
       </MenuLabel>
       <MenuContent className={css.profileMenuContent}>
-        <MenuItem key="ManageListingsPage">
+        <MenuItem key="ReviewDetailsPage">
           <NamedLink
-            className={classNames(css.yourListingsLink, currentPageClass('ManageListingsPage'))}
-            name="ManageListingsPage"
+            className={classNames(css.profileSettingsLink, currentPageClass('ProfileSettingsPage'))}
+            name="ReviewDetailsPage"
           >
             <span className={css.menuItemBorder} />
-            <FormattedMessage id="TopbarDesktop.yourListingsLink" />
+            <FormattedMessage id="TopbarDesktop.review" />
           </NamedLink>
         </MenuItem>
+        {!!brand && yourListingsLink}
         <MenuItem key="ProfileSettingsPage">
           <NamedLink
             className={classNames(css.profileSettingsLink, currentPageClass('ProfileSettingsPage'))}
@@ -116,6 +135,12 @@ const TopbarDesktop = props => {
     </Menu>
   ) : null;
 
+  const reviewLink = authenticatedOnClientSide ? (
+    <NamedLink name="ReviewDetailsPage" className={css.signupLink}>
+      <FormattedMessage id="TopbarDesktop.review" />
+    </NamedLink>
+  ) : null;
+
   const signupLink = isAuthenticatedOrJustHydrated ? null : (
     <NamedLink name="SignupPage" className={css.signupLink}>
       <span className={css.signup}>
@@ -142,8 +167,7 @@ const TopbarDesktop = props => {
         />
       </NamedLink>
       {search}
-
-      {inboxLink}
+      {reviewLink}
       {profileMenu}
       {signupLink}
       {loginLink}

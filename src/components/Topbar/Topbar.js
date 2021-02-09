@@ -19,6 +19,7 @@ import {
   NamedLink,
   TopbarDesktop,
   TopbarMobileMenu,
+  UserNav,
 } from '../../components';
 import { TopbarSearchForm } from '../../forms';
 

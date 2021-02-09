@@ -32,7 +32,6 @@ const ReviewImages = props => {
           rootClassName={css.rootForImage}
           image={firstImage}
           variants={['scaled-medium']}
-          sizes="(max-width: 767px) 100vw, 80vw"
         />
         {viewPhotosButton}
       </div>
@@ -43,6 +42,7 @@ const ReviewImages = props => {
         isOpen={imageCarouselOpen}
         onClose={onImageCarouselClose}
         onManageDisableScrolling={onManageDisableScrolling}
+        usePortal
       >
         <ImageCarousel className={css.ImageCarousel} images={images} />
       </Modal>
