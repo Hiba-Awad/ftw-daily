@@ -405,7 +405,7 @@
   "ReviewPage.title": "your reviews.",
   "ListingPage.rulesTitle": "Sauna rules",
   "ListingPage.schemaTitle": "{title} - {price} | {siteTitle}",
-  "ListingPage.viewImagesButton": "view photos ({count})",
+  "ListingPage.viewImagesButton": "see more ({count})",
   "ListingPage.yourHostHeading": "Your host",
   "ListingPage.preOrder": "This item is available for pre-order. It will ship in {preorder_window}",
   "ListingPage.madetoOrder": "This item is made to order. Please allow {made_to_order_window} for delivery.",

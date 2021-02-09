@@ -27,15 +27,23 @@
 .viewPhotos {
   font-size: 10px;
   font-weight: 500;
-  color: var(--marketplaceColorLight);
+  color: var(--marketplaceColor);
   border: none;
-  padding: 3px 3px 3px 3px;
+  padding: 10px;
   line-height: 1;
+  cursor: pointer;
+  background-color: var(--marketplaceColorBackground);
 
   &:hover {
-    color: var(--marketplaceColorDark);
     text-decoration: underline;
   }
+
+  @media (--viewportMedium) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
 }
 
 .reviewItem {
@@ -48,7 +56,7 @@
 }
 
 .review {
-  padding: 20px;
+  padding: 0px;
   display: flex;
   flex-direction: column;
   box-shadow: var(--boxShadowListingCard);
@@ -59,147 +67,81 @@
 
   @media (--viewportMedium) {
   width: 350px;
-  height: 250px;
-  margin: 5px;
   flex-direction: row;
+  margin-right: 10px;
 
   }
 }
 
-.avatar {
-  display: flex;
+.containerTop {
+height: 80%;
+width: 100%;
+display: flex;
+flex-direction: column;
+
+  @media (--viewportMedium) {
   flex-direction: row;
-  margin-right: 10px;
+  align-items: flex-start;
+  }
 }
 
-.containerLeft {
+.containerImage {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 5px;
-  max-width: 125px;
+  width: 100%;
+ 
+  @media (--viewportMedium) {
+  width: 50%;
+}
 }
 
-.containerRight {
-  padding: 5px;
+.containerMain {
+  padding: 10px;
   display: flex;
   flex-direction: column;
   width: 100%;
 
   @media (--viewportMedium) {
-  width: 75%;
+  width: 50%;
 }
 }
-.containerRightTop {
+
+.reviewDate {
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 0px;
+  margin-bottom: 2px;
+  
+}
+
+.containerAuthor {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 15px;
   height: 15px;
+}
+
+.textRecommend {
+  @apply --marketplaceH5FontStyles;
+font-weight: 300;
+margin-top: 5px;
+margin-bottom: 15px;
+}
+
+
+.reviewComments {
+  @apply --marketplaceBodyFontStyles;
+  font-family: 'Georgia';
+  font-size: 12px;
+  white-space: pre-line;
+  line-height: 1.2;
   margin-bottom: 20px;
 }
 
-.reviewContent {
-  @apply --marketplaceBodyFontStyles;
-  font-family: 'Georgia';
-  font-size: 10px;
-  margin: 0;
-  white-space: pre-line;
-  height: 50px;
-  line-height: 1.1;
-}
-
-.reviewInfo {
-  @apply --marketplaceDefaultFontStyles;
-  font-size: 10px;
-  margin-top: 2px;
-  margin-bottom: 0px;
-  color: var(--matterColorDark);
-
-  @media (--viewportMedium) {
-    margin-top: 2px;
-  }
-}
-
-.textContent{
-
-}
-
-.separator {
-  margin: 0 7px;
-}
-
-.desktopSeparator {
-  margin: 0 7px;
-  display: none;
-
-  @media (--viewportMedium) {
-    display: inline;
-  }
-}
-
-.mobileReviewRating {
-  display: block;
-  margin-top: 3px;
-  margin-bottom: 9px;
-
-  @media (--viewportMedium) {
-    display: none;
-  }
-}
-
-.desktopReviewRatingWrapper {
-  /* For aligning rating starts in the middle
-   * of a paragraph line */
-  position: relative;
-  display: none;
-
-  @media (--viewportMedium) {
-    display: inline;
-  }
-}
-
-.desktopReviewRating {
-  /* For aligning rating starts in the middle
-   * of a paragraph line */
-  display: inline-flex;
-  position: absolute;
-  top: 4px;
-  white-space: nowrap;
-}
-
-.reviewRatingStar {
-  height: 12px;
-  width: 12px;
-  margin-right: 2px;
-
-  &:last-of-type {
-    margin-right: 0;
-  }
-}
-
-.reviewDate {
-  font-size: 10px;
-  font-weight: 400;
-  margin-top: 0px;
-  margin-bottom: 5px;
-}
-
-.bodyStats {
-  display: flex;
-  flex-direction: column;
-  line-height: 1;
-
-  @media (--viewportMedium) {
-    flex-direction: row;
-    justify-content: space-between;
-    height: 20px;
-    margin-top: 2px;
-    margin-bottom: 2px;
-    padding-bottom: 2px;
-
-  }
+.containerMeasurements {
+  margin-bottom: 20px;
 
 }
 
@@ -207,19 +149,21 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 20px;
+  height: 12px;
   margin-top: 2px;
   margin-bottom: 2px;
-  padding-bottom: 2px;
+}
+
+.subBodyStats1 {
+  display: flex;
+  flex-direction: row;
 }
 
 .height {
   @apply --marketplaceDefaultFontStyles;
   font-size: 10px;
   line-height: 1;
-}
-
-.weight {
-  @apply --marketplaceDefaultFontStyles;
-  font-size: 12px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  color: var(--matterColorAnti);
 }

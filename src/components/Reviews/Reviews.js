@@ -68,7 +68,7 @@ const Review = props => {
   } = review;
   const [imageCarouselOpen, setImageCarouselOpen] = useState(false);
   const date = createdAt;
-  const dateString = intl.formatDate(date, { month: 'short', day: 'numeric', year: 'numeric' });
+  const dateString = intl.formatDate(date, { month: 'short', year: 'numeric' });
   const authorInfo = anonymous ? null : (
     <p className={css.reviewDate}>
       by <UserDisplayName user={user} intl={intl} />
@@ -103,41 +103,46 @@ const Review = props => {
   console.log(user);
   return (
     <div className={css.review}>
-      <div className={css.containerLeft}>
-        <ReviewImages
-          images={images}
-          imageCarouselOpen={imageCarouselOpen}
-          onImageCarouselClose={() => setImageCarouselOpen(false)}
-          handleViewPhotosClick={handleViewPhotosClick}
-          onManageDisableScrolling={onManageDisableScrolling}
-        />
-      </div>
-      <div className={css.containerRight}>
-        <div className={css.containerRightTop}>
-          <p className={css.reviewDate}>{dateString}</p>
-          {/*}<Avatar className={css.avatar} user={user} />{*/}
-          <p>{authorInfo}</p>
+        <div className={css.containerImage}>
+          <ReviewImages
+            images={images}
+            imageCarouselOpen={imageCarouselOpen}
+            onImageCarouselClose={() => setImageCarouselOpen(false)}
+            handleViewPhotosClick={handleViewPhotosClick}
+            onManageDisableScrolling={onManageDisableScrolling}
+          />
         </div>
-        <div className={css.textContent}>
-          <p className={css.reviewContent}>"{comments}"</p>
-          <div className={css.bodyStats1}>
-            <p className={css.height}>Height: {height}</p>
-            <p className={css.height}>Weight (lbs): {weight}</p>
-          </div>
-          <div className={css.bodyStats1}>
-            <p className={css.height}>Bust-Waist-Hips (in): </p>
-            <p className={css.height}>{bust}"-</p>
-            <p className={css.height}>{waist}"-</p>
-            <p className={css.height}>{hips}"</p>
-          </div>
-          <div className={css.bodyStats1}>
-             <p className={css.height}>Fit: {fit}</p>
-            <p className={css.height}>Variant: {variant}</p>
-          </div>
-          <div className={css.bodyStats}>
-          <p className={css.height}><b>Recommend?</b> {recommend}</p>
-          </div>
-        </div>
+        <div className={css.containerMain}>
+            {/*}<Avatar className={css.avatar} user={user} />{*/}
+            <div className={css.containerAuthor}>
+              <p className={css.reviewDate}>{dateString}</p>
+              <p>{authorInfo}</p>
+            </div>
+
+            <div className={css.containerMeasurements}>
+            <div className={css.bodyStats1}>
+              <p className={css.height}><b>Height:</b> {height}</p>
+              <p className={css.height}><b>Weight (lbs):</b> {weight}</p>
+            </div>
+            <div className={css.bodyStats1}>
+              <p className={css.height}><b>Bust-Waist-Hips (in):</b> </p>
+                <div className={css.subBodyStats1}>
+                <p className={css.height}>{bust}"-</p>
+                <p className={css.height}>{waist}"-</p>
+                <p className={css.height}>{hips}"</p>
+                </div>
+            </div>
+            <div className={css.bodyStats1}>
+              <p className={css.height}><b>Fit:</b> {fit}</p>
+              <p className={css.height}><b>Variant:</b> {variant}</p>
+            </div>
+         </div>
+
+            <p className={css.reviewComments}>"{comments}"</p>
+
+            <p className={css.textRecommend}><b>Recommend?</b> {recommend}</p>
+
+          
       </div>
     </div>
   );
