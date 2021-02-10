@@ -162,3 +162,13 @@ margin-bottom: 15px;
   margin-bottom: 1px;
   color: var(--matterColorAnti);
 }
+
+.carouselModalContainer {
+  flex-grow: 1;
+  /* min-height: 568px; */
+  padding: var(--modalPaddingMedium);
+  margin-top: 0vh;
+  margin-bottom: 0vh;
+  padding: 25px 60px 25px 60px;
+  background-color: var(--marketplaceColorBackground);
+}

@@ -5,7 +5,7 @@ max-width: 100%;
 
   @media (--viewportMedium) {
     margin: 0 0 0 0;
-    padding: 10px;
+    padding: 10px 10px 10px 0px;
     max-width: 25%;
   }
 
