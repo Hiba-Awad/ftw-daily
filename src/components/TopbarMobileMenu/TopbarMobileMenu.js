@@ -25,6 +25,7 @@ const TopbarMobileMenu = props => {
 
   const user = ensureCurrentUser(currentUser);
 
+  const brand = user.attributes.profile.publicData.brand;
   if (!isAuthenticated) {
     const signup = (
       <NamedLink name="SignupPage" className={css.signupLink}>
@@ -74,6 +75,29 @@ const TopbarMobileMenu = props => {
     return currentPage === page || isAccountSettingsPage ? css.currentPage : null;
   };
 
+  const listingLink = (
+    <NamedLink
+      className={classNames(css.navigationLink, currentPageClass('ManageListingsPage'))}
+      name="ManageListingsPage"
+    >
+      <FormattedMessage id="TopbarMobileMenu.yourListingsLink" />
+    </NamedLink>
+  );
+
+  const profileLink = (
+    <NamedLink
+      className={classNames(css.navigationLink, currentPageClass('ProfileSettingsPage'))}
+      name="ProfileSettingsPage"
+    >
+      <FormattedMessage id="TopbarMobileMenu.profileSettingsLink" />
+    </NamedLink>
+  );
+
+  const addListingButton = (
+    <NamedLink className={css.createNewListingLink} name="NewListingPage">
+      <FormattedMessage id="TopbarMobileMenu.newListingLink" />
+    </NamedLink>
+  );
   return (
     <div className={css.root}>
       <AvatarLarge className={css.avatar} user={currentUser} />
@@ -85,25 +109,14 @@ const TopbarMobileMenu = props => {
           <FormattedMessage id="TopbarMobileMenu.logoutLink" />
         </InlineTextButton>
         <NamedLink
-          className={classNames(css.inbox, currentPageClass('InboxPage'))}
-          name="InboxPage"
-          params={{ tab: currentUserHasListings ? 'sales' : 'orders' }}
-        >
-          <FormattedMessage id="TopbarMobileMenu.inboxLink" />
-          {notificationCountBadge}
-        </NamedLink>
-        <NamedLink
-          className={classNames(css.navigationLink, currentPageClass('ManageListingsPage'))}
-          name="ManageListingsPage"
-        >
-          <FormattedMessage id="TopbarMobileMenu.yourListingsLink" />
-        </NamedLink>
-        <NamedLink
           className={classNames(css.navigationLink, currentPageClass('ProfileSettingsPage'))}
-          name="ProfileSettingsPage"
+          name="ReviewDetailsPage"
         >
-          <FormattedMessage id="TopbarMobileMenu.profileSettingsLink" />
+          <span className={css.menuItemBorder} />
+          <FormattedMessage id="TopbarDesktop.review" />
         </NamedLink>
+        {!!brand && listingLink}
+        {!!brand && profileLink}
         <NamedLink
           className={classNames(css.navigationLink, currentPageClass('AccountSettingsPage'))}
           name="AccountSettingsPage"
@@ -111,11 +124,7 @@ const TopbarMobileMenu = props => {
           <FormattedMessage id="TopbarMobileMenu.accountSettingsLink" />
         </NamedLink>
       </div>
-      <div className={css.footer}>
-        <NamedLink className={css.createNewListingLink} name="NewListingPage">
-          <FormattedMessage id="TopbarMobileMenu.newListingLink" />
-        </NamedLink>
-      </div>
+      <div className={css.footer}>{!!brand && addListingButton}</div>
     </div>
   );
 };
