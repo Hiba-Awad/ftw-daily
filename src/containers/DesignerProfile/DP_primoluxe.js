@@ -12,7 +12,7 @@ import {
 } from '../../components';
 
 import css from './DesignerProfile.css';
-import dp_primoluxe from './DP_primoluxe.jpg';
+import dp_primoluxe from './DP_primoluxe.jpeg';
 import { pink } from '@material-ui/core/colors';
 
 const DP_primoluxePage = () => {
@@ -42,7 +42,7 @@ const DP_primoluxePage = () => {
           <div className={css.contentWrapper}>
             <div className={css.contentMain}>
               <div className={css.headerSub}>
-              <img className={css.coverImage} src={dp_primoluxe} alt="georgette mcgriff | primo luxe" />
+              <img className={css.coverImagePrimoLuxe} src={dp_primoluxe} alt="georgette mcgriff | primo luxe" />
                 <h5 className={css.headerSub}>
                   Georgette frequently traveled to Italy for her job as an executive assistant in the music business and was always bringing back beautiful leather gloves as gifts for her friends and family. One day, a friend suggested that Georgette create her own line of custom gloves and voila, Primo Luxe was born.
                 </h5>

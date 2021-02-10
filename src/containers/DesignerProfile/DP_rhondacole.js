@@ -42,7 +42,7 @@ const DP_rhondacolePage = () => {
           <div className={css.contentWrapper}>
             <div className={css.contentMain}>
               <div className={css.headerSub}>
-              <img className={css.coverImage} src={dp_rhondacole} alt="rhonda cole | rhonda cole" />
+              <img className={css.coverImagePrimoLuxe} src={dp_rhondacole} alt="rhonda cole | rhonda cole" />
                 <h5 className={css.headerSub}>
                   Rhonda Cole was a long-time ad executive at the New York Times before jumping into fashion. A lover of beautiful white shirts, she decided to launch her namesake brand after years of searching for the perfect white shirt and coming up short. 
                 </h5>
