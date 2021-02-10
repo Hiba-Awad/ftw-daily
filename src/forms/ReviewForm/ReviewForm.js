@@ -280,28 +280,21 @@ export class ReviewFormComponent extends Component {
                       label="Runs small"
                       value="Runs small"
                       showAsRequired="please select yes or no"
+                      validate={required('please specify the fit')}
                     />
                     <FieldRadioButton
                       id="fittruetosize"
                       name="fit"
                       label="True to size"
                       value="True to size"
-                      showAsRequired="please select yes or no"
                     />
                     <FieldRadioButton
                       id="fitlarge"
                       name="fit"
                       label="Runs large"
                       value="Runs large"
-                      showAsRequired="please select yes or no"
                     />
-                    <FieldRadioButton
-                      id="fitna"
-                      name="fit"
-                      label="n/a"
-                      value="n/a"
-                      showAsRequired="please select yes or no"
-                    />
+                    <FieldRadioButton id="fitna" name="fit" label="n/a" value="n/a" />
                   </div>
                 </div>
 
@@ -314,15 +307,16 @@ export class ReviewFormComponent extends Component {
                       id="recommendyes"
                       name="recommend"
                       label="Yes"
-                      value="true"
-                      showAsRequired="please select yes or no"
+                      value="Yes"
+                      validate={required('please specify if you recommend this product')}
                     />
                     <FieldRadioButton
                       id="recommendno"
                       name="recommend"
                       label="No"
-                      value="false"
+                      value="No"
                       showAsRequired="please select yes or no"
+                      validate={required('please specify if you recommend this product')}
                     />
                   </div>
                 </div>
@@ -336,14 +330,14 @@ export class ReviewFormComponent extends Component {
                       id="anonymousyes"
                       name="anonymous"
                       label="Yes"
-                      value="true"
+                      value="yes"
                       showAsRequired="please select yes or no"
                     />
                     <FieldRadioButton
                       id="anonymousno"
                       name="anonymous"
                       label="No"
-                      value="false"
+                      value="no"
                       showAsRequired="please select yes or no"
                     />
                   </div>
