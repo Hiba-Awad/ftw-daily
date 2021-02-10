@@ -33,7 +33,6 @@ const ReviewImages = props => {
           image={firstImage}
           variants={['scaled-medium']}
         />
-        {viewPhotosButton}
       </div>
       <Modal
         id="Reviews.imageCarousel"
