@@ -16,7 +16,7 @@
   @media (--viewportMedium) {
     width: 425px;
     height: 150px;
-    margin-left: 10px; 
+    margin-left: 0px;
     margin-right: 10px;
   }
   /* Remove link's hover effect */
