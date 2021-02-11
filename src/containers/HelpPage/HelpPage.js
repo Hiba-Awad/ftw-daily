@@ -46,14 +46,14 @@ const HelpPage = () => {
             
             <div className={css.contentRow}>
               <div className={css.contentText}>
-                <p style={{fontWeight: 'bold'}}>Check if you have an eligible review</p>
+                <h3 style={{fontWeight: 'bold'}}>Create an account with the same email you used to make a purchase</h3>
                 <p>We only allow verified reviewers to post reviews.</p>
-                <p>If you have purchased from one of our partner brands and would like to write a review, create an account using the same email you used to make the purchase. </p>
-                <p>Go to "my reviews" and you will see the eligible review.</p>
+                <p>Go to "my reviews" in the upper right corner, right under your avatar.</p>
+                <p>If you have an available review, you should see it in "availalbe reviews".</p>
               
               </div>
               <div className={css.contentStep}>
-                <h4>001</h4>
+                <h3 className={css.contentStep}>001</h3>
               </div>
               <div className={css.contentIcon}>
               <img className={css.graphic} src={verified} alt="verified review" />
@@ -65,11 +65,11 @@ const HelpPage = () => {
                 <img className={css.graphic} src={writereview} alt="writereview" />
               </div>
               <div className={css.contentStep}>
-                <h4>002</h4>
+                <h3 className={css.contentStep}>002</h3>
               </div>
               <div className={css.contentText}>
-                <p style={{fontWeight: 'bold'}}>Write the review</p>
-                <p>If you have an eligible review, open the form and fill out the review.</p>
+                <h3 style={{fontWeight: 'bold'}}>Write the review</h3>
+                <p>Tap "write review" and off you go!</p>
                 <p>Remember, small brands rely on your voice and experience to help spread the word and establish trust in the brand and product. Make it count!</p>
                 <p>You can submit your review anonymously. Make sure to select the "anonymous" option before hitting submit!</p>              
               </div>
@@ -77,12 +77,12 @@ const HelpPage = () => {
 
             <div className={css.contentRow}>
                 <div className={css.contentText}>
-                  <p style={{fontWeight: 'bold'}}>Hit "Publish" and you're good to go!</p>
+                  <h3 style={{fontWeight: 'bold'}}>Hit "Publish" and that's it!</h3>
                   <p>Once you hit publish, your review will be available for others to see. </p>
                   <p>Thank you so much for sharing your experience. We (and our designers) are so grateful.</p>
                 </div>
                 <div className={css.contentStep}>
-                  <h4>003</h4>
+                  <h3 className={css.contentStep}>003</h3>
                 </div>
                 <div className={css.contentIcon}>
                   <img className={css.graphic} src={published} alt="publishedreview" />

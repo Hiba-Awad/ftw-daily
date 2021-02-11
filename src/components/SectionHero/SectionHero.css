@@ -52,35 +52,30 @@
 
 .heroContent {
   margin: 0 24px 0 24px;
-  background-color: none;
-  
+  background-color: var(--marketplaceColorBackground);
+  border: solid;
+  border-color: var(--marketplaceColor);
+  border-width: 5px;
+  padding: 10px 30px 10px 30px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--boxShadowSectionLocationHover);
+
 
   @media (--viewportMedium) {
-    margin: 0 7.5vw 0 7.5vw;
+    margin: 0 20.5vw 0 20.5vw;
     background-color: none;
   }
 
   /* Special viewport for adjusting the heroContent's placement */
-
-  @media only screen and (min-width: 1025px) and (max-width: 1366px) {
-    padding: 100px 0 0px 500px;
-    background-color: none;
-
-  }
-
-  @media only screen and (min-width: 1367px) {
-    margin: 0 auto;
-    max-width: calc(1052px + 36px + 36px);
-    width: 100%;
-    padding: 0 0 0 500px;
-    background-color: none;
-
-  }
 }
 
 .heroMainTitle {
   @apply --marketplaceHeroTitleFontStyles;
   color: var(--matterColorDark);
+  margin: 0 0 0 0;
+  text-align: center;
+  padding-bottom: 15px;
 
   @apply --SectionHero_animation;
   animation-delay: 0.5s;
@@ -93,9 +88,10 @@
 
 .heroSubTitle {
   @apply --marketplaceH3FontStyles;
+  text-align: center;
 
   color: var(--matterColorDark);
-  margin: 0 0 32px 0;
+  margin: 0 0 0 0;
 
   @apply --SectionHero_animation;
   animation-delay: 0.65s;
