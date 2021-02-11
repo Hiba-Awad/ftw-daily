@@ -164,12 +164,15 @@
 
   /* Single column in mobile */
   margin-top: 34px;
+  margin-right: 5px;
+  margin-left: 5px;
 
   @media (--viewportMedium) {
     /* Three columns in desktop */
     width: calc(25% - 20px);
     margin-bottom: 36px;
-    margin-right: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
 
     /*Eugena's Notes: I removed the Horizontal space below and added "margin-right: 12px";
 
