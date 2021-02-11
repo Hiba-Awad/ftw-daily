@@ -85,6 +85,7 @@ const routeConfiguration = () => {
       path: '/',
       name: 'LandingPage',
       component: props => <LandingPage {...props} />,
+      loadData: LandingPage.loadData,
     },
     {
       path: '/about',
@@ -392,7 +393,7 @@ const routeConfiguration = () => {
       name: 'ava-james-nyc-product',
       component: props => <PH_avajamesnycPage {...props} />,
     },
-  
+
     {
       path: '/designer-profile-metal-and-stone-creations-lisette-bez',
       name: 'metal-and-stone-creations',

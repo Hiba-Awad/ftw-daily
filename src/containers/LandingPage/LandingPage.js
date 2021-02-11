@@ -4,13 +4,13 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { injectIntl, intlShape } from '../../util/reactIntl';
-import { isScrollingDisabled } from '../../ducks/UI.duck';
+import { manageDisableScrolling, isScrollingDisabled } from '../../ducks/UI.duck';
 import config from '../../config';
 import {
   Page,
   SectionHero,
-  SectionHowItWorks,
   SectionLocations,
+  SectionHowItWorks,
   SectionReviews,
   LayoutSingleColumn,
   LayoutWrapperTopbar,
@@ -18,14 +18,24 @@ import {
   LayoutWrapperFooter,
   Footer,
 } from '../../components';
+
 import { TopbarContainer } from '../../containers';
+import { loadData } from './LandingPage.duck';
 
 import facebookImage from '../../assets/facebookPreview.png';
 import twitterImage from '../../assets/twitterPreview.png';
 import css from './LandingPage.css';
 
 export const LandingPageComponent = props => {
-  const { history, intl, location, scrollingDisabled } = props;
+  const {
+    history,
+    intl,
+    location,
+    scrollingDisabled,
+    reviews,
+    queryReviewsError,
+    onManageDisableScrolling,
+  } = props;
 
   // Schema for search engines (helps them to understand what this page is about)
   // http://schema.org
@@ -69,7 +79,7 @@ export const LandingPageComponent = props => {
                 <SectionHowItWorks />
               </div>
             </li>
-    {*/}
+            {*/}
             <li className={css.section}>
               <div className={css.sectionContentFirstChild}>
                 <SectionLocations />
@@ -78,10 +88,13 @@ export const LandingPageComponent = props => {
 
             <li className={css.section}>
               <div className={css.sectionContentFirstChild}>
-                <SectionReviews />
+                <SectionReviews
+                  reviews={reviews}
+                  queryReviewsError={queryReviewsError}
+                  onManageDisableScrolling={onManageDisableScrolling}
+                />
               </div>
             </li>
-
           </ul>
         </LayoutWrapperMain>
         <LayoutWrapperFooter>
@@ -106,10 +119,18 @@ LandingPageComponent.propTypes = {
 };
 
 const mapStateToProps = state => {
+  const { reviews, queryReviewsError } = state.LandingPage;
   return {
+    reviews,
+    queryReviewsError,
     scrollingDisabled: isScrollingDisabled(state),
   };
 };
+
+const mapDispatchToProps = dispatch => ({
+  onManageDisableScrolling: (componentId, disableScrolling) =>
+    dispatch(manageDisableScrolling(componentId, disableScrolling)),
+});
 
 // Note: it is important that the withRouter HOC is **outside** the
 // connect HOC, otherwise React Router won't rerender any Route
@@ -119,8 +140,11 @@ const mapStateToProps = state => {
 // See: https://github.com/ReactTraining/react-router/issues/4671
 const LandingPage = compose(
   withRouter,
-  connect(mapStateToProps),
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  ),
   injectIntl
 )(LandingPageComponent);
-
+LandingPage.loadData = loadData;
 export default LandingPage;
