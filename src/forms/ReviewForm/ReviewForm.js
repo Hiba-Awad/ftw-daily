@@ -226,10 +226,12 @@ export class ReviewFormComponent extends Component {
                   <option value="5'5">5'5</option>
                   <option value="5'6">5'6</option>
                   <option value="5'7">5'7</option>
-                  <option value="5'4">5'8</option>
-                  <option value="5'5">5'9</option>
-                  <option value="5'6">6'0</option>
-                  <option value="5'7">taller than 6'0</option>
+                  <option value="5'8">5'8</option>
+                  <option value="5'9">5'9</option>
+                  <option value="5'10">5'10</option>
+                  <option value="5'11">5'11</option>
+                  <option value="6'0">6'0</option>
+                  <option value="6'0+">taller than 6'0</option>
                 </FieldSelect>
 
                 <FieldTextInput
