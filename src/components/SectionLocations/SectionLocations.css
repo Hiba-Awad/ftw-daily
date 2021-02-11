@@ -98,7 +98,8 @@
 
 .designers {
   width: calc(50% - 20px);
-  margin-right: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
 
 
   /* Single column in mobile */
@@ -108,7 +109,8 @@
     /* Three columns in desktop */
     width: calc(25% - 20px);
     margin-bottom: 36px;
-    margin-right: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
   }
 }
 

@@ -38,8 +38,8 @@ const PH_lafemmeaperoPage = () => {
         </LayoutWrapperTopbar>
 
         <LayoutWrapperMain className={css.staticPageWrapper}>
-          <h6 className={css.pageTitle} style={{color: "#DA4167",}}>PRODUCT HIGHLIGHT {'\u2B24'} OUISA</h6>
-          <h1 className={css.pageTitle}>the lillet stretch dress.</h1>
+          <h6 className={css.pageTitle} style={{color: "#DA4167",}}>PRODUCT HIGHLIGHT {'\u2B24'} LA FEMME APERO</h6>
+          <h1 className={css.pageTitle}>la robe legere fendue.</h1>
          
           <div className={css.contentWrapper}>
             <div className={css.contentMainOUISA2}>
@@ -49,32 +49,19 @@ const PH_lafemmeaperoPage = () => {
               </div>
               <div className={css.text}>
                 <h5 className={css.headerSub}>
-                  We sat down with designer Bryn Taylor to talk about her favorite piece from the collection, the Lillet Stretch Dress, the perfect example of 'quiet chic' and sophistication. 
                 </h5>
                 <div className={css.paragraph}>
                   <p style={{fontWeight: 'bold'}}>
-                  What’s your favorite product?
+                  What's your favorite item from your collection? Why?
                   </p>
                   <p>
-                  The Lillet Stretch Dress, for sure. My mother, who’s very chic, adores this dress.
+                  <b>S:</b> The blue slip dress, for sure. It’s super comfortable, really easy to wear, and you feel very empowered regardless of your body shape. We also love the concept of “accidentally sexy” so we created a long silhouette but there’s a slit. Not showing too much skin but still very empowering and sexy.
+                  </p>
+                  <p>
+                  <b>L:</b> It’s our bestseller. When we started the brand, we spent a lot of time thinking about what is sexy? What is the French way of being sexy? And French women love showing a little leg, whether it’s a short skirt or a slit in the front or back. So it’s very on brand! 
                   </p>
 
-                  <p style={{fontWeight: 'bold'}}>
-                  Tell us how you came up with this design.
-                  </p>
-                  <p>
-                  I wanted to create a super chic dress that, true to the OUISA style, was super comfortable. The fabric is this interesting polyester with stretch – it’s almost like scuba fabric but much thinner. It’s also completely matte. I love that the dress maintains a structure when you move; it’s not as flowy as it seems.
-                  </p>
-
-                  <p style={{fontWeight: 'bold'}}>
-                  How did you come up with the draping in the back?
-                  </p>
-                  <p>
-                  Many, many, many fit sessions!
-                  </p>
-                  <p>
-                  I also wanted to make sure that you could wear a bra with the dress and not have the bra be exposed. Plus, I didn’t want the dress to fall off the shoulder. It’s all about the little details.
-                  </p>
+                 
                   
                 </div>
               </div>

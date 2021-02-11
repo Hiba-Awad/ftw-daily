@@ -11,13 +11,11 @@
     flex-direction: row;
     width: 100%;
     flex-wrap: wrap;
+    justify-content: space-between;
   }
-
-
 }
 
 .sectionImages {
-
   cursor: pointer;
   max-width: 100%;
   height: auto;
@@ -53,7 +51,9 @@
 .review {
   padding: 0px;
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  flex-direction: column;  
+  
   box-shadow: var(--boxShadowListingCard);
 
   &:hover {
@@ -61,9 +61,9 @@
   }
 
   @media (--viewportMedium) {
-  width: 450px;
+  width: 350px;
   flex-direction: row;
-  margin-right: 20px;
+  margin-right: 10px;
 
   }
 }
@@ -129,10 +129,16 @@ margin-bottom: 15px;
 .reviewComments {
   @apply --marketplaceBodyFontStyles;
   font-family: 'Georgia';
-  font-size: 12px;
+  font-size: 14px;
   white-space: pre-line;
   line-height: 1.2;
   margin-bottom: 20px;
+
+  @media (--viewportMedium) {
+    font-size: 12px;
+
+}
+
 }
 
 .containerMeasurements {
@@ -156,10 +162,10 @@ margin-bottom: 15px;
 
 .height {
   @apply --marketplaceDefaultFontStyles;
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1;
-  margin-top: 1px;
-  margin-bottom: 1px;
+  margin-top: 2px;
+  margin-bottom: 2px;
   color: var(--matterColorAnti);
 }
 

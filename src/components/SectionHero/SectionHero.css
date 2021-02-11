@@ -52,16 +52,20 @@
 
 .heroContent {
   margin: 0 24px 0 24px;
+  background-color: none;
   
 
   @media (--viewportMedium) {
     margin: 0 7.5vw 0 7.5vw;
+    background-color: none;
   }
 
   /* Special viewport for adjusting the heroContent's placement */
 
   @media only screen and (min-width: 1025px) and (max-width: 1366px) {
     padding: 100px 0 0px 500px;
+    background-color: none;
+
   }
 
   @media only screen and (min-width: 1367px) {
@@ -69,6 +73,8 @@
     max-width: calc(1052px + 36px + 36px);
     width: 100%;
     padding: 0 0 0 500px;
+    background-color: none;
+
   }
 }
 

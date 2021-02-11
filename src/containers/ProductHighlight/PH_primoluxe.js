@@ -12,8 +12,7 @@ import {
 } from '../../components';
 
 import css from './ProductHighlight.css';
-import ph_sylthvirago from './PH_sylthvirago.jpg';
-import ph_sylthvirago2 from './PH_sylthvirago2.jpg';
+import ph_primoluxe from './PH_primoluxe.jpg';
 import { pink } from '@material-ui/core/colors';
 
 const PH_primoluxePage = () => {
@@ -23,10 +22,10 @@ const PH_primoluxePage = () => {
   // prettier-ignore
   return (
     <StaticPage
-      title="product highlight | sylth virago | persephone in white"
+      title="product highlight |  primo luxe | bianca fingerless gloves"
       schema={{
         '@context': 'http://schema.org',
-        '@type': 'PH_sylthvirago',
+        '@type': 'PH_primo luxe',
         description: 'Product Highlight | Revvie',
         name: 'Product Highlight Page',
       }}
@@ -37,34 +36,26 @@ const PH_primoluxePage = () => {
         </LayoutWrapperTopbar>
 
         <LayoutWrapperMain className={css.staticPageWrapper}>
-          <h6 className={css.pageTitle} style={{color: "#DA4167",}}>PRODUCT HIGHLIGHT {'\u2B24'} SYLTH VIRAGO</h6>
-          <h1 className={css.pageTitle}>persephone in white.</h1>
+          <h6 className={css.pageTitle} style={{color: "#DA4167",}}>PRODUCT HIGHLIGHT {'\u2B24'} PRIMO LUXE</h6>
+          <h1 className={css.pageTitle}>bianca fingerless gloves.</h1>
          
           <div className={css.contentWrapper}>
             <div className={css.contentMainFormerlyYan}>
-              <img className={css.coverImageFormerlyYan} src={ph_sylthvirago} alt="persephone boot in white" />
+              <img className={css.coverImageFormerlyYan} src={ph_primoluxe} alt="bianca fingerless gloves" />
               <div className={css.text}>
                 <h5 className={css.headerSub}>
-                  The Persephone style is the kind of boot that turns heads and keeps them there. Made entirely of vegan leather with gorgeously detailed hand embellishments, this is a true statement piece for the daringly sexy woman. 
+                Made from a buttery soft lambskin leather and finished with beautiful alligator embossing, the Bianca fingerless glove isn't just for looks.
                 </h5>
                 <div className={css.paragraph}>
                   <p style={{fontWeight: 'bold'}}>
-                  What’s your favorite shoe?
+                    Do you have a favorite style?
                   </p>
                   <p>
-                  The Persephone boot in white.
-                  </p>
-
-                  <p style={{fontWeight: 'bold'}}>
-                  Tell us about the design process.
-                  </p>
-                  <p>
-                  It was a very collaborative process that included all members of our team. Kyle Blackmon, our designer, had several sessions with Brianna Fano of SwatchHub, an embellishment and embroidery studio that’s based in NYC. Together, they developed the shape, colors, and design for the stunning kneecap embellishment. We decided to use more specialized lead-free beading instead of sequins to keep our materials as ethical as possible. Kyle also developed the Sylth heel which was inspired by shapes and movement found in dance and nature. It’s a head-turner, for sure!
+                  The Bianca fingerless gloves are my favorite. I like wearing them indoors as part of a specific look but they've also actually come very much in handy during these pandemic times when I'm dining outdoors. New York winters are chilly and these gloves keep my hands warm while freeing up my fingers so I can actually eat. Practical and stylish!
                   </p>
                   
                         
                 </div>
-                <img className={css.coverImageFormerlyYan} src={ph_sylthvirago2} alt="formerly yan convertible midi snap dress" />
 
               </div>
             </div>

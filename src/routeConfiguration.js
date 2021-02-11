@@ -519,7 +519,7 @@ const routeConfiguration = () => {
     },
 
     {
-      path: '/product-highlight-storms-will-roll-crossbody',
+      path: '/product-highlight-primo-luxe-bianca-fingerless-gloves',
       name: 'primo-luxe-product',
       component: props => <PH_primoluxePage {...props} />,
     },
