@@ -120,6 +120,10 @@ const Review = props => {
 
             <div className={css.containerMeasurements}>
             <div className={css.bodyStats1}>
+              <p className={css.height}><b>Fit:</b> {fit}</p>
+              <p className={css.height}><b>Variant:</b> {variant}</p>
+            </div>
+            <div className={css.bodyStats1}>
               <p className={css.height}><b>Height:</b> {height}</p>
               <p className={css.height}><b>Weight (lbs):</b> {weight}</p>
             </div>
@@ -131,10 +135,7 @@ const Review = props => {
                 <p className={css.height}>{hips}"</p>
                 </div>
             </div>
-            <div className={css.bodyStats1}>
-              <p className={css.height}><b>Fit:</b> {fit}</p>
-              <p className={css.height}><b>Variant:</b> {variant}</p>
-            </div>
+
          </div>
 
             <p className={css.reviewComments}>"{comments}"</p>

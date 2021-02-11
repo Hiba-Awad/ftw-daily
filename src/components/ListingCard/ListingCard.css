@@ -15,7 +15,7 @@
 .threeToTwoWrapper {
   /* Layout */
   display: block;
-  width: 80%;
+  width: 100%;
   position: relative;
   transition: var(--transitionStyleButton);
 
@@ -109,7 +109,7 @@
 
   @media (--viewportMedium) {
     margin-top: 0;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     font-size: 14px;
   }
 }
