@@ -4,8 +4,11 @@ import { injectIntl, intlShape, FormattedMessage } from '../../util/reactIntl';
 import { arrayOf, string } from 'prop-types';
 import classNames from 'classnames';
 import { Avatar, ReviewRating, UserDisplayName } from '../../components';
+import { ensureListing } from '../../util/data';
+import { createSlug } from '../../util/urlHelpers';
+
 import { propTypes } from '../../util/types';
-import { ResponsiveImage, Modal, ImageCarousel } from '../../components/';
+import { NamedLink, ResponsiveImage, Modal, ImageCarousel } from '../../components/';
 
 import css from './Reviews.css';
 
@@ -68,13 +71,17 @@ const Review = props => {
   const [imageCarouselOpen, setImageCarouselOpen] = useState(false);
   const date = createdAt;
   const dateString = intl.formatDate(date, { month: 'short', year: 'numeric' });
-  const authorInfo = anonymous ? null : (
-    <p className={css.reviewDate}>
-      by <UserDisplayName user={user} intl={intl} />
-    </p>
-  );
+  const authorInfo =
+    anonymous === 'yes' ? null : (
+      <p className={css.reviewDate}>
+        by <UserDisplayName user={user} intl={intl} />
+      </p>
+    );
   const { email, weight, height, bust, waist, hips } = userData;
-
+  const currentListing = ensureListing(listing);
+  const id = currentListing.id.uuid;
+  const { title = '', price } = currentListing.attributes;
+  const slug = createSlug(title);
   const handleViewPhotosClick = e => {
     // Stop event from bubbling up to prevent image click handler
     // trying to open the carousel as well.
@@ -102,47 +109,59 @@ const Review = props => {
   console.log(user);
   return (
     <div className={css.review}>
-        <div className={css.containerImage}>
-          <ReviewImages
-            images={images}
-            imageCarouselOpen={imageCarouselOpen}
-            onImageCarouselClose={() => setImageCarouselOpen(false)}
-            handleViewPhotosClick={handleViewPhotosClick}
-            onManageDisableScrolling={onManageDisableScrolling}
-          />
+      <div className={css.containerImage}>
+        <ReviewImages
+          images={images}
+          imageCarouselOpen={imageCarouselOpen}
+          onImageCarouselClose={() => setImageCarouselOpen(false)}
+          handleViewPhotosClick={handleViewPhotosClick}
+          onManageDisableScrolling={onManageDisableScrolling}
+        />
+      </div>
+      <div className={css.containerMain}>
+        <NamedLink name="ListingPage" params={{ id, slug }}>
+          {title}
+        </NamedLink>
+        {/*}<Avatar className={css.avatar} user={user} />{*/}
+        <div className={css.containerAuthor}>
+          <p className={css.reviewDate}>{dateString}</p>
+          <p>{authorInfo}</p>
         </div>
-        <div className={css.containerMain}>
-            {/*}<Avatar className={css.avatar} user={user} />{*/}
-            <div className={css.containerAuthor}>
-              <p className={css.reviewDate}>{dateString}</p>
-              <p>{authorInfo}</p>
+
+        <div className={css.containerMeasurements}>
+          <div className={css.bodyStats1}>
+            <p className={css.height}>
+              <b>Fit:</b> {fit}
+            </p>
+            <p className={css.height}>
+              <b>Variant:</b> {variant}
+            </p>
+          </div>
+          <div className={css.bodyStats1}>
+            <p className={css.height}>
+              <b>Height:</b> {height}
+            </p>
+            <p className={css.height}>
+              <b>Weight (lbs):</b> {weight}
+            </p>
+          </div>
+          <div className={css.bodyStats1}>
+            <p className={css.height}>
+              <b>Bust-Waist-Hips (in):</b>{' '}
+            </p>
+            <div className={css.subBodyStats1}>
+              <p className={css.height}>{bust}"-</p>
+              <p className={css.height}>{waist}"-</p>
+              <p className={css.height}>{hips}"</p>
             </div>
+          </div>
+        </div>
 
-            <div className={css.containerMeasurements}>
-            <div className={css.bodyStats1}>
-              <p className={css.height}><b>Fit:</b> {fit}</p>
-              <p className={css.height}><b>Variant:</b> {variant}</p>
-            </div>
-            <div className={css.bodyStats1}>
-              <p className={css.height}><b>Height:</b> {height}</p>
-              <p className={css.height}><b>Weight (lbs):</b> {weight}</p>
-            </div>
-            <div className={css.bodyStats1}>
-              <p className={css.height}><b>Bust-Waist-Hips (in):</b> </p>
-                <div className={css.subBodyStats1}>
-                <p className={css.height}>{bust}"-</p>
-                <p className={css.height}>{waist}"-</p>
-                <p className={css.height}>{hips}"</p>
-                </div>
-            </div>
+        <p className={css.reviewComments}>"{comments}"</p>
 
-         </div>
-
-            <p className={css.reviewComments}>"{comments}"</p>
-
-            <p className={css.textRecommend}><b>Recommend?</b> {recommend}</p>
-
-          
+        <p className={css.textRecommend}>
+          <b>Recommend?</b> {recommend}
+        </p>
       </div>
     </div>
   );
