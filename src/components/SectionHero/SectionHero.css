@@ -53,13 +53,11 @@
 .heroContent {
   margin: 0 24px 0 24px;
   background-color: var(--marketplaceColorBackground);
-  border: solid;
-  border-color: var(--marketplaceColor);
-  border-width: 5px;
+
   padding: 10px 30px 10px 30px;
   justify-content: center;
   align-items: center;
-  box-shadow: var(--boxShadowSectionLocationHover);
+  box-shadow: var(--boxShadowHero);
 
 
   @media (--viewportMedium) {

@@ -175,6 +175,17 @@ const SignupFormComponent = props => (
             />
           </div>
 
+          <div className ={css.accountCreationText}>
+              <p className={css.bottomWrapperText}>
+              <span className={css.termsTextAccount}>
+                Create an account with the <b>same email</b> that you used to make a purchase from our brands.
+                <br></br>
+                <br></br>
+                You'll be able to write a review for that purchase!
+              </span>
+            </p>
+          </div>
+
           <div className={css.bottomWrapper}>
             <p className={css.bottomWrapperText}>
               <span className={css.termsText}>

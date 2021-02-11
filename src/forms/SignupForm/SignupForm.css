@@ -34,10 +34,22 @@
 
 .bottomWrapper {
   @apply --marketplaceModalBottomWrapper;
+  margin-top: 30px;
 }
 
 .bottomWrapperText {
   @apply --marketplaceModalBottomWrapperText;
+  font-weight: 400;
+
+}
+
+.accountCreationText {
+  text-align: center;
+  padding-top: 45px;
+}
+
+.termsTextAccount {
+  font-weight: 400;
 }
 
 .termsText {
