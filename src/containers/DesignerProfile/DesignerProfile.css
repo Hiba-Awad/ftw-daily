@@ -46,18 +46,17 @@
 }
 
 .contentMain {
-  width: 70%;
+  width: 100%;
   margin-bottom: 50px;
-  padding: 25px;
+  padding: 5px;
   box-shadow: var(--boxShadowSectionLocationHover);
-
-
-  &:hover {
-    transform: scale(1.02);
-  }
 
   @media (--viewportMedium) {
     max-width: 750px;
+
+    &:hover {
+      transform: scale(1.02);
+    }
   }
 }
 

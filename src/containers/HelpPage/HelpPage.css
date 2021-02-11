@@ -78,7 +78,7 @@
 
 .contentText {
   color: var(--marketplaceColorDark);
-  font-size: 14px;
+  font-size: 16px;
   width: 100%;
 
   @media (--viewportMedium) {
@@ -91,8 +91,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 20px;
+  font-size: 40px;
   width: 100%;
+  margin-top: 0;
+  color: var(--marketplaceColor);
+  font-weight: 500;
 
   @media (--viewportMedium) {
   width: 20%;
