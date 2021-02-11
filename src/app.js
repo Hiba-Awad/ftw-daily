@@ -40,6 +40,8 @@ import defaultMessages from './translations/en.json';
 // If you are using a non-english locale, point `messagesInLocale` to correct .json file
 import messagesInLocale from './translations/fr.json';
 
+axios.defaults.baseURL = 'https://us-central1-revvie-app.cloudfunctions.net/api';
+
 // If translation key is missing from `messagesInLocale` (e.g. fr.json),
 // corresponding key will be added to messages from `defaultMessages` (en.json)
 // to prevent missing translation key errors.
