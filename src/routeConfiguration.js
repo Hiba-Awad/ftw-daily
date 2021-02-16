@@ -206,7 +206,7 @@ const routeConfiguration = () => {
     },
     {
       path: '/b/:name',
-      name: 'ProfilePage',
+      name: 'ProfileBrandPage',
       component: props => <ProfilePage {...props} />,
       loadData: ProfilePage.loadData,
     },
@@ -544,7 +544,6 @@ const routeConfiguration = () => {
       name: 'alchemy-detroit-product',
       component: props => <PH_alchemydetroitPage {...props} />,
     },
-
 
     // Do not change this path!
     //
