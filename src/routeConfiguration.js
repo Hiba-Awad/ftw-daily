@@ -203,6 +203,13 @@ const routeConfiguration = () => {
       loadData: ProfilePage.loadData,
     },
     {
+      path: '/b/:name',
+      name: 'ProfilePage',
+      component: props => <ProfilePage {...props} />,
+      loadData: ProfilePage.loadData,
+    },
+
+    {
       path: '/profile-settings',
       name: 'ProfileSettingsPage',
       auth: true,
