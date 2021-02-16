@@ -5,6 +5,7 @@
   flex-direction: column;
 }
 
+ 
 .listingCards {
   padding: 0 12px 96px 12px;
   display: flex;
@@ -42,8 +43,9 @@
 
     * flex-basis: calc((100%/columnCount) - (guttersBetweenColumns / columnCount))
     */
-    flex-basis: calc(33% - 8px);
-    margin-right: 10px;
+    flex-basis: calc(25% - 20px);
+    margin-right: 8px;
+    margin-left: 8px;
   }
 
   @media (--viewportLarge) {
@@ -61,8 +63,9 @@
 
     * flex-basis: calc((100%/columnCount) - (guttersBetweenColumns / columnCount))
     */
-    flex-basis: calc(25% - 6px);
-    margin-right: 0px;
+    flex-basis: calc(25% - 20px);
+    margin-right: 8px;
+    margin-left: 8px;
   }
 
   @media (--viewportXLarge) {
@@ -81,8 +84,9 @@
      * flex-basis: calc((100%/columnCount) - (guttersBetweenColumns / columnCount))
      */
 
-    flex-basis: calc(25% - 12px);
-    margin-right: 0px;
+     flex-basis: calc(25% - 20px);
+     margin-right: 8px;
+     margin-left: 8px;
   }
 }
 

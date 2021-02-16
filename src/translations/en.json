@@ -1049,6 +1049,7 @@
   "TopbarMobileMenu.yourListingsLink": "your listings",
   "TopbarSearchForm.placeholder": "search...",
   "TopbarSearchForm.searchHelp": "Tip: You can also search by size, for example \"size 8 dress\".",
+  "Topbar.mobileSearchHelp": "",
   "TransactionPage.deletedListing": "deleted listing",
   "TransactionPage.fetchOrderFailed": "Fetching order data failed.",
   "TransactionPage.fetchSaleFailed": "Fetching sale data failed.",

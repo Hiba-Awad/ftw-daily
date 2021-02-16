@@ -51,6 +51,8 @@ import {
   PH_harperthelabelPage,
   DP_primoluxePage,
   PH_primoluxePage,
+  DP_alchemydetroitPage,
+  PH_alchemydetroitPage,
 } from './containers';
 
 // routeConfiguration needs to initialize containers first
@@ -530,6 +532,20 @@ const routeConfiguration = () => {
       name: 'primo-luxe-product',
       component: props => <PH_primoluxePage {...props} />,
     },
+
+    {
+      path: '/designer-profile-alchemy-detroit-shelley-van-riper',
+      name: 'alchemy-detroit',
+      component: props => <DP_alchemydetroitPage {...props} />,
+    },
+
+    {
+      path: '/product-highlight-alchemy-detroit-catherine-blazer',
+      name: 'alchemy-detroit-product',
+      component: props => <PH_alchemydetroitPage {...props} />,
+    },
+
+
     // Do not change this path!
     //
     // The API expects that the application implements /reset-password endpoint

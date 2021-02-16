@@ -74,6 +74,7 @@
   margin: 0 0 0 0;
   text-align: center;
   padding-bottom: 15px;
+  
 
   @apply --SectionHero_animation;
   animation-delay: 0.5s;
@@ -81,6 +82,7 @@
   @media (--viewportMedium) {
     max-width: var(--SectionHero_desktopTitleMaxWidth);
     padding-bottom: 25px;
+    padding-top: 35px;
   }
 }
 
