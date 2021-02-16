@@ -133,7 +133,10 @@ export class ProfilePageComponent extends Component {
         </h1>
         {hasBio ? <p className={css.bio}>{bio}</p> : null}
         <div className={css.bioLinks}>
-          <FreeBreakfastOutlinedIcon className={css.icon} style={{ color: 'black' }}></FreeBreakfastOutlinedIcon>
+          <FreeBreakfastOutlinedIcon
+            className={css.icon}
+            style={{ color: 'black' }}
+          ></FreeBreakfastOutlinedIcon>
           {hasBio ? (
             <NamedLink className={css.outboundLink} name={designerProfileLink}>
               <FormattedMessage id="ProfilePage.designerProfile" />
@@ -141,7 +144,10 @@ export class ProfilePageComponent extends Component {
           ) : null}
         </div>
         <div className={css.bioLinks}>
-          <HighlightOutlinedIcon className={css.icon} style={{ color: 'black' }}></HighlightOutlinedIcon>
+          <HighlightOutlinedIcon
+            className={css.icon}
+            style={{ color: 'black' }}
+          ></HighlightOutlinedIcon>
           {hasBio ? (
             <NamedLink className={css.outboundLink} name={productHighlightLink}>
               <FormattedMessage id="ProfilePage.productHighlight" />
@@ -149,17 +155,16 @@ export class ProfilePageComponent extends Component {
           ) : null}
         </div>
         <div className={css.bioLinks}>
-        <BookmarkIcon className={css.icon} style={{ color: "black"}}></BookmarkIcon>
-        {hasBio ? <ExternalLink className={css.outboundLink} href={websiteLink}>
-        {websiteLink}
-        </ExternalLink> : null}
+          <BookmarkIcon className={css.icon} style={{ color: 'black' }}></BookmarkIcon>
+          {hasBio ? (
+            <ExternalLink className={css.outboundLink} href={websiteLink}>
+              {websiteLink}
+            </ExternalLink>
+          ) : null}
         </div>
         <h2 className={css.listingsTitle}>
-              <FormattedMessage
-                id="ProfilePage.reviewsTitle"
-                values={{ count: reviews.length }}
-              />
-            </h2>
+          <FormattedMessage id="ProfilePage.reviewsTitle" values={{ count: reviews.length }} />
+        </h2>
         {isMobileLayout ? mobileReviews : desktopReviews}
         {hasListings ? (
           <div className={listingsContainerClasses}>
@@ -303,7 +308,12 @@ const ProfilePage = compose(
 )(ProfilePageComponent);
 
 ProfilePage.loadData = params => {
-  const id = new UUID(params.id);
+  let id = new UUID(params.id);
+  if (params.name) {
+    const map = config.brandIdMap;
+    id = new UUID(map[params.name]);
+  }
+  console.log(id);
   return loadData(id);
 };
 

@@ -186,6 +186,19 @@ const maps = {
   },
 };
 
+const brandIdMap = {
+  spinoza: '6011af1f-2236-43ef-a77a-b94f771a3999',
+  arteaga: '601190c7-6359-4f9e-9af7-8af74dab50ee',
+  'primo-luxe': '601d915c-b066-4513-b41f-2e3abe66888a',
+  'harper-the-label': '601ca574-ef5b-4414-838b-e647bed770b8',
+  'sylth-virago': '601c4afa-f72b-4f42-96eb-cd0f3f6ddfa6',
+  'la-femme-apero': '601c33dd-9f09-4605-a781-72bab94f7581',
+  ouisa: '6011c643-7a8d-47de-8982-83119fe8b410',
+  'rhonda-cole': '6011badf-0453-4c2a-95da-c65191b99371',
+  'formerly-yan': '601187f0-45d8-4671-b5cf-5550e2b437ad',
+  'marco-baga': '601171c1-ec55-401c-bd36-e2e7f00f2ec0',
+};
+
 // NOTE: only expose configuration that should be visible in the
 // client side, don't add any server secrets in this file.
 const config = {
@@ -227,6 +240,7 @@ const config = {
   usingSSL,
   maps,
   custom,
+  brandIdMap,
 };
 
 export default config;
