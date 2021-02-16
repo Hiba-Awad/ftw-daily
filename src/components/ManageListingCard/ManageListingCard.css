@@ -281,6 +281,7 @@
   @apply --marketplaceH3FontStyles;
   color: var(--matterColor);
   text-align: left;
+  word-break: normal;
 
   padding-top: 3px;
   padding-bottom: 3px;
