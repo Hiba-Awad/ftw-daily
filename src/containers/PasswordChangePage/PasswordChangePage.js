@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
 import { propTypes } from '../../util/types';
 import { isScrollingDisabled } from '../../ducks/UI.duck';
+import { ensureCurrentUser } from '../../util/data';
+
 import {
   LayoutSideNavigation,
   LayoutWrapperMain,
@@ -35,6 +37,8 @@ export const PasswordChangePageComponent = props => {
     scrollingDisabled,
     intl,
   } = props;
+  const user = ensureCurrentUser(currentUser);
+  const brand = user.attributes.profile.publicData.brand;
 
   const changePasswordForm =
     currentUser && currentUser.id ? (
@@ -63,9 +67,8 @@ export const PasswordChangePageComponent = props => {
             desktopClassName={css.desktopTopbar}
             mobileClassName={css.mobileTopbar}
           />
-          <UserNav selectedPageName="PasswordChangePage" />
         </LayoutWrapperTopbar>
-        <LayoutWrapperAccountSettingsSideNav currentTab="PasswordChangePage" />
+        <LayoutWrapperAccountSettingsSideNav currentTab="PasswordChangePage" brand={brand} />
         <LayoutWrapperMain>
           <div className={css.content}>
             <h1 className={css.title}>
