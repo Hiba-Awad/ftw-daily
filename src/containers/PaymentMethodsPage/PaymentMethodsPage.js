@@ -144,6 +144,8 @@ const PaymentMethodsPageComponent = props => {
 
   const showForm = cardState === 'replaceCard' || !hasDefaultPaymentMethod;
   const showCardDetails = !!hasDefaultPaymentMethod;
+  const brand = ensuredCurrentUser.attributes.profile.publicData.brand;
+
   return (
     <Page title={title} scrollingDisabled={scrollingDisabled}>
       <LayoutSideNavigation>
@@ -153,9 +155,8 @@ const PaymentMethodsPageComponent = props => {
             desktopClassName={css.desktopTopbar}
             mobileClassName={css.mobileTopbar}
           />
-          <UserNav selectedPageName="PaymentMethodsPage" />
         </LayoutWrapperTopbar>
-        <LayoutWrapperAccountSettingsSideNav currentTab="PaymentMethodsPage" />
+        <LayoutWrapperAccountSettingsSideNav currentTab="PaymentMethodsPage" brand={brand} />
         <LayoutWrapperMain>
           <div className={css.content}>
             <h1 className={css.title}>

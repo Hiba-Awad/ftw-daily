@@ -187,6 +187,7 @@ const maps = {
 };
 
 const brandIdMap = {
+  'ava-james-nyc': '5fff3aba-cdb2-4208-8213-aba6df523dd6',
   spinoza: '6011af1f-2236-43ef-a77a-b94f771a3999',
   arteaga: '601190c7-6359-4f9e-9af7-8af74dab50ee',
   'primo-luxe': '601d915c-b066-4513-b41f-2e3abe66888a',
@@ -197,6 +198,7 @@ const brandIdMap = {
   'rhonda-cole': '6011badf-0453-4c2a-95da-c65191b99371',
   'formerly-yan': '601187f0-45d8-4671-b5cf-5550e2b437ad',
   'marco-baga': '601171c1-ec55-401c-bd36-e2e7f00f2ec0',
+  'metal-stone': '600716f5-356d-433d-a9f2-2e0950504ad6',
 };
 
 // NOTE: only expose configuration that should be visible in the

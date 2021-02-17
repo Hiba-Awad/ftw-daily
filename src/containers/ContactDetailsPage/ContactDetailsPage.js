@@ -50,6 +50,8 @@ export const ContactDetailsPageComponent = props => {
   const currentEmail = user.attributes.email || '';
   const protectedData = user.attributes.profile.protectedData || {};
   const currentPhoneNumber = protectedData.phoneNumber || '';
+  const brand = user.attributes.profile.publicData.brand;
+
   const contactInfoForm = user.id ? (
     <ContactDetailsForm
       className={css.form}
@@ -82,7 +84,7 @@ export const ContactDetailsPageComponent = props => {
             mobileClassName={css.mobileTopbar}
           />
         </LayoutWrapperTopbar>
-        <LayoutWrapperAccountSettingsSideNav currentTab="ContactDetailsPage" />
+        <LayoutWrapperAccountSettingsSideNav currentTab="ContactDetailsPage" brand={brand} />
         <LayoutWrapperMain>
           <div className={css.content}>
             <h1 className={css.title}>

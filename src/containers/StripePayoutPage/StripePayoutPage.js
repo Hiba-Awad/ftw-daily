@@ -142,6 +142,8 @@ export const StripePayoutPageComponent = props => {
     handleGetStripeConnectAccountLink('custom_account_verification')();
   }
 
+  const brand = ensuredCurrentUser.attributes.profile.publicData.brand;
+
   return (
     <Page title={title} scrollingDisabled={scrollingDisabled}>
       <LayoutSideNavigation>
@@ -151,9 +153,8 @@ export const StripePayoutPageComponent = props => {
             desktopClassName={css.desktopTopbar}
             mobileClassName={css.mobileTopbar}
           />
-          <UserNav selectedPageName="StripePayoutPage" />
         </LayoutWrapperTopbar>
-        <LayoutWrapperAccountSettingsSideNav currentTab="StripePayoutPage" />
+        <LayoutWrapperAccountSettingsSideNav currentTab="StripePayoutPage" brand={brand} />
         <LayoutWrapperMain>
           <div className={css.content}>
             <h1 className={css.title}>
