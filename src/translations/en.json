@@ -745,7 +745,7 @@
   "ReviewForm.reviewSubmit": "Publish review",
   "ReviewForm.reviewSubmitAlreadySent": "Review already sent. Please refresh the page.",
   "ReviewForm.reviewSubmitFailed": "Failed to sent a review. Please try again.",
-  "ReviewModal.description": "Reviews are an important part of the Revvie community. Please share what went well and what could have been improved.",
+  "ReviewModal.description": "Reviews are an important part of the Revvie community. Please share what went well and what could be improved.",
   "ReviewModal.later": "Later",
   "ReviewModal.title": "Leave a review",
   "SavedCardDetails.cancel": "Cancel",
