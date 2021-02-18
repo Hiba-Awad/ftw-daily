@@ -20,6 +20,10 @@ import lafemmeaperoImage from './images/lafemmeapero.jpg';
 import sylthviragoImage from './images/sylthvirago.png';
 import harperImage from './images/harper.jpg';
 import primoluxeImage from './images/primoluxe.jpg';
+import noyetteImage from './images/noyette.png';
+import alchemydetroitImage from './images/alchemydetroit.jpg';
+import yeonImage from './images/yeon.jpg';
+import hmeteImage from './images/hmete.png';
 
 class LocationImage extends Component {
   render() {
@@ -143,6 +147,39 @@ const SectionLocations = props => {
             <FormattedMessage id="SectionLocations.metalandstone" />
           </div>
         </div>
+{/*Eugena: I think you need to add some magic here :0) but the brand profile pages are all set up!}
+
+        <div className={css.designers}>
+          {locationLink('noyette', noyetteImage, 'noyette')}
+          <div className={css.subtext}>
+            <FormattedMessage id="SectionLocations.noyette" />
+          </div>
+        </div>
+
+        <div className={css.designers}>
+          {locationLink('alchemy detroit', alchemydetroitImage, 'alchemy-detroit')}
+          <div className={css.subtext}>
+            <FormattedMessage id="SectionLocations.alchemydetroit" />
+          </div>
+        </div>
+
+        <div className={css.designers}>
+          {locationLink('yeon', yeonImage, 'yeon')}
+          <div className={css.subtext}>
+            <FormattedMessage id="SectionLocations.yeon" />
+          </div>
+        </div>
+
+        <div className={css.designers}>
+          {locationLink('hmete', hmeteImage, 'hmete')}
+          <div className={css.subtext}>
+            <FormattedMessage id="SectionLocations.hmete" />
+          </div>
+        </div>
+
+  {*/}
+
+
       </div>
     </div>
   );

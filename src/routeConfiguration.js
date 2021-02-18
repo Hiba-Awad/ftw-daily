@@ -53,6 +53,12 @@ import {
   PH_primoluxePage,
   DP_alchemydetroitPage,
   PH_alchemydetroitPage,
+  DP_hmetePage,
+  PH_hmetePage,
+  DP_noyettePage,
+  PH_noyettePage,
+  DP_yeonPage,
+  PH_yeonPage,
 } from './containers';
 
 // routeConfiguration needs to initialize containers first
@@ -543,6 +549,43 @@ const routeConfiguration = () => {
       path: '/product-highlight-alchemy-detroit-catherine-blazer',
       name: 'alchemy-detroit-product',
       component: props => <PH_alchemydetroitPage {...props} />,
+    },
+    
+    {
+      path: '/designer-profile-hmete-hikmete-morina',
+      name: 'hmete',
+      component: props => <DP_hmetePage {...props} />,
+    },
+
+    {
+      path: '/product-highlight-hmete-classic-black-dress',
+      name: 'hmete-product',
+      component: props => <PH_hmetePage {...props} />,
+    },
+
+    {
+      path: '/designer-profile-noyette-riley-bennett',
+      name: 'noyette',
+      component: props => <DP_noyettePage {...props} />,
+    },
+
+    {
+      path: '/product-highlight-noyette-fillmore-dress',
+      name: 'noyette-product',
+      component: props => <PH_noyettePage {...props} />,
+    },
+
+
+    {
+      path: '/designer-profile-yeon-yeon-park',
+      name: 'yeon',
+      component: props => <DP_yeonPage {...props} />,
+    },
+
+    {
+      path: '/product-highlight-yeon-rose-bomber-jacket',
+      name: 'yeon-product',
+      component: props => <PH_yeonPage {...props} />,
     },
 
     // Do not change this path!
