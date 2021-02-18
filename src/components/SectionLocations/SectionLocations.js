@@ -147,7 +147,6 @@ const SectionLocations = props => {
             <FormattedMessage id="SectionLocations.metalandstone" />
           </div>
         </div>
-{/*Eugena: I think you need to add some magic here :0) but the brand profile pages are all set up!}
 
         <div className={css.designers}>
           {locationLink('noyette', noyetteImage, 'noyette')}
@@ -176,10 +175,6 @@ const SectionLocations = props => {
             <FormattedMessage id="SectionLocations.hmete" />
           </div>
         </div>
-
-  {*/}
-
-
       </div>
     </div>
   );

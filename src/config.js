@@ -199,6 +199,10 @@ const brandIdMap = {
   'formerly-yan': '601187f0-45d8-4671-b5cf-5550e2b437ad',
   'marco-baga': '601171c1-ec55-401c-bd36-e2e7f00f2ec0',
   'metal-stone': '600716f5-356d-433d-a9f2-2e0950504ad6',
+  noyette: '602b246d-436f-4943-8d96-844117177748',
+  'alchemy-detroit': '6021a8fe-4822-4f89-806e-c01170abe957',
+  yeon: '60242829-507e-44b0-aae7-13c7ffc97815',
+  hmete: '602dba81-5366-48f2-8930-9dec0b9f7096',
 };
 
 // NOTE: only expose configuration that should be visible in the
