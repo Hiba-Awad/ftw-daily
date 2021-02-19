@@ -89,7 +89,7 @@ const Review = props => {
   const authorDisplayName = userDisplayNameAsString(ensuredAuthor, '');
   const brandLink = (
     <NamedLink
-      className={css.authorNameLink}
+      className={css.brandLink}
       name="ProfilePage"
       params={{ id: ensuredAuthor.id.uuid }}
     >

@@ -125,8 +125,15 @@
 }
 
 .brandLink {
-  margin-top: 15px;
+  margin-top: 2px;
+  @apply --marketplaceBodyFontStyles;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #000000;
+  font-size: 15px;
+
 }
+
+
 .containerAuthor {
   display: flex;
   flex-direction: row;
