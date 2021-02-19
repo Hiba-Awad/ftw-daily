@@ -36,9 +36,6 @@
   padding: 15px;
 }
 
-
-
-
 .viewPhotos {
   font-size: 10px;
   font-weight: 500;
@@ -52,7 +49,7 @@
   left: 15px;
   margin: 0;
   padding: 8px 13px 6px 13px;
-  
+
   &:hover {
     text-decoration: underline;
   }
@@ -60,7 +57,6 @@
 
 .reviewItem {
   margin-bottom: 25px;
-
 
   @media (--viewportMedium) {
     margin-bottom: 25px;
@@ -71,8 +67,8 @@
   padding: 0px;
   display: flex;
   width: 100%;
-  flex-direction: column;  
-  
+  flex-direction: column;
+
   box-shadow: var(--boxShadowListingCard);
 
   &:hover {
@@ -80,23 +76,22 @@
   }
 
   @media (--viewportMedium) {
-  width: 425px;
-  flex-direction: row;
-  margin-left: 20px;
-  margin-right: 20px;
-
+    width: 425px;
+    flex-direction: row;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }
 
 .containerTop {
-height: 80%;
-width: 100%;
-display: flex;
-flex-direction: column;
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 
   @media (--viewportMedium) {
-  flex-direction: row;
-  align-items: flex-start;
+    flex-direction: row;
+    align-items: flex-start;
   }
 }
 
@@ -104,10 +99,10 @@ flex-direction: column;
   display: flex;
   flex-direction: column;
   width: 100%;
- 
+
   @media (--viewportMedium) {
-  width: 50%;
-}
+    width: 50%;
+  }
 }
 
 .containerMain {
@@ -118,8 +113,8 @@ flex-direction: column;
   line-height: 1.1;
 
   @media (--viewportMedium) {
-  width: 50%;
-}
+    width: 50%;
+  }
 }
 
 .reviewDate {
@@ -127,9 +122,11 @@ flex-direction: column;
   font-weight: 400;
   margin-top: 0px;
   margin-bottom: 2px;
-  
 }
 
+.brandLink {
+  margin-top: 15px;
+}
 .containerAuthor {
   display: flex;
   flex-direction: row;
@@ -142,11 +139,10 @@ flex-direction: column;
 
 .textRecommend {
   @apply --marketplaceH5FontStyles;
-font-weight: 300;
-margin-top: 5px;
-margin-bottom: 15px;
+  font-weight: 300;
+  margin-top: 5px;
+  margin-bottom: 15px;
 }
-
 
 .reviewComments {
   @apply --marketplaceBodyFontStyles;
@@ -158,14 +154,11 @@ margin-bottom: 15px;
 
   @media (--viewportMedium) {
     font-size: 12px;
-
-}
-
+  }
 }
 
 .containerMeasurements {
   margin-bottom: 20px;
-
 }
 
 .bodyStats1 {

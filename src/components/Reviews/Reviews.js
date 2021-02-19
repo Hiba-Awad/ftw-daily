@@ -4,7 +4,7 @@ import { injectIntl, intlShape, FormattedMessage } from '../../util/reactIntl';
 import { arrayOf, string } from 'prop-types';
 import classNames from 'classnames';
 import { Avatar, ReviewRating, UserDisplayName } from '../../components';
-import { ensureListing } from '../../util/data';
+import { ensureListing, ensureUser, userDisplayNameAsString } from '../../util/data';
 import { createSlug } from '../../util/urlHelpers';
 
 import { propTypes } from '../../util/types';
@@ -82,6 +82,21 @@ const Review = props => {
   const id = currentListing.id.uuid;
   const { title = '', price } = currentListing.attributes;
   const slug = createSlug(title);
+  const authorAvailable = currentListing && currentListing.author;
+
+  const currentAuthor = authorAvailable ? currentListing.author : null;
+  const ensuredAuthor = ensureUser(currentAuthor);
+  const authorDisplayName = userDisplayNameAsString(ensuredAuthor, '');
+  const brandLink = (
+    <NamedLink
+      className={css.authorNameLink}
+      name="ProfilePage"
+      params={{ id: ensuredAuthor.id.uuid }}
+    >
+      {authorDisplayName}
+    </NamedLink>
+  );
+
   const handleViewPhotosClick = e => {
     // Stop event from bubbling up to prevent image click handler
     // trying to open the carousel as well.
@@ -106,7 +121,6 @@ const Review = props => {
     return image_resource;
   });
 
-  console.log(user);
   return (
     <div className={css.review}>
       <div className={css.containerImage}>
@@ -122,6 +136,8 @@ const Review = props => {
         <NamedLink name="ListingPage" params={{ id, slug }}>
           {title}
         </NamedLink>
+        <div className={css.brandLink}>{brandLink}</div>
+
         {/*}<Avatar className={css.avatar} user={user} />{*/}
         <div className={css.containerAuthor}>
           <p className={css.reviewDate}>{dateString}</p>
