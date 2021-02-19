@@ -744,7 +744,7 @@
   "ReviewForm.reviewRatingRequired": "Rating is required.",
   "ReviewForm.reviewSubmit": "Publish review",
   "ReviewForm.reviewSubmitAlreadySent": "Review already sent. Please refresh the page.",
-  "ReviewForm.reviewSubmitFailed": "Failed to sent a review. Please try again.",
+  "ReviewForm.reviewSubmitFailed": "Oops, that didn't work! Did you fill out all the required questions?",
   "ReviewModal.description": "Reviews are an important part of the Revvie community. Please share what went well and what could be improved.",
   "ReviewModal.later": "Later",
   "ReviewModal.title": "Leave a review",
