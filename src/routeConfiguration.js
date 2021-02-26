@@ -59,6 +59,14 @@ import {
   PH_noyettePage,
   DP_yeonPage,
   PH_yeonPage,
+  DP_allyPage,
+  PH_allyPage,
+  DP_almosttherePage,
+  PH_almosttherePage,
+  DP_sophieblakePage,
+  PH_sophieblakePage,
+  DP_zaimePage,
+  PH_zaimePage,
 } from './containers';
 
 // routeConfiguration needs to initialize containers first
@@ -586,6 +594,54 @@ const routeConfiguration = () => {
       path: '/product-highlight-yeon-rose-bomber-jacket',
       name: 'yeon-product',
       component: props => <PH_yeonPage {...props} />,
+    },
+
+    {
+      path: '/designer-profile-ally-samantha-dong',
+      name: 'ally',
+      component: props => <DP_allyPage {...props} />,
+    },
+
+    {
+      path: '/product-highlight-ally-classic-black-leather-pump',
+      name: 'ally-product',
+      component: props => <PH_allyPage {...props} />,
+    },
+
+    {
+      path: '/designer-profile-almost-there-celine-kabaker',
+      name: 'almost-there',
+      component: props => <DP_almosttherePage {...props} />,
+    },
+
+    {
+      path: '/product-highlight-almost-there-bianca-betty-dress',
+      name: 'almost-there-product',
+      component: props => <PH_almosttherePage {...props} />,
+    },
+
+    {
+      path: '/designer-profile-sophie-blake',
+      name: 'sophie-blake',
+      component: props => <DP_sophieblakePage {...props} />,
+    },
+
+    {
+      path: '/product-highlight-sophie-blake-the-valeria-cuff',
+      name: 'sophie-blake-product',
+      component: props => <PH_sophieblakePage {...props} />,
+    },
+
+    {
+      path: '/designer-profile-zaime-zapora-williams',
+      name: 'zaime',
+      component: props => <DP_zaimePage {...props} />,
+    },
+
+    {
+      path: '/product-highlight-zaime',
+      name: 'zaime-product',
+      component: props => <PH_zaimePage {...props} />,
     },
 
     // Do not change this path!

@@ -24,6 +24,12 @@ import noyetteImage from './images/noyette.png';
 import alchemydetroitImage from './images/alchemydetroit.jpg';
 import yeonImage from './images/yeon.jpg';
 import hmeteImage from './images/hmete.png';
+import allyImage from './images/ally.png';
+import almostthereImage from './images/almostthere.jpg';
+import sophieblakeImage from './images/sophieblake.jpg';
+import zaimeImage from './images/zaime.png';
+
+
 
 class LocationImage extends Component {
   render() {
@@ -175,8 +181,41 @@ const SectionLocations = props => {
             <FormattedMessage id="SectionLocations.hmete" />
           </div>
         </div>
+
+        <div className={css.designers}>
+          {locationLink('ally', allyImage, 'ally')}
+          <div className={css.subtext}>
+            <FormattedMessage id="SectionLocations.ally" />
+          </div>
+        </div>
+
+        <div className={css.designers}>
+          {locationLink('almost there', almostthereImage, 'almost there')}
+          <div className={css.subtext}>
+            <FormattedMessage id="SectionLocations.almostthere" />
+          </div>
+        </div>
+
+        <div className={css.designers}>
+          {locationLink('sophie blake', sophieblakeImage, 'sophie blake')}
+          <div className={css.subtext}>
+            <FormattedMessage id="SectionLocations.sophieblake" />
+          </div>
+        </div>
+
+        <div className={css.designers}>
+          {locationLink('zaime', zaimeImage, 'zaime')}
+          <div className={css.subtext}>
+            <FormattedMessage id="SectionLocations.zaime" />
+          </div>
+        </div>
+
+
       </div>
     </div>
+
+
+
   );
 };
 
