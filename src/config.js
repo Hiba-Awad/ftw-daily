@@ -207,6 +207,10 @@ const brandIdMap = {
   'almost there': '60366b96-9bab-4ccf-bb4a-b7b90ef9fb2d',
   'sophie blake': '60366be3-d08a-4d92-a111-ddf35ebefcde',
   zaime: '60366b50-47a3-4002-999a-1aefa15ed158',
+  '13-7': '603ed4f6-c115-4ed1-94d9-8621eb486585',
+  heike: '603eddd5-b6ef-48b9-a535-bd90388210f1',
+  'tarin thomas': '603edf42-958e-45f1-aa1e-dedc22689100',
+  kovasky: '603ede8f-cbf6-4f31-b284-ff28d51670ab',
 };
 
 // NOTE: only expose configuration that should be visible in the
