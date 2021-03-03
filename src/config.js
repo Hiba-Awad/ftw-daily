@@ -203,6 +203,10 @@ const brandIdMap = {
   'alchemy-detroit': '6021a8fe-4822-4f89-806e-c01170abe957',
   yeon: '60242829-507e-44b0-aae7-13c7ffc97815',
   hmete: '602dba81-5366-48f2-8930-9dec0b9f7096',
+  ally: '6035b0ad-47d0-447c-86a3-112f31a86f4b',
+  'almost there': '60366b96-9bab-4ccf-bb4a-b7b90ef9fb2d',
+  'sophie blake': '60366be3-d08a-4d92-a111-ddf35ebefcde',
+  zaime: '60366b50-47a3-4002-999a-1aefa15ed158',
 };
 
 // NOTE: only expose configuration that should be visible in the
