@@ -40,6 +40,14 @@ export { default as DP_sophieblakePage } from './DesignerProfile/DP_sophieblake'
 export { default as PH_sophieblakePage } from './ProductHighlight/PH_sophieblake';
 export { default as DP_zaimePage } from './DesignerProfile/DP_zaime';
 export { default as PH_zaimePage } from './ProductHighlight/PH_zaime';
+export { default as DP_heikePage } from './DesignerProfile/DP_heike';
+export { default as PH_heikePage } from './ProductHighlight/PH_heike';
+export { default as DP_kovaskyPage } from './DesignerProfile/DP_kovasky';
+export { default as PH_kovaskyPage } from './ProductHighlight/PH_kovasky';
+export { default as DP_thirteensevenPage } from './DesignerProfile/DP_thirteenseven';
+export { default as PH_thirteensevenPage } from './ProductHighlight/PH_thirteenseven';
+export { default as DP_tarinthomasPage } from './DesignerProfile/DP_tarinthomas';
+export { default as PH_tarinthomasPage } from './ProductHighlight/PH_tarinthomas';
 export { default as AuthenticationPage } from './AuthenticationPage/AuthenticationPage';
 export { default as CheckoutPage } from './CheckoutPage/CheckoutPage';
 export { default as ContactDetailsPage } from './ContactDetailsPage/ContactDetailsPage';

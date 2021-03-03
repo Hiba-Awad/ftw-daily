@@ -67,6 +67,14 @@ import {
   PH_sophieblakePage,
   DP_zaimePage,
   PH_zaimePage,
+  DP_heikePage,
+  PH_heikePage,
+  DP_kovaskyPage,
+  PH_kovaskyPage,
+  DP_thirteensevenPage,
+  PH_thirteensevenPage,
+  DP_tarinthomasPage,
+  PH_tarinthomasPage,
 } from './containers';
 
 // routeConfiguration needs to initialize containers first
@@ -639,9 +647,59 @@ const routeConfiguration = () => {
     },
 
     {
-      path: '/product-highlight-zaime',
+      path: '/product-highlight-zaime-reflective-bomber-jacket',
       name: 'zaime-product',
       component: props => <PH_zaimePage {...props} />,
+    },
+
+    {
+      path: '/designer-profile-heike-heike-jarik',
+      name: 'heike',
+      component: props => <DP_heikePage {...props} />,
+    },
+
+    {
+      path: '/product-highlight-heike-rumi-coat',
+      name: 'heike-product',
+      component: props => <PH_heikePage {...props} />,
+    },
+
+    {
+      path: '/designer-profile-kovasky-minika-ko',
+      name: 'kovasky',
+      component: props => <DP_kovaskyPage {...props} />,
+    },
+
+    {
+      path: '/product-highlight-kovasky-madame-dress-peekaboo-leggings',
+      name: 'kovasky-product',
+      component: props => <PH_kovaskyPage {...props} />,
+    },
+
+
+    {
+      path: '/designer-profile-thirteen-seven-mya-goldberg',
+      name: 'thirteen-seven',
+      component: props => <DP_thirteensevenPage {...props} />,
+    },
+
+    {
+      path: '/product-highlight-thirteen-seven-trapezoid-pullover',
+      name: 'thirteen-seven-product',
+      component: props => <PH_thirteensevenPage {...props} />,
+    },
+
+
+    {
+      path: '/designer-profile-tarin-thomas-kylie-nakao',
+      name: 'tarin-thomas',
+      component: props => <DP_tarinthomasPage {...props} />,
+    },
+
+    {
+      path: '/product-highlight-tarin-thomas-charles-ring',
+      name: 'tarin-thomas-product',
+      component: props => <PH_tarinthomasPage {...props} />,
     },
 
     // Do not change this path!

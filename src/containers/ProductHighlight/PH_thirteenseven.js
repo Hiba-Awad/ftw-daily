@@ -12,22 +12,22 @@ import {
 } from '../../components';
 
 import css from './ProductHighlight.css';
-import ph_alchemydetroit from './PH_alchemydetroit.jpg';
-import ph_alchemydetroit2 from './PH_alchemydetroit2.jpg';
+import ph_thirteenseven from './PH_thirteenseven.jpg';
+import ph_thirteenseven2 from './PH_thirteenseven2.jpg';
 
 import { pink } from '@material-ui/core/colors';
 
-const PH_alchemydetroitPage = () => {
+const PH_thirteensevenPage = () => {
   const { siteTwitterHandle, siteFacebookPage } = config;
   const siteTwitterPage = twitterPageURL(siteTwitterHandle);
 
   // prettier-ignore
   return (
     <StaticPage
-      title="product highlight | alchemy detroit | catherine blazer"
+      title="product highlight | thirteenseven | the trapezoid pullover"
       schema={{
         '@context': 'http://schema.org',
-        '@type': 'PH_alchemydetroit',
+        '@type': 'PH_thirteenseven',
         description: 'Product Highlight | Revvie',
         name: 'Product Highlight Page',
       }}
@@ -38,34 +38,33 @@ const PH_alchemydetroitPage = () => {
         </LayoutWrapperTopbar>
 
         <LayoutWrapperMain className={css.staticPageWrapper}>
-          <h6 className={css.pageTitle} style={{color: "#DA4167",}}>PRODUCT HIGHLIGHT {'\u2B24'} ALCHEMY DETROIT</h6>
-          <h1 className={css.pageTitle}>the catherine blazer.</h1>
+          <h6 className={css.pageTitle} style={{color: "#DA4167",}}>PRODUCT HIGHLIGHT {'\u2B24'} 13-7</h6>
+          <h1 className={css.pageTitle}>the trapezoid pullover.</h1>
          
           <div className={css.contentWrapper}>
             <div className={css.contentMainOUISA2}>
               <div className={css.contentMainOUISA}>
-                <img className={css.coverImageOUISA} src={ph_alchemydetroit} alt="alchemy detroit catherine blazer" />
-                <img className={css.coverImageOUISA} src={ph_alchemydetroit2} alt="alchemy detroit catherine blazer" />
+                <img className={css.coverImageOUISA} src={ph_thirteenseven} alt="thirteenseven the trapezoid pullover" />
+                <img className={css.coverImageOUISA} src={ph_thirteenseven2} alt="thirteenseven the trapezoid pullover" />
               </div>
               <div className={css.text}>
                 <h5 className={css.headerSub}>
                 </h5>
                 <div className={css.paragraph}>
                   <p style={{fontWeight: 'bold'}}>
-                  Tell us about your favorite blazer from the collection. 
+                  What’s your favorite shirt? 
                   </p>
                   <p>
-                  I love the Catherine silhouette. It’s a personal favorite of mine. I wear mine with Lululemon, jogging pants, pencil skirts… It’s so incredibly versatile and comfortable while immediately elevating your style. I love that a great blazer can dress up a casual outfit of t-shirt and jeans.
+                  The Trapezoid Pullover. Not coincidentally, it’s also the most popular style in the collection.
                   </p>
-                
+
                   <p style={{fontWeight: 'bold'}}>
-                  Are all the jackets unisex?
+                  Tell us about your design process.
                   </p>
                   <p>
-                  Yes. The styles were made with unisex in mind so they aren’t overly feminine or masculine. Which is also great for a more conservative corporate environment!
+                  The pocket was inspired by the good ol’ hoodie. I was looking for a shirt that could be casual and dress at the same time. There’s just something about the pocket that makes you feel comfortable and at ease, but the shirting fabric also looks very sleek. It’s all about bridging the gap between dressy and casual. Bonus points that you can wear the shirt untucked!
                   </p>
-                 
-                  
+
                 </div>
               </div>
             </div>
@@ -80,4 +79,4 @@ const PH_alchemydetroitPage = () => {
   );
 };
 
-export default PH_alchemydetroitPage;
+export default PH_thirteensevenPage;

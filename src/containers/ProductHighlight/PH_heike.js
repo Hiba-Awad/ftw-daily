@@ -12,22 +12,22 @@ import {
 } from '../../components';
 
 import css from './ProductHighlight.css';
-import ph_alchemydetroit from './PH_alchemydetroit.jpg';
-import ph_alchemydetroit2 from './PH_alchemydetroit2.jpg';
+import ph_heike from './PH_heike.jpg';
+import ph_heike2 from './PH_heike2.png';
 
 import { pink } from '@material-ui/core/colors';
 
-const PH_alchemydetroitPage = () => {
+const PH_heikePage = () => {
   const { siteTwitterHandle, siteFacebookPage } = config;
   const siteTwitterPage = twitterPageURL(siteTwitterHandle);
 
   // prettier-ignore
   return (
     <StaticPage
-      title="product highlight | alchemy detroit | catherine blazer"
+      title="product highlight | heike | rumi coat"
       schema={{
         '@context': 'http://schema.org',
-        '@type': 'PH_alchemydetroit',
+        '@type': 'PH_heike',
         description: 'Product Highlight | Revvie',
         name: 'Product Highlight Page',
       }}
@@ -38,31 +38,27 @@ const PH_alchemydetroitPage = () => {
         </LayoutWrapperTopbar>
 
         <LayoutWrapperMain className={css.staticPageWrapper}>
-          <h6 className={css.pageTitle} style={{color: "#DA4167",}}>PRODUCT HIGHLIGHT {'\u2B24'} ALCHEMY DETROIT</h6>
-          <h1 className={css.pageTitle}>the catherine blazer.</h1>
+          <h6 className={css.pageTitle} style={{color: "#DA4167",}}>PRODUCT HIGHLIGHT {'\u2B24'} HEIKE</h6>
+          <h1 className={css.pageTitle}>the rumi coat.</h1>
          
           <div className={css.contentWrapper}>
             <div className={css.contentMainOUISA2}>
               <div className={css.contentMainOUISA}>
-                <img className={css.coverImageOUISA} src={ph_alchemydetroit} alt="alchemy detroit catherine blazer" />
-                <img className={css.coverImageOUISA} src={ph_alchemydetroit2} alt="alchemy detroit catherine blazer" />
+                <img className={css.coverImageOUISA} src={ph_heike} alt="heike rumi coat" />
+                <img className={css.coverImageOUISA} src={ph_heike2} alt="heike rumi coat" />
               </div>
               <div className={css.text}>
                 <h5 className={css.headerSub}>
                 </h5>
                 <div className={css.paragraph}>
                   <p style={{fontWeight: 'bold'}}>
-                  Tell us about your favorite blazer from the collection. 
+                  What’s your favorite piece? 
                   </p>
                   <p>
-                  I love the Catherine silhouette. It’s a personal favorite of mine. I wear mine with Lululemon, jogging pants, pencil skirts… It’s so incredibly versatile and comfortable while immediately elevating your style. I love that a great blazer can dress up a casual outfit of t-shirt and jeans.
-                  </p>
-                
-                  <p style={{fontWeight: 'bold'}}>
-                  Are all the jackets unisex?
+                  The Rumi coat. I love that it’s also gotten a great response. It’s very modern and functional; it’s an embodiment of the Bauhaus idea.
                   </p>
                   <p>
-                  Yes. The styles were made with unisex in mind so they aren’t overly feminine or masculine. Which is also great for a more conservative corporate environment!
+                  It’s made of a double-faced fabric and is finished on some seams like a classic double-face but I left others with a raw edge. It’s a fantastic winter coat.
                   </p>
                  
                   
@@ -80,4 +76,4 @@ const PH_alchemydetroitPage = () => {
   );
 };
 
-export default PH_alchemydetroitPage;
+export default PH_heikePage;

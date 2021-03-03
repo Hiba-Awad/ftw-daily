@@ -12,7 +12,7 @@ import {
 } from '../../components';
 
 import css from './DesignerProfile.css';
-import dp_primoluxe from './DP_primoluxe.jpeg';
+import dp_primoluxe from './DP_primoluxe.jpg';
 import { pink } from '@material-ui/core/colors';
 
 const DP_primoluxePage = () => {

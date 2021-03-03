@@ -28,6 +28,10 @@ import allyImage from './images/ally.png';
 import almostthereImage from './images/almostthere.jpg';
 import sophieblakeImage from './images/sophieblake.jpg';
 import zaimeImage from './images/zaime.png';
+import heikeImage from './images/heike.jpg';
+import kovaskyImage from './images/kovasky.jpg';
+import tarinthomasImage from './images/tarinthomas.png';
+import thirteensevenImage from './images/thirteenseven.jpg';
 
 
 
@@ -207,6 +211,34 @@ const SectionLocations = props => {
           {locationLink('zaime', zaimeImage, 'zaime')}
           <div className={css.subtext}>
             <FormattedMessage id="SectionLocations.zaime" />
+          </div>
+        </div>
+
+        <div className={css.designers}>
+          {locationLink('13-7', thirteensevenImage, '13-7')}
+          <div className={css.subtext}>
+            <FormattedMessage id="SectionLocations.thirteenseven" />
+          </div>
+        </div>
+
+        <div className={css.designers}>
+          {locationLink('heike', heikeImage, 'heike')}
+          <div className={css.subtext}>
+            <FormattedMessage id="SectionLocations.heike" />
+          </div>
+        </div>
+
+        <div className={css.designers}>
+          {locationLink('tarin thomas', tarinthomasImage, 'tarin thomas')}
+          <div className={css.subtext}>
+            <FormattedMessage id="SectionLocations.tarinthomas" />
+          </div>
+        </div>
+
+        <div className={css.designers}>
+          {locationLink('kovasky', kovaskyImage, 'kovasky')}
+          <div className={css.subtext}>
+            <FormattedMessage id="SectionLocations.kovasky" />
           </div>
         </div>
 
