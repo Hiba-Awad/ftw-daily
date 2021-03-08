@@ -504,12 +504,12 @@ export function requestCreateListingDraft(data) {
       'imageVariant.portrait-crop': sdkUtil.objectQueryString({
         w: 400,
         h: 600,
-        fit: 'scale',
+        fit: 'crop',
       }),
       'imageVariant.portrait-crop2x': sdkUtil.objectQueryString({
         w: 800,
         h: 1200,
-        fit: 'scale',
+        fit: 'crop',
       }),
     };
 

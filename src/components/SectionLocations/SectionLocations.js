@@ -32,6 +32,7 @@ import heikeImage from './images/heike.jpg';
 import kovaskyImage from './images/kovasky.jpg';
 import tarinthomasImage from './images/tarinthomas.png';
 import thirteensevenImage from './images/thirteenseven.jpg';
+import manaleImage from './images/manale.png';
 
 
 
@@ -215,7 +216,7 @@ const SectionLocations = props => {
         </div>
 
         <div className={css.designers}>
-          {locationLink('13-7', thirteensevenImage, '13-7')}
+          {locationLink('thirteen seven', thirteensevenImage, 'thirteen seven')}
           <div className={css.subtext}>
             <FormattedMessage id="SectionLocations.thirteenseven" />
           </div>
@@ -229,9 +230,9 @@ const SectionLocations = props => {
         </div>
 
         <div className={css.designers}>
-          {locationLink('tarin thomas', tarinthomasImage, 'tarin thomas')}
+          {locationLink('manale', manaleImage, 'manale')}
           <div className={css.subtext}>
-            <FormattedMessage id="SectionLocations.tarinthomas" />
+            <FormattedMessage id="SectionLocations.manale" />
           </div>
         </div>
 

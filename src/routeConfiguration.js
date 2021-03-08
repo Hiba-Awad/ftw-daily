@@ -75,6 +75,8 @@ import {
   PH_thirteensevenPage,
   DP_tarinthomasPage,
   PH_tarinthomasPage,
+  DP_manalePage,
+  PH_manalePage,
 } from './containers';
 
 // routeConfiguration needs to initialize containers first
@@ -700,6 +702,19 @@ const routeConfiguration = () => {
       path: '/product-highlight-tarin-thomas-charles-ring',
       name: 'tarin-thomas-product',
       component: props => <PH_tarinthomasPage {...props} />,
+    },
+
+
+    {
+      path: '/designer-profile-manale-manale-dagnew',
+      name: 'manale',
+      component: props => <DP_manalePage {...props} />,
+    },
+
+    {
+      path: '/product-highlight-manale-gondar-shawl',
+      name: 'manale-product',
+      component: props => <PH_manalePage {...props} />,
     },
 
     // Do not change this path!

@@ -48,6 +48,8 @@ export { default as DP_thirteensevenPage } from './DesignerProfile/DP_thirteense
 export { default as PH_thirteensevenPage } from './ProductHighlight/PH_thirteenseven';
 export { default as DP_tarinthomasPage } from './DesignerProfile/DP_tarinthomas';
 export { default as PH_tarinthomasPage } from './ProductHighlight/PH_tarinthomas';
+export { default as DP_manalePage } from './DesignerProfile/DP_manale';
+export { default as PH_manalePage } from './ProductHighlight/PH_manale';
 export { default as AuthenticationPage } from './AuthenticationPage/AuthenticationPage';
 export { default as CheckoutPage } from './CheckoutPage/CheckoutPage';
 export { default as ContactDetailsPage } from './ContactDetailsPage/ContactDetailsPage';

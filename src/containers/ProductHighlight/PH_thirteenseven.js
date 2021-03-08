@@ -24,7 +24,7 @@ const PH_thirteensevenPage = () => {
   // prettier-ignore
   return (
     <StaticPage
-      title="product highlight | thirteenseven | the trapezoid pullover"
+      title="product highlight | thirteen seven | the trapezoid pullover"
       schema={{
         '@context': 'http://schema.org',
         '@type': 'PH_thirteenseven',
@@ -38,7 +38,7 @@ const PH_thirteensevenPage = () => {
         </LayoutWrapperTopbar>
 
         <LayoutWrapperMain className={css.staticPageWrapper}>
-          <h6 className={css.pageTitle} style={{color: "#DA4167",}}>PRODUCT HIGHLIGHT {'\u2B24'} 13-7</h6>
+          <h6 className={css.pageTitle} style={{color: "#DA4167",}}>PRODUCT HIGHLIGHT {'\u2B24'} THIRTEEN SEVEN</h6>
           <h1 className={css.pageTitle}>the trapezoid pullover.</h1>
          
           <div className={css.contentWrapper}>

@@ -26,8 +26,8 @@ const DP_thirteensevenPage = () => {
       schema={{
         '@context': 'http://schema.org',
         '@type': 'DP_thirteensevenPage',
-        description: 'Designer Profile - 13-7 | Revvie',
-        name: 'Designer Profile | 13-7',
+        description: 'Designer Profile - Thirteen Seven | Revvie',
+        name: 'Designer Profile | Thirteen Seven',
       }}
     >
       <LayoutSingleColumn>
@@ -36,7 +36,7 @@ const DP_thirteensevenPage = () => {
         </LayoutWrapperTopbar>
 
         <LayoutWrapperMain className={css.staticPageWrapper}>
-          <h6 className={css.pageTitle} style={{color: "#DA4167",}}>DESIGNER PROFILE {'\u2B24'} 13-7</h6>
+          <h6 className={css.pageTitle} style={{color: "#DA4167",}}>DESIGNER PROFILE {'\u2B24'} Thirteen Seven</h6>
           <h1 className={css.pageTitle}>mya on creating the perfect button-down shirt and solving the problem of "boob-gape".</h1>
 
           <div className={css.contentWrapper}>
