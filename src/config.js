@@ -211,6 +211,7 @@ const brandIdMap = {
   heike: '603eddd5-b6ef-48b9-a535-bd90388210f1',
   'tarin thomas': '603edf42-958e-45f1-aa1e-dedc22689100',
   kovasky: '603ede8f-cbf6-4f31-b284-ff28d51670ab',
+  manale: '6044d73d-68ef-45c4-9c0e-b6407e86a092',
 };
 
 // NOTE: only expose configuration that should be visible in the
