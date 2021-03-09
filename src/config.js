@@ -212,6 +212,7 @@ const brandIdMap = {
   'tarin thomas': '603edf42-958e-45f1-aa1e-dedc22689100',
   kovasky: '603ede8f-cbf6-4f31-b284-ff28d51670ab',
   manale: '6044d73d-68ef-45c4-9c0e-b6407e86a092',
+  'thirteen seven': '603ed4f6-c115-4ed1-94d9-8621eb486585',
 };
 
 // NOTE: only expose configuration that should be visible in the
